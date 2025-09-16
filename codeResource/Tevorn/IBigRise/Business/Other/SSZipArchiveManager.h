@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <SSZipArchive/SSZipArchive.h>
 NS_ASSUME_NONNULL_BEGIN
-#define kAppleProjectEmoticon @"AppleProjectEmoticon"
+#define kDuringMonitor @"DuringMonitor"
 
 @interface SSZipArchiveManager : NSObject
 

