@@ -12,7 +12,6 @@ target "IBigRise" do
      pod 'Reachability'
      pod 'YYModel'
      pod 'FLAnimatedImage'
-     pod 'LEEAlert'
      pod 'MJExtension'
      pod 'SSZipArchive'
      
@@ -24,6 +23,7 @@ target "IBigRise" do
 #     pod 'AFNetworking', :git => 'https://github.com/NewAFNetworking/AFNetworking.git'
 #     pod 'Toast'
 #     pod 'NIMSDK_LITE', '9.20.12'
+#     pod 'LEEAlert'
 
 end
 

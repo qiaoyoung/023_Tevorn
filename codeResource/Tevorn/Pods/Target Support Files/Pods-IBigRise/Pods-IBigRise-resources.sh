@@ -98,7 +98,6 @@ EOM
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/FMDB/FMDB_Privacy.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/LEEAlert/LEEAlert.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/MJExtension/MJExtension.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/Reachability/Reachability_Privacy.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.bundle"
@@ -106,7 +105,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/FMDB/FMDB_Privacy.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/LEEAlert/LEEAlert.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/MJExtension/MJExtension.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/Reachability/Reachability_Privacy.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.bundle"

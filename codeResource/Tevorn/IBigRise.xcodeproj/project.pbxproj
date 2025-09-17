@@ -364,6 +364,7 @@
 		B1465F072DC0F58E00C4D5B8 /* SSZipArchiveManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B1465F062DC0F58E00C4D5B8 /* SSZipArchiveManager.m */; };
 		B1465F0A2DC1B83300C4D5B8 /* UIImage+ZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = B1465F092DC1B83300C4D5B8 /* UIImage+ZipArchive.m */; };
 		B1465F0C2DC1BB2200C4D5B8 /* DuringMonitor.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B1465F0B2DC1BB2200C4D5B8 /* DuringMonitor.bundle */; };
+		B1E420532E7A480D006AA71D /* LEEAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = B1E420502E7A480D006AA71D /* LEEAlert.m */; };
 		B1F4ED862E7190BC00195A20 /* AppDelegateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F4ED852E7190BC00195A20 /* AppDelegateManager.m */; };
 		B1F4ED8B2E719FF100195A20 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F4ED8A2E719FF100195A20 /* XMLReader.m */; };
 		B1F4ED8C2E719FF100195A20 /* NTESLanguageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F4ED882E719FF100195A20 /* NTESLanguageManager.m */; };
@@ -1191,6 +1192,9 @@
 		B1465F082DC1B83300C4D5B8 /* UIImage+ZipArchive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZipArchive.h"; sourceTree = "<group>"; };
 		B1465F092DC1B83300C4D5B8 /* UIImage+ZipArchive.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ZipArchive.m"; sourceTree = "<group>"; };
 		B1465F0B2DC1BB2200C4D5B8 /* DuringMonitor.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DuringMonitor.bundle; sourceTree = "<group>"; };
+		B1E4204F2E7A480D006AA71D /* LEEAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LEEAlert.h; sourceTree = "<group>"; };
+		B1E420502E7A480D006AA71D /* LEEAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LEEAlert.m; sourceTree = "<group>"; };
+		B1E420512E7A480D006AA71D /* LEEAlertHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LEEAlertHelper.h; sourceTree = "<group>"; };
 		B1F4ED842E7190BC00195A20 /* AppDelegateManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateManager.h; sourceTree = "<group>"; };
 		B1F4ED852E7190BC00195A20 /* AppDelegateManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateManager.m; sourceTree = "<group>"; };
 		B1F4ED872E719FF100195A20 /* NTESLanguageManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTESLanguageManager.h; sourceTree = "<group>"; };
@@ -2345,6 +2349,7 @@
 		B14655952DC0B4E300C4D5B8 /* Librarys */ = {
 			isa = PBXGroup;
 			children = (
+				B1E420522E7A480D006AA71D /* LEEAlert */,
 				B1F4EDEE2E71A2C600195A20 /* TXScrollLabelView */,
 				B1F4EDE82E71A2A400195A20 /* Toast */,
 				B1F4EDE32E71A27700195A20 /* UCZProgressView */,
@@ -3066,6 +3071,16 @@
 			path = CustomTabBar;
 			sourceTree = "<group>";
 		};
+		B1E420522E7A480D006AA71D /* LEEAlert */ = {
+			isa = PBXGroup;
+			children = (
+				B1E4204F2E7A480D006AA71D /* LEEAlert.h */,
+				B1E420502E7A480D006AA71D /* LEEAlert.m */,
+				B1E420512E7A480D006AA71D /* LEEAlertHelper.h */,
+			);
+			path = LEEAlert;
+			sourceTree = "<group>";
+		};
 		B1F4ED832E71900A00195A20 /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -3255,8 +3270,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 420711C02D75915B002453E9 /* Build configuration list for PBXNativeTarget "IBigRise" */;
 			buildPhases = (
-				13B7FAEEBC9EDB39D5BDE67E /* Compile Bundle Assets */,
 				42E79DCBC6F6F5165988825C /* [CP] Check Pods Manifest.lock */,
+				13B7FAEEBC9EDB39D5BDE67E /* Compile Bundle Assets */,
 				420711A42D759159002453E9 /* Sources */,
 				420711A52D759159002453E9 /* Frameworks */,
 				420711A62D759159002453E9 /* Resources */,
@@ -3457,6 +3472,7 @@
 				B14657D12DC0B4E300C4D5B8 /* ZZZBaseSessionContentConfig.m in Sources */,
 				B14657D22DC0B4E300C4D5B8 /* ZZZFileContentConfig.m in Sources */,
 				B14657D32DC0B4E300C4D5B8 /* ZZZImageContentConfig.m in Sources */,
+				B1E420532E7A480D006AA71D /* LEEAlert.m in Sources */,
 				B14657D42DC0B4E300C4D5B8 /* ZZZLocationContentConfig.m in Sources */,
 				B14657D52DC0B4E300C4D5B8 /* ZZZNotificationContentConfig.m in Sources */,
 				B14657D62DC0B4E300C4D5B8 /* ZZZRtcCallRecordContentConfig.m in Sources */,

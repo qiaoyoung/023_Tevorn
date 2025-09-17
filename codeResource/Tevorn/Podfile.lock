@@ -5,9 +5,6 @@ PODS:
   - FMDB/Core (2.7.12)
   - FMDB/standard (2.7.12):
     - FMDB/Core
-  - LEEAlert (1.8.0):
-    - LEEAlert/Privacy (= 1.8.0)
-  - LEEAlert/Privacy (1.8.0)
   - Masonry (1.1.0)
   - MJExtension (3.4.2)
   - Reachability (3.7.6)
@@ -34,7 +31,6 @@ PODS:
 DEPENDENCIES:
   - FLAnimatedImage
   - FMDB
-  - LEEAlert
   - Masonry
   - MJExtension
   - Reachability
@@ -51,7 +47,6 @@ SPEC REPOS:
   trunk:
     - FLAnimatedImage
     - FMDB
-    - LEEAlert
     - Masonry
     - MJExtension
     - Reachability
@@ -66,7 +61,6 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   FLAnimatedImage: bbf914596368867157cc71b38a8ec834b3eeb32b
   FMDB: 728731dd336af3936ce00f91d9d8495f5718a0e6
-  LEEAlert: 20b46f143287d749ec3e718059e064c175932807
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: e97d164cb411aa9795cf576093a1fa208b4a8dd8
   Reachability: fd0ecd23705e2599e4cceeb943222ae02296cbc6
@@ -78,6 +72,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 66bd2f4180ac866898731ff9dc406cbb755c6051
+PODFILE CHECKSUM: dd524c11892308235352db5ccba40b63ee91dc31
 
 COCOAPODS: 1.16.2
