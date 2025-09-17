@@ -1,3 +1,5 @@
+// __DEBUG__
+// __CLOSE_PRINT__
 //
 //  AppDelegate.h
 //  NIMDemo
@@ -6,11 +8,20 @@
 //  Copyright (c) 2015年 Netease. All rights reserved.
 //
 
+// __M_A_C_R_O__
+//: #import <UIKit/UIKit.h>
 #import <UIKit/UIKit.h>
 
+//: @interface AppDelegate : UIResponder <UIApplicationDelegate>
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
+//: @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UIWindow *window;
 
-@end
+//: @end
+@property (nonatomic, assign) BOOL arrowEnable;
+@property (nonatomic, assign) NSInteger bearTotal;
+@property (nonatomic, strong) NSMutableArray *usedArray;
+@property (nonatomic, assign) double creationNumber;
 
+@end

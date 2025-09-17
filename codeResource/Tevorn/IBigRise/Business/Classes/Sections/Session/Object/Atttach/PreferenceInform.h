@@ -1,0 +1,49 @@
+// __DEBUG__
+// __CLOSE_PRINT__
+//
+//  PreferenceInform.h
+//  NIM
+//
+//  Created by chris on 2017/7/17.
+//  Copyright © 2017年 Netease. All rights reserved.
+//
+
+// __M_A_C_R_O__
+//: #import <Foundation/Foundation.h>
+#import <Foundation/Foundation.h>
+//: #import "NTESCustomAttachmentDefines.h"
+#import "NTESCustomAttachmentDefines.h"
+
+//: @interface NTESRedPacketTipAttachment : NSObject<NIMCustomAttachment,NTESCustomAttachmentInfo>
+@interface PreferenceInform : NSObject<NIMCustomAttachment,HistoryMultiple>
+
+/**
+ 红包发送者ID
+ */
+//: @end
+@property (nonatomic, strong) NSMutableDictionary *aloneMinimumDictionary;
+/**
+ *  红包ID
+ */
+//: @property (nonatomic, strong) NSString * packetId;
+@property (nonatomic, strong) NSString * secondary;
+@property (nonatomic, strong) NSString * click;
+
+//: @property (nonatomic, strong) NSString * sendPacketId;
+@property (nonatomic, strong) NSString * calendarMonth;
+
+/**
+ 拆红包的人的ID
+ */
+//: @property (nonatomic, strong) NSString * openPacketId;
+@property (nonatomic, strong) NSString * barBillLoad;
+/**
+ 是否为最后一个红包
+ */
+//: @property (nonatomic, strong) NSString * isGetDone;
+@property (nonatomic, strong) NSString * director;
+
+
+@property (nonatomic, strong) NSString * middleLoad;
+
+@end

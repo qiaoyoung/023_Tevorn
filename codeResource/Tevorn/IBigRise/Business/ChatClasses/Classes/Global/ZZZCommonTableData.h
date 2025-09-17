@@ -1,3 +1,5 @@
+// __DEBUG__
+// __CLOSE_PRINT__
 //
 //  ZZZCommonTableData.h
 //  NIM
@@ -5,85 +7,88 @@
 //  Created by chris on 15/6/26.
 //  Copyright © 2015年 Netease. All rights reserved.
 //
+//section key
+//row key
+//common key
 
+// __M_A_C_R_O__
+//: #import <UIKit/UIKit.h>
 #import <UIKit/UIKit.h>
 
-#define SepLineLeft 15 //分割线距左边距离
+//: @interface NIMCommonTableSection : NSObject
+@interface EpisodeTab : NSObject
 
-//section key
-#define HeaderTitle  @"headerTitle"
-#define FooterTitle  @"footerTitle"
-#define HeaderHeight @"headerHeight"
-#define FooterHeight @"footerHeight"
-#define RowContent   @"row"
+//: @property (nonatomic,copy) NSString *headerTitle;
+@property (nonatomic,copy) NSString *remark;
 
-//row key
-#define Title         @"title"
-#define DetailTitle   @"detailTitle"
-#define CellClass     @"cellClass"
-#define CellAction    @"action"
-#define ExtraInfo     @"extraInfo"
-#define RowHeight     @"rowHeight"
-#define SepLeftEdge   @"leftEdge"
-#define Language      @"language"
+@property (nonatomic,assign) CGFloat lowness;
+@property (nonatomic,copy) NSArray *publicTransportRows;
 
-//common key
-#define Disable       @"disable"      //cell不可见
-#define ShowAccessory @"accessory"    //cell显示>箭头
-#define ForbidSelect  @"forbidSelect" //cell不响应select事件
-#define DisableUserInteraction @"disableUserInteraction" //cell是否响应任何事件
+//: @property (nonatomic,assign) CGFloat uiHeaderHeight;
+@property (nonatomic,assign) CGFloat theLikesOf;
 
-@interface NIMCommonTableSection : NSObject
+//: @property (nonatomic,assign) CGFloat uiFooterHeight;
+@property (nonatomic,assign) CGFloat visual;
+//: @property (nonatomic,copy) NSArray *rows;
+@property (nonatomic,copy) NSArray *select;
 
-@property (nonatomic,copy)   NSString *headerTitle;
+//: @property (nonatomic,copy) NSString *footerTitle;
+@property (nonatomic,copy) NSString *ainCenter;
 
-@property (nonatomic,copy)   NSArray *rows;
+//: - (instancetype) initWithDict:(NSDictionary *)dict;
+- (instancetype) initWithBolt:(NSDictionary *)dict;
 
-@property (nonatomic,copy)   NSString *footerTitle;
+//: + (NSArray *)sectionsWithData:(NSArray *)data;
++ (NSArray *)searchionTarget:(NSArray *)data;
 
-@property (nonatomic,assign) CGFloat  uiHeaderHeight;
-
-@property (nonatomic,assign) CGFloat  uiFooterHeight;
-
-- (instancetype) initWithDict:(NSDictionary *)dict;
-
-+ (NSArray *)sectionsWithData:(NSArray *)data;
-
+//: @end
 @end
 
 
 
 
-@interface NIMCommonTableRow : NSObject
+//: @interface NIMCommonTableRow : NSObject
+@interface StandUpRow : NSObject
 
-@property (nonatomic,strong) NSString *title;
+//: @property (nonatomic,copy ) NSString *cellActionName;
+@property (nonatomic,copy ) NSString *runAwayName;
 
-@property (nonatomic,copy  ) NSString *detailTitle;
+//: @property (nonatomic,copy ) NSString *cellClassName;
+@property (nonatomic,copy ) NSString *fiscal;
 
-@property (nonatomic,copy  ) NSString *cellClassName;
+//: @property (nonatomic,assign) CGFloat sepLeftEdge;
+@property (nonatomic,assign) CGFloat advantageFloat;
+//: @property (nonatomic,assign) BOOL showAccessory;
+@property (nonatomic,assign) BOOL sampleBecome;
 
-@property (nonatomic,copy  ) NSString *cellActionName;
+//: @property (nonatomic,assign) BOOL forbidSelect;
+@property (nonatomic,assign) BOOL disturbing;
 
-@property (nonatomic,assign) CGFloat  uiRowHeight;
+@property (nonatomic,copy ) NSString *breast;
 
-@property (nonatomic,assign) CGFloat  sepLeftEdge;
+//: @property (nonatomic,strong) NSString *language;
+@property (nonatomic,strong) NSString *electBack;
 
-@property (nonatomic,assign) BOOL     showAccessory;
+//: @property (nonatomic,strong) id extraInfo;
+@property (nonatomic,strong) id unique;
 
-@property (nonatomic,assign) BOOL     forbidSelect;
+//: @property (nonatomic,assign) CGFloat uiRowHeight;
+@property (nonatomic,assign) CGFloat clip;
 
-@property (nonatomic,assign) BOOL     userInteractionDisable;
+//: @property (nonatomic,strong) NSString *title;
+@property (nonatomic,strong) NSString *simple;
 
-@property (nonatomic,strong) id extraInfo;
+//: @property (nonatomic,copy ) NSString *detailTitle;
+@property (nonatomic,copy ) NSString *superabundance;
 
-@property (nonatomic,strong) NSString *language;
+//: @property (nonatomic,assign) BOOL userInteractionDisable;
+@property (nonatomic,assign) BOOL when;
 
-- (instancetype)initWithDict:(NSDictionary *)dict;
+//: + (NSArray *)rowsWithData:(NSArray *)data;
++ (NSArray *)track:(NSArray *)data;
 
-+ (NSArray *)rowsWithData:(NSArray *)data;
+//: - (instancetype)initWithDict:(NSDictionary *)dict;
+- (instancetype)initWithAbout:(NSDictionary *)dict;
 
+//: @end
 @end
-
-
-
-
