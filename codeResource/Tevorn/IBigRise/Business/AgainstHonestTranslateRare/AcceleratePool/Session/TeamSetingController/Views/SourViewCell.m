@@ -1025,7 +1025,7 @@ typedef struct {
             //: teamMute.selectedBlock = ^(id<NIMKitSelectCardData> item) {
             teamMute.dealMonitorWith = ^(id<ArrayIndividualYard> item) {
                 //: [_vc didUpdateTeamMute:[item.value integerValue]];
-                [_independent defense:[item.motion integerValue]];
+                [_independent defense:[item.ringReverse integerValue]];
             //: };
             };
             //: ZZZTeamCardSelectedViewController *vc = [ZZZTeamCardSelectedViewController instanceWithTitle:teamMute.title
@@ -1080,7 +1080,7 @@ typedef struct {
             //: teamNotify.selectedBlock = ^(id<NIMKitSelectCardData> item) {
             teamNotify.dealMonitorWith = ^(id<ArrayIndividualYard> item) {
                 //: [_vc didUpdateNotifiyState:[item.value integerValue]];
-                [_independent moreNotifiyState:[item.motion integerValue]];
+                [_independent moreNotifiyState:[item.ringReverse integerValue]];
             //: };
             };
             //: ZZZTeamCardSelectedViewController *vc = [ZZZTeamCardSelectedViewController instanceWithTitle:teamNotify.title
@@ -1753,7 +1753,7 @@ typedef struct {
     //: itemAuth.selectedBlock = ^(id<NIMKitSelectCardData> item) {
     itemAuth.dealMonitorWith = ^(id<ArrayIndividualYard> item) {
         //: [_vc didupdateTeamJoinMode:[item.value integerValue]];
-        [_visible mode:[item.motion integerValue]];
+        [_visible mode:[item.ringReverse integerValue]];
     //: };
     };
     //: ZZZTeamCardSelectedViewController *vc = [ZZZTeamCardSelectedViewController instanceWithTitle:itemAuth.title
@@ -2047,7 +2047,7 @@ typedef struct {
             //: itemInvite.selectedBlock = ^(id<NIMKitSelectCardData> item) {
             itemInvite.dealMonitorWith = ^(id<ArrayIndividualYard> item) {
                 //: [_vc didUpdateTeamInviteMode:[item.value integerValue]];
-                [_airVc appearance:[item.motion integerValue]];
+                [_airVc appearance:[item.ringReverse integerValue]];
             //: };
             };
             //: ZZZTeamCardSelectedViewController *vc = [ZZZTeamCardSelectedViewController instanceWithTitle:itemInvite.title
@@ -2088,7 +2088,7 @@ typedef struct {
             //: itemUpdateInfo.selectedBlock = ^(id<NIMKitSelectCardData> item) {
             itemUpdateInfo.dealMonitorWith = ^(id<ArrayIndividualYard> item) {
                 //: [_vc didUpdateTeamInfoMode:[item.value integerValue]];
-                [_airVc bound:[item.motion integerValue]];
+                [_airVc bound:[item.ringReverse integerValue]];
             //: };
             };
             //: ZZZTeamCardSelectedViewController *vc = [ZZZTeamCardSelectedViewController instanceWithTitle:itemUpdateInfo.title
@@ -2130,7 +2130,7 @@ typedef struct {
             //: itemBeInvite.selectedBlock = ^(id<NIMKitSelectCardData> item) {
             itemBeInvite.dealMonitorWith = ^(id<ArrayIndividualYard> item) {
                 //: [_vc didUpdateTeamBeInviteMode:[item.value integerValue]];
-                [_airVc art:[item.motion integerValue]];
+                [_airVc art:[item.ringReverse integerValue]];
             //: };
             };
             //: ZZZTeamCardSelectedViewController *vc = [ZZZTeamCardSelectedViewController instanceWithTitle:itemBeInvite.title

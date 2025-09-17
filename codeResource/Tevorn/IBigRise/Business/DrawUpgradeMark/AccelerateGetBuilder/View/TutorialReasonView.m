@@ -109,7 +109,7 @@ typedef struct {
         //: ZZZTimestampModel *model = (ZZZTimestampModel *)data;
         TabSummitTask *model = (TabSummitTask *)data;
         //: [_timeLabel setText:[ZZZKitUtil showTime:model.messageTime showDetail:YES]];
-        [_denounce setText:[ArrayUtil reach:model.atTheSameTimeMid exhibitLevel:YES]];
+        [_denounce setText:[ArrayUtil reach:model.undercoverOperation exhibitLevel:YES]];
     }
 
         if ((self.inputCross.autoresizingMask == UIViewAutoresizingFlexibleWidth) && (/*:CALL>ed*/[self.inputCross convertPoint:CGPointZero toView:self.inputCross.superview].y == 47.29/*:CALL<ed*/)) {

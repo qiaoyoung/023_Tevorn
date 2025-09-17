@@ -294,7 +294,7 @@
         //: [items enumerateObjectsUsingBlock:^(id<NIMKitSelectCardData> _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [items enumerateObjectsUsingBlock:^(id<ArrayIndividualYard> _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             //: if (obj.selected) {
-            if (obj.tackle) {
+            if (obj.quantityro) {
                 //: weakSelf.selectedIndex = idx;
                 weakSelf.priorityPage = idx;
             }
@@ -333,13 +333,13 @@
     //: cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     //: cell.iconImageView.image = [UIImage imageNamed:bodyData.img];
-    cell.dioramaLevelView.image = [UIImage imageNamed:bodyData.map];
+    cell.dioramaLevelView.image = [UIImage imageNamed:bodyData.number];
 	[self setShakeOffScrollView:_occurrentRemove];
     //: cell.titleLabel.text = bodyData.title;
-    cell.sumeractionLabel.text = bodyData.saveOf;
+    cell.sumeractionLabel.text = bodyData.dayBorder;
 	[self setShakeOffScrollView:_occurrentRemove];
     //: cell.arrowsImageView.hidden = ![bodyData selected];
-    cell.transmittingAerialFactor.hidden = ![bodyData tackle];
+    cell.transmittingAerialFactor.hidden = ![bodyData quantityro];
 	[self setShakeOffScrollView:_occurrentRemove];
 	self.lap.image = [UIImage imageNamed:@"resistance_b"];
 
@@ -685,7 +685,7 @@
         //: BOOL selected = (idx == indexPath.row);
         BOOL selected = (idx == indexPath.row);
         //: [obj setSelected:selected];
-        [obj setTackle:selected];
+        [obj setQuantityro:selected];
     //: }];
     }];
     //: [self.tableView reloadData];

@@ -165,7 +165,7 @@
 }
 
 //: - (NSString *)showName{
-- (NSString *)riceTitle{
+- (NSString *)indicator{
     //: return self.info.showName;
     return self.acceptableHandleKitInfo.receiver;
 }

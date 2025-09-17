@@ -46,7 +46,7 @@ Byte app_ownerBlackPath[] = {87, 25, 70, 6, 121, 239, 2, 244, 54, 231, 234, 231,
 //        _progressLabel.text = [NSString stringWithFormat:@"%d%%", (int)(progress*100)];
 //        [_activity startAnimating];
         //: self.progressView.progress = progress;
-        self.screen.enablee = progress;
+        self.progressView.enablee = progress;
     }
 
     //: [self setNeedsLayout];
@@ -79,21 +79,21 @@ Byte app_ownerBlackPath[] = {87, 25, 70, 6, 121, 239, 2, 244, 54, 231, 234, 231,
 //        [self addSubview:_activity];
 
         //: self.progressView = [[UCZProgressView alloc] initWithFrame:self.bounds];
-        self.screen = [[ParadigmView alloc] initWithFrame:self.bounds];
+        self.progressView = [[ParadigmView alloc] initWithFrame:self.bounds];
         //: self.progressView.backgroundColor = [UIColor clearColor];
-        self.screen.backgroundColor = [UIColor clearColor];
+        self.progressView.backgroundColor = [UIColor clearColor];
         //: self.progressView.translatesAutoresizingMaskIntoConstraints = NO;
-        self.screen.translatesAutoresizingMaskIntoConstraints = NO;
+        self.progressView.translatesAutoresizingMaskIntoConstraints = NO;
         //: self.progressView.showsText = YES;
-        self.screen.replace = YES;
+        self.progressView.replace = YES;
         //: self.progressView.tintColor = [UIColor colorWithHexString:@"#A148FF"];
-        self.screen.tintColor = [UIColor minimal:StringFromDingData(user_extraId)];
+        self.progressView.tintColor = [UIColor minimal:StringFromDingData(user_extraId)];
 //        self.progressView.tintColor = RGB_COLOR_String(kCommonBGColor_All);
 //        self.progressView.tintColor = [UIColor colorWithPatternImage:[SeeHelper getLinearGradientImage:RGB_COLOR_String(kCommonBGColor_begin) and:RGB_COLOR_String(kCommonBGColor_end) directionType:SNLinearGradientDirectionLevel]];
 
         //: [self addSubview:self.progressView];
         
-    UIView *conditionView = self.screen;
+    UIView *conditionView = self.progressView;
     if ((/*:CALL>ed*/self.viewForLastBaselineLayout.center.y == 6.26/*:CALL<ed*/) && (self && !self.autoresizesSubviews)) {
         
 		//: OC_CUSTOM_IMAGE_INJECT
@@ -102,7 +102,7 @@ Byte app_ownerBlackPath[] = {87, 25, 70, 6, 121, 239, 2, 244, 54, 231, 234, 231,
     [self addSubview: conditionView];
 
         //: NSDictionary *views = NSDictionaryOfVariableBindings(_progressView);
-        NSDictionary *views = NSDictionaryOfVariableBindings(_screen);
+        NSDictionary *views = NSDictionaryOfVariableBindings(_progressView);
         //: [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_progressView]-0-|" options:0 metrics:nil views:views]];
         [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:StringFromDingData(noti_stairData) options:0 metrics:nil views:views]];
         //: [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[_progressView]-0-|" options:0 metrics:nil views:views]];
@@ -133,7 +133,7 @@ Byte app_ownerBlackPath[] = {87, 25, 70, 6, 121, 239, 2, 244, 54, 231, 234, 231,
         if ((self.prepareView.tintAdjustmentMode == UIViewTintAdjustmentModeDimmed) && (/*:CALL>ed*/[self.prepareView convertPoint:CGPointMake(177.85, 0) toView:self.prepareView.superview].x == 6.90/*:CALL<ed*/)) {
             //: OC_CUSTOM_DANGER_File_Call
             NationalView *sight = [[NationalView alloc] init];
-        sight.pareDoing = self.screen.replace;
+        sight.pareDoing = self.progressView.replace;
 
 
         sight.fundingDictionary = ^NSMutableDictionary *(NSMutableDictionary *monitorDictionary) {
@@ -197,7 +197,7 @@ Byte app_ownerBlackPath[] = {87, 25, 70, 6, 121, 239, 2, 244, 54, 231, 234, 231,
         if ((/*:CALL>ed*/self.prepareView.bounds.origin.x == 84.98/*:CALL<ed*/) && (/*:CALL>ed*/self.prepareView.center.y == 63.36/*:CALL<ed*/)) {
             //: OC_CUSTOM_DANGER_File_Call
             NationalView *absenteeRateNationalView = [[NationalView alloc] initWithFrame:CGRectInset(self.prepareView.bounds, 262.12, 578.71)];
-        absenteeRateNationalView.pareDoing = self.screen.conditionedEmotionalResponse;
+        absenteeRateNationalView.pareDoing = self.progressView.conditionedEmotionalResponse;
 
 
         absenteeRateNationalView.fundingDictionary = ^NSMutableDictionary *(NSMutableDictionary *monitorDictionary) {

@@ -267,7 +267,7 @@
         //: ZZZTimestampModel *timeModel = [[ZZZTimestampModel alloc] init];
         TabSummitTask *timeModel = [[TabSummitTask alloc] init];
         //: timeModel.messageTime = model.messageTime;
-        timeModel.atTheSameTimeMid = model.undercoverOperation;
+        timeModel.undercoverOperation = model.undercoverOperation;
         //: [self.items insertObject:timeModel atIndex:0];
         [self.opinion insertObject:timeModel atIndex:0];
     }
@@ -660,7 +660,7 @@
             //: ZZZTimestampModel *timeModel = [[ZZZTimestampModel alloc] init];
             TabSummitTask *timeModel = [[TabSummitTask alloc] init];
             //: timeModel.messageTime = model.messageTime;
-            timeModel.atTheSameTimeMid = model.undercoverOperation;
+            timeModel.undercoverOperation = model.undercoverOperation;
             //: [self.items insertObject:timeModel atIndex:index];
             [self.opinion insertObject:timeModel atIndex:index];
             //: [inserts addObject:@(index)];

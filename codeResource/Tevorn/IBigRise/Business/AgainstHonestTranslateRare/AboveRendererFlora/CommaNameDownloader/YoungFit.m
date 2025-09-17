@@ -739,7 +739,7 @@ static NSArray * buttIncludePaths() {
     //: _dispatch_once(&onceToken, ^{
     _dispatch_once(&onceToken, ^{
         //: _AFHTTPRequestSerializerObservedKeyPaths = @[NSStringFromSelector(@selector(allowsCellularAccess)), NSStringFromSelector(@selector(cachePolicy)), NSStringFromSelector(@selector(HTTPShouldHandleCookies)), NSStringFromSelector(@selector(HTTPShouldUsePipelining)), NSStringFromSelector(@selector(networkServiceType)), NSStringFromSelector(@selector(timeoutInterval))];
-        _AFHTTPRequestSerializerObservedKeyPaths = @[NSStringFromSelector(@selector(photoFormatted)), NSStringFromSelector(@selector(sumroTopped)), NSStringFromSelector(@selector(sustenanceSecondses)), NSStringFromSelector(@selector(stepFrames)), NSStringFromSelector(@selector(destinationOnes)), NSStringFromSelector(@selector(processorDirectionses))];
+        _AFHTTPRequestSerializerObservedKeyPaths = @[NSStringFromSelector(@selector(photoFormatted)), NSStringFromSelector(@selector(sumroTopped)), NSStringFromSelector(@selector(sustenanceSecondses)), NSStringFromSelector(@selector(stepFrames)), NSStringFromSelector(@selector(destinationOnes)), NSStringFromSelector(@selector(timeoutInterval))];
     //: });
     });
 
@@ -1239,14 +1239,14 @@ buildValue:(NSString *)field
 }
 
 //: - (void)setTimeoutInterval:(NSTimeInterval)timeoutInterval {
-- (void)setProcessorDirectionses:(NSTimeInterval)timeoutInterval {
+- (void)setTimeoutInterval:(NSTimeInterval)timeoutInterval {
     //: [self willChangeValueForKey:NSStringFromSelector(@selector(timeoutInterval))];
-    [self willChangeValueForKey:NSStringFromSelector(@selector(processorDirectionses))];
+    [self willChangeValueForKey:NSStringFromSelector(@selector(timeoutInterval))];
     //: _timeoutInterval = timeoutInterval;
-    _processorDirectionses = timeoutInterval;
+    _timeoutInterval = timeoutInterval;
 	[self setStorageRear:self.fast];
     //: [self didChangeValueForKey:NSStringFromSelector(@selector(timeoutInterval))];
-    [self didChangeValueForKey:NSStringFromSelector(@selector(processorDirectionses))];
+    [self didChangeValueForKey:NSStringFromSelector(@selector(timeoutInterval))];
 }
 
 //: #pragma mark -

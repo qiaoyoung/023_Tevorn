@@ -314,7 +314,7 @@ static ApproximatelySessionManager *k_leadingUrl;
 //: + (void)setRequestTimeoutInterval:(NSTimeInterval)time {
 + (void)setQuantityerruption:(NSTimeInterval)time {
     //: _sessionManager.requestSerializer.timeoutInterval = time;
-    k_leadingUrl.listWeakked.processorDirectionses = time;
+    k_leadingUrl.listWeakked.timeoutInterval = time;
 }
 
 //: + (BOOL)isWiFiNetwork {
@@ -455,7 +455,7 @@ static ApproximatelySessionManager *k_leadingUrl;
     //: _sessionManager = [AFHTTPSessionManager manager];
     k_leadingUrl = [ApproximatelySessionManager lock];
     //: _sessionManager.requestSerializer.timeoutInterval = 15.f;
-    k_leadingUrl.listWeakked.processorDirectionses = 15.f;
+    k_leadingUrl.listWeakked.timeoutInterval = 15.f;
     //: _sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html", @"text/json", @"text/plain", @"text/javascript", @"text/xml", @"image/|*", nil];
     k_leadingUrl.elementGalleries.molarConcentrationned = [NSSet setWithObjects:[RadiationData app_ammaOpMessage], [RadiationData main_createMsg], [RadiationData m_championshipName], [RadiationData appDiscussText], [RadiationData userBackgroundValue], [RadiationData mCartContent], [RadiationData kFlashMsg], nil];
     // 打开状态栏的等待菊花

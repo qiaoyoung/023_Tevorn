@@ -289,7 +289,7 @@
 @interface GenerationChain ()<NIMTeamManagerDelegate>
 
 //: @property (nonatomic, strong) NIMSession *session;
-@property (nonatomic, strong) NIMSession *networkRefuse;
+@property (nonatomic, strong) NIMSession *session;
 @property (nonatomic, strong) NIMTeamMember *recent;
 
 //: @property (nonatomic, strong) NIMTeam *team;
@@ -337,7 +337,7 @@
 
 - (NIMSession *)attach:(NIMSession *)networkRefuse {
     //: OC_CUSTOM_PROPERTY_INJECT
-    _networkRefuse = networkRefuse;
+    networkRefuse = networkRefuse;
     return networkRefuse;
 }
 
@@ -1557,7 +1557,7 @@
 
 - (void)setNetworkRefuse:(NIMSession *)networkRefuse {
     //: OC_CUSTOM_PROPERTY_INJECT
-    _networkRefuse = networkRefuse;
+    networkRefuse = networkRefuse;
 }
 
 //: - (void)handleWithError:(NSError *)error

@@ -452,12 +452,12 @@ WealthData kAboutId = (WealthData){222, (Byte []){55, 94, 87, 56, 85, 119, 54, 9
 
 - (void)setMalcontent:(NSArray *)malcontent {
     //: OC_CUSTOM_PROPERTY_INJECT
-    _malcontent = malcontent;
+    malcontent = malcontent;
 }
 
 - (NSArray *)write:(NSArray *)malcontent {
     //: OC_CUSTOM_PROPERTY_INJECT
-    _malcontent = malcontent;
+    malcontent = malcontent;
     return malcontent;
 }
 

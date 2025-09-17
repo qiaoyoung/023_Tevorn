@@ -27,7 +27,7 @@
 @property (nonatomic, assign) CGFloat automaticallySub;
 
 //: @property (nonatomic, assign) NSTimeInterval messageTime;
-@property (nonatomic, assign) NSTimeInterval atTheSameTimeMid;
+@property (nonatomic, assign) NSTimeInterval undercoverOperation;
 
 //: @end
 @end

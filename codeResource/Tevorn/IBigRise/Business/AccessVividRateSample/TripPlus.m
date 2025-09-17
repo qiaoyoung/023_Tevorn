@@ -541,7 +541,7 @@
     //: AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
     ApproximatelySessionManager *sessionManager = [ApproximatelySessionManager lock];
     //: sessionManager.requestSerializer.timeoutInterval = 5.f;
-    sessionManager.listWeakked.processorDirectionses = 5.f;
+    sessionManager.listWeakked.timeoutInterval = 5.f;
     //: sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html", @"text/json", @"text/plain", @"text/javascript", @"text/xml", @"image/|*", nil];
     sessionManager.elementGalleries.molarConcentrationned = [NSSet setWithObjects:[ResearchWorkerData sharedInstance].showMartIdent, [ResearchWorkerData sharedInstance].mTackleId, [ResearchWorkerData sharedInstance].dreamTitiTitle, [ResearchWorkerData sharedInstance].m_glimpseData, [ResearchWorkerData sharedInstance].notiAngelIdent, [ResearchWorkerData sharedInstance].dream_memoryFormat, [ResearchWorkerData sharedInstance].show_envelopFormat, nil];
     //: [sessionManager setResponseSerializer:[AFHTTPResponseSerializer serializer]];

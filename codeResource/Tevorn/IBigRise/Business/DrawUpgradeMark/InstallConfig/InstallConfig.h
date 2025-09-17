@@ -50,7 +50,7 @@ typedef void(^NIMContactDataProviderHandler)(NSDictionary *contentDic, NSArray *
  *  默认已经勾选的人或群组
  */
 //: - (NSArray *)alreadySelectedMemberId;
-- (NSArray *)on;
+- (NSArray *)light;
 
 /**
  *  需要过滤的人或群组id
@@ -130,7 +130,7 @@ typedef void(^NIMContactDataProviderHandler)(NSDictionary *contentDic, NSArray *
 
 @property (nonatomic,assign) NSInteger current;
 //: @property (nonatomic,copy) NSArray *alreadySelectedMemberId;
-@property (nonatomic,copy) NSArray *bonTons;
+@property (nonatomic,copy) NSArray *light;
 
 //: @property (nonatomic,assign) BOOL needMutiSelected;
 @property (nonatomic,assign) BOOL serious;
@@ -186,7 +186,7 @@ typedef void(^NIMContactDataProviderHandler)(NSDictionary *contentDic, NSArray *
 @property (nonatomic,copy) NSArray *bonTons;
 
 //: @property (nonatomic,copy) NSArray *alreadySelectedMemberId;
-@property (nonatomic,copy) NSArray *malcontent;
+@property (nonatomic,copy) NSArray *light;
 
 //: @end
 @end

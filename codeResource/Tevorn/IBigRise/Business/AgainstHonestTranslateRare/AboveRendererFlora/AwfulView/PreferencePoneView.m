@@ -1792,7 +1792,7 @@ static const CGFloat dream_selectedMessage (NSString *value) {
      NSBundle *bundle = [NSBundle bundleForClass:[PreferencePoneView class]];
 
      //: NSURL *url = [bundle URLForResource:@"SVProgressHUD" withExtension:@"bundle"];
-     NSURL *url = [bundle URLForResource:@"PreferencePoneView" withExtension:[[AdolescentData sharedInstance] mRobName]];
+     NSURL *url = [bundle URLForResource:@"SVProgressHUD" withExtension:[[AdolescentData sharedInstance] mRobName]];
      //: return [NSBundle bundleWithURL:url];
      return [NSBundle bundleWithURL:url];
  }

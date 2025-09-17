@@ -127,7 +127,7 @@
     [self.seriousMindedness addTarget:self action:@selector(grading:) forControlEvents:UIControlEventTouchUpInside];
 
     //: NSString *showName = data.title;
-    NSString *showName = data.margin;
+    NSString *showName = data.dayBorder;
     //: if ([data isMyUserId]) {
     if ([data flow]) {
         //: showName = [NTESLanguageManager getTextWithKey:@"Group_Me"];

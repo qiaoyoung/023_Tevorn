@@ -1168,7 +1168,7 @@ NameDriver>
     //: teamMute.selectedBlock = ^(id<NIMKitSelectCardData> item) {
     teamMute.dealMonitorWith = ^(id<ArrayIndividualYard> item) {
         //: [weakSelf didUpdateTeamMute:[item.value integerValue]];
-        [weakSelf defense:[item.motion integerValue]];
+        [weakSelf defense:[item.ringReverse integerValue]];
     //: };
     };
 	[self setDown:_mode];
@@ -1212,7 +1212,7 @@ NameDriver>
     //: teamNotify.selectedBlock = ^(id<NIMKitSelectCardData> item) {
     teamNotify.dealMonitorWith = ^(id<ArrayIndividualYard> item) {
         //: [weakSelf didUpdateNotifiyState:[item.value integerValue]];
-        [weakSelf moreNotifiyState:[item.motion integerValue]];
+        [weakSelf moreNotifiyState:[item.ringReverse integerValue]];
     //: };
     };
     //: teamNotify.img = [UIImage imageNamed:@"ic_group_notice"];
@@ -1241,7 +1241,7 @@ NameDriver>
     //: itemAuth.selectedBlock = ^(id<NIMKitSelectCardData> item) {
     itemAuth.dealMonitorWith = ^(id<ArrayIndividualYard> item) {
         //: [weakSelf didupdateTeamJoinMode:[item.value integerValue]];
-        [weakSelf mode:[item.motion integerValue]];
+        [weakSelf mode:[item.ringReverse integerValue]];
     //: };
     };
     //: itemAuth.img = [UIImage imageNamed:@"ic_identity_authentication"];
@@ -1266,7 +1266,7 @@ NameDriver>
     //: itemInvite.selectedBlock = ^(id<NIMKitSelectCardData> item) {
     itemInvite.dealMonitorWith = ^(id<ArrayIndividualYard> item) {
         //: [weakSelf didUpdateTeamInviteMode:[item.value integerValue]];
-        [weakSelf appearance:[item.motion integerValue]];
+        [weakSelf appearance:[item.ringReverse integerValue]];
     //: };
     };
     //: itemInvite.img = [UIImage imageNamed:@"ic_invite"];
@@ -1293,7 +1293,7 @@ NameDriver>
     //: itemUpdateInfo.selectedBlock = ^(id<NIMKitSelectCardData> item) {
     itemUpdateInfo.dealMonitorWith = ^(id<ArrayIndividualYard> item) {
         //: [weakSelf didUpdateTeamInfoMode:[item.value integerValue]];
-        [weakSelf bound:[item.motion integerValue]];
+        [weakSelf bound:[item.ringReverse integerValue]];
     //: };
     };
     //: itemUpdateInfo.img = [UIImage imageNamed:@"ic_modify"];
@@ -1319,7 +1319,7 @@ NameDriver>
     //: itemBeInvite.selectedBlock = ^(id<NIMKitSelectCardData> item) {
     itemBeInvite.dealMonitorWith = ^(id<ArrayIndividualYard> item) {
         //: [weakSelf didUpdateTeamBeInviteMode:[item.value integerValue]];
-        [weakSelf art:[item.motion integerValue]];
+        [weakSelf art:[item.ringReverse integerValue]];
     //: };
     };
     //: itemBeInvite.img = [UIImage imageNamed:@"ic_invitee_verification"];

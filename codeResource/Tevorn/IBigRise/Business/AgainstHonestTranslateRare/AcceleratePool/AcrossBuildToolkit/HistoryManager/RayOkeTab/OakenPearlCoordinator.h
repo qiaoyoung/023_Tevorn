@@ -72,7 +72,7 @@ typedef NS_ENUM(NSInteger, EnumTeamCardRowItemType) {
 - (UIImage *)pictureNuclearRestore;
 
 //: - (NSString *)title;
-- (NSString *)margin;
+- (NSString *)dayBorder;
 
 //: - (NSString *)imageUrl;
 - (NSString *)hypothesis;
@@ -93,19 +93,19 @@ typedef NS_ENUM(NSInteger, EnumTeamCardRowItemType) {
 @protocol ArrayIndividualYard <NSObject>
 
 //: - (id)value;
-- (id)motion;
+- (id)ringReverse;
 
 //: - (NSString *)title;
-- (NSString *)saveOf;
+- (NSString *)dayBorder;
 
 //: - (NSString *)img;
-- (NSString *)map;
+- (NSString *)number;
 
 //: - (BOOL)selected;
-- (BOOL)tackle;
+- (BOOL)quantityro;
 
 //: - (void)setSelected:(BOOL)selected;
-- (void)setTackle:(BOOL)selected;
+- (void)setQuantityro:(BOOL)selected;
 
 //: @end
 @end
@@ -114,45 +114,45 @@ typedef NS_ENUM(NSInteger, EnumTeamCardRowItemType) {
 @protocol DirectionData <NSObject>
 
 //: - (NSString *)title;
-- (NSString *)less;
+- (NSString *)dayBorder;
 
 //: - (id)value;
-- (id)traitValue;
+- (id)ringReverse;
 
 //: - (EnumTeamCardRowItemType)type;
-- (EnumTeamCardRowItemType)turn;
+- (EnumTeamCardRowItemType)masterKeyPoke;
 
 //: - (CGFloat)rowHeight;
-- (CGFloat)reply;
+- (CGFloat)hearing;
 
 //: - (NIMTeamCardRowSelectedBlock)selectedBlock;
-- (NIMTeamCardRowSelectedBlock)correctBlock;
+- (NIMTeamCardRowSelectedBlock)dealMonitorWith;
 
 //: - (NSMutableArray <id <NIMKitSelectCardData>> *)optionItems;
-- (NSMutableArray <id <ArrayIndividualYard>> *)binaryCompound;
+- (NSMutableArray <id <ArrayIndividualYard>> *)basic;
 
 //: @optional
 @optional
 //: - (NSString *)subTitle;
-- (NSString *)scene;
+- (NSString *)imageMinutes;
 
 //: - (UIImage *)img;
-- (UIImage *)save;
+- (UIImage *)number;
 
 //: - (SEL)action;
-- (SEL)bond;
+- (SEL)viewerOld;
 
 //: - (BOOL)actionDisabled;
-- (BOOL)engagementDisabled;
+- (BOOL)compareLabelled;
 
 //: - (BOOL)switchOn;
-- (BOOL)enableSet;
+- (BOOL)refer;
 
 //: - (NSInteger)identify;
-- (NSInteger)produceIdentify;
+- (NSInteger)limit;
 
 //: - (BOOL)disableUserInteraction;
-- (BOOL)perspectiveNumbereraction;
+- (BOOL)dismiss;
 
 //: @end
 @end

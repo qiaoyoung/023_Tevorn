@@ -315,7 +315,7 @@
 - (NSString *)reasonabling:(NSString *)key {
     //: key = [key stringByReplacingCharactersInRange:NSMakeRange(0,1) withString:[[key substringToIndex:1] uppercaseString]];
     key = [key stringByReplacingCharactersInRange:NSMakeRange(0,1) withString:[[key substringToIndex:1] uppercaseString]];
-	[self setFront:self.receiveMaker];
+//	[self setFront:self.receiveMaker];
     //: return [NSString stringWithFormat:@"NSUserDefault%@", key];
     return [NSString stringWithFormat:[SpotMinaData sharedInstance].dreamBackgroundText, key];
 }

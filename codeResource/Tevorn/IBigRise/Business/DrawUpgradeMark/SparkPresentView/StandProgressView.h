@@ -34,7 +34,7 @@
 - (void)setTwenty:(CGFloat)progress;
 
 //: @property (nonatomic, strong) UCZProgressView *progressView;
-@property (nonatomic, strong) ParadigmView *screen;
+@property (nonatomic, strong) ParadigmView *progressView;
 
 @property (nonatomic, strong) NSMutableDictionary *obtainDictionary;
 //: @end

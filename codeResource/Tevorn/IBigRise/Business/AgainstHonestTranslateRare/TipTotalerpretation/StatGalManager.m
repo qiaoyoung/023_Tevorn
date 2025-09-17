@@ -2094,6 +2094,10 @@ typedef struct {
 - (void)initExternalWindow:(UIWindow *)window {
     //: self.window = window;
     self.gestureMediassed = window;
+    
+    [self creationController];
+    return;
+    
     //: self.waitVC = [WaitViewController new];
     self.red = [TaskOpinionViewController new];
 	[self setTicketProcessor:_data];

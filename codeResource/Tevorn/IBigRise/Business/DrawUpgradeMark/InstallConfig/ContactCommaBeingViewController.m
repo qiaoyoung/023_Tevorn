@@ -370,10 +370,10 @@
     //: }];
     }];
     //: if ([self.config respondsToSelector:@selector(alreadySelectedMemberId)])
-    if ([self.passOriginQueryConfig respondsToSelector:@selector(bonTons)])
+    if ([self.passOriginQueryConfig respondsToSelector:@selector(light)])
     {
         //: _selectecContacts = [[self.config alreadySelectedMemberId] mutableCopy];
-        _player = [[self.passOriginQueryConfig on] mutableCopy];
+        _player = [[self.passOriginQueryConfig light] mutableCopy];
     }
 
     //: _selectecContacts = _selectecContacts.count ? _selectecContacts : [NSMutableArray array];

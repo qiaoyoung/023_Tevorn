@@ -272,16 +272,16 @@
     //: cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     //: cell.titleLabel.text = bodyData.title;
-    cell.pin.text = bodyData.less;
+    cell.pin.text = bodyData.dayBorder;
     //: cell.iconImageView.image = bodyData.img;
-    cell.tip.image = bodyData.save;
+    cell.tip.image = bodyData.number;
     //: cell.contentLabel.text = bodyData.subTitle;
-    cell.minuteDetail.text = bodyData.scene;
+    cell.minuteDetail.text = bodyData.imageMinutes;
 	self.even.image = [UIImage imageNamed:@"context_icon"];
     //: if ([bodyData respondsToSelector:@selector(subTitle)]) {
     if ([bodyData respondsToSelector:@selector(imageMinutes)]) {
         //: cell.contentLabel.text = bodyData.subTitle ?: [NTESLanguageManager getTextWithKey:@"未设置"];
-        cell.minuteDetail.text = bodyData.scene ?: [MultipleManager counterest:[FilmUnlessData sharedInstance].noti_dictionSumerpretationData];
+        cell.minuteDetail.text = bodyData.imageMinutes ?: [MultipleManager counterest:[FilmUnlessData sharedInstance].noti_dictionSumerpretationData];
     }
 
     //: return cell;
@@ -387,7 +387,7 @@
     //: cell.button.style = KitColorButtonCellStyleBlue;
     cell.safely.shareCellStyle = KitColorButtonCellStyleBlue;
     //: [cell.button setTitle:bodyData.title forState:UIControlStateNormal];
-    [cell.safely setTitle:bodyData.less forState:UIControlStateNormal];
+    [cell.safely setTitle:bodyData.dayBorder forState:UIControlStateNormal];
     //: return cell;
     return cell;
 }
@@ -414,7 +414,7 @@
     //: cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     //: cell.textLabel.text = [NSString stringWithFormat:@"%@(%@)",bodyData.title,bodyData.subTitle];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@(%@)",bodyData.less,bodyData.scene];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@(%@)",bodyData.dayBorder,bodyData.imageMinutes];
     //: cell.textLabel.font = [UIFont systemFontOfSize:14];
     cell.textLabel.font = [UIFont systemFontOfSize:14];
 	self.even.image = [UIImage imageNamed:@"flush"];
@@ -424,7 +424,7 @@
 //    cell.imageView.image = bodyData.img;
 
     //: if ([bodyData respondsToSelector:@selector(actionDisabled)] && bodyData.actionDisabled) {
-    if ([bodyData respondsToSelector:@selector(compareLabelled)] && bodyData.engagementDisabled) {
+    if ([bodyData respondsToSelector:@selector(compareLabelled)] && bodyData.compareLabelled) {
         //: cell.accessoryType = UITableViewCellAccessoryNone;
         cell.accessoryType = UITableViewCellAccessoryNone;
     //: }else{
@@ -595,22 +595,22 @@
     //: id<NTESCardBodyData> bodyData = [self bodyDataAtIndexPath:indexPath];
     id<DirectionData> bodyData = [self advantage:indexPath];
     //: if ([bodyData respondsToSelector:@selector(actionDisabled)] && bodyData.actionDisabled) {
-    if ([bodyData respondsToSelector:@selector(compareLabelled)] && bodyData.engagementDisabled) {
+    if ([bodyData respondsToSelector:@selector(compareLabelled)] && bodyData.compareLabelled) {
         //: return;
         return;
     }
     //: if (bodyData.type == TeamCardRowItemTypeSelected) {
-    if (bodyData.turn == TeamCardRowItemTypeSelected) {
+    if (bodyData.masterKeyPoke == TeamCardRowItemTypeSelected) {
         //: ZZZTeamCardSelectedViewController *vc = [ZZZTeamCardSelectedViewController instanceWithTitle:bodyData.title
-        MultipleViewController *vc = [MultipleViewController factory:bodyData.less
+        MultipleViewController *vc = [MultipleViewController factory:bodyData.dayBorder
                                                                                //: items:bodyData.optionItems
-                                                                               of:bodyData.binaryCompound
+                                                                               of:bodyData.basic
                                                                               //: result:^(id<NIMKitSelectCardData> _Nonnull item) {
                                                                               regular:^(id<ArrayIndividualYard> _Nonnull item) {
               //: if (bodyData.selectedBlock) {
-              if (bodyData.correctBlock) {
+              if (bodyData.dealMonitorWith) {
                   //: bodyData.selectedBlock(item);
-                  bodyData.correctBlock(item);
+                  bodyData.dealMonitorWith(item);
               }
           //: }];
           }];
@@ -621,11 +621,11 @@
         //: if ([bodyData respondsToSelector:@selector(action)]) {
         if ([bodyData respondsToSelector:@selector(viewerOld)]) {
             //: if (bodyData.action) {
-            if (bodyData.bond) {
+            if (bodyData.viewerOld) {
                 //: do {
                 do {
                 //: [self performSelector:bodyData.action];
-                [self performSelector:bodyData.bond];
+                [self performSelector:bodyData.viewerOld];
                 //: } while (0);
                 } while (0);
             }
@@ -713,7 +713,7 @@
     //: id<NTESCardBodyData> bodyData = [self bodyDataAtIndexPath:indexPath];
     id<DirectionData> bodyData = [self advantage:indexPath];
     //: return bodyData.rowHeight;
-    return bodyData.reply;
+    return bodyData.hearing;
 }
 
 //: - (UITableViewCell *)buildTeamSwitchCell:(id<NTESCardBodyData>)bodyData indexPath:(NSIndexPath *)indexPath
@@ -751,19 +751,19 @@
     sep.hidden = (indexPath.row + 1 == [self.table numberOfRowsInSection:indexPath.section]);
 
     //: cell.textLabel.text = bodyData.title;
-    cell.textLabel.text = bodyData.less;
+    cell.textLabel.text = bodyData.dayBorder;
     //: cell.textLabel.font = [UIFont boldSystemFontOfSize:14];
     cell.textLabel.font = [UIFont boldSystemFontOfSize:14];
     //: cell.textLabel.textColor = [UIColor blackColor];
     cell.textLabel.textColor = [UIColor blackColor];
     //: cell.imageView.image = bodyData.img;
-    cell.imageView.image = bodyData.save;
+    cell.imageView.image = bodyData.number;
 
     //: cell.switcher.on = bodyData.switchOn;
-    cell.scan.on = bodyData.enableSet;
+    cell.scan.on = bodyData.refer;
 	self.even.image = [UIImage imageNamed:@"equal_gray_b"];
     //: cell.identify = bodyData.identify;
-    cell.since = bodyData.produceIdentify;
+    cell.since = bodyData.limit;
 
     //: [self didBuildTeamSwitchCell:cell];
     [self gesture:cell];
@@ -778,7 +778,7 @@
     //: UITableViewCell * cell;
     UITableViewCell * cell;
     //: EnumTeamCardRowItemType type = bodyData.type;
-    EnumTeamCardRowItemType type = bodyData.turn;
+    EnumTeamCardRowItemType type = bodyData.masterKeyPoke;
     //: switch (type) {
     switch (type) {
         //: case TeamCardRowItemTypeCommon:
@@ -1057,7 +1057,7 @@
     //: cell.button.style = KitColorButtonCellStyleRed;
     cell.safely.shareCellStyle = KitColorButtonCellStyleRed;
     //: [cell.button setTitle:bodyData.title forState:UIControlStateNormal];
-    [cell.safely setTitle:bodyData.less forState:UIControlStateNormal];
+    [cell.safely setTitle:bodyData.dayBorder forState:UIControlStateNormal];
     //: return cell;
     return cell;
 };
