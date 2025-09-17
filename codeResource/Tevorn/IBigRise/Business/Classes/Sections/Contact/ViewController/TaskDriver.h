@@ -13,9 +13,7 @@
 #import <Foundation/Foundation.h>
 //: #import "ZZZContactPerson.h"
 #import "IncrementalCostPerson.h"
-//: #import "SNSingletonMacro.h"
-#import "SNSingletonMacro.h"
-
+ 
 //: @interface ZZZAddressBookManager : NSObject
 @interface TaskDriver : NSObject
 

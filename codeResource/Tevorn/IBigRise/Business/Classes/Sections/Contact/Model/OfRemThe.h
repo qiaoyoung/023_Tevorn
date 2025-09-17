@@ -16,11 +16,11 @@
 @protocol ArmyDefiniteStand <NSObject>
 
 //: - (NSString *)groupTitle;
-- (NSString *)ocular;
+- (NSString *)take;
 //: - (NSString *)memberId;
-- (NSString *)four;
+- (NSString *)metropolis;
 //: - (id)sortKey;
-- (id)bulk;
+- (id)hiddenKey;
 
 //: @end
 @end

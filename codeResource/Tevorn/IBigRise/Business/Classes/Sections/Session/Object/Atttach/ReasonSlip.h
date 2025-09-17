@@ -11,8 +11,8 @@
 // __M_A_C_R_O__
 //: #import <Foundation/Foundation.h>
 #import <Foundation/Foundation.h>
-//: #import "NTESCustomAttachmentDefines.h"
-#import "NTESCustomAttachmentDefines.h"
+//: #import "ConnectTransformer.h"
+#import "ConnectTransformer.h"
 
 //: typedef NS_ENUM(NSInteger, CustomJanKenPonValue) {
 typedef NS_ENUM(NSInteger, CustomJanKenPonValue) {
@@ -32,7 +32,7 @@ typedef NS_ENUM(NSInteger, CustomJanKenPonValue) {
 @property (nonatomic,assign) CustomJanKenPonValue margin;
 
 //: @property (nonatomic,strong) UIImage *showCoverImage;
-@property (nonatomic,strong) UIImage *dark;
+@property (nonatomic,strong) UIImage *showCoverImage;
 
 //: @end
 @end

@@ -43,7 +43,7 @@ Byte notiHappenName[] = {32, 7, 64, 12, 155, 214, 208, 52, 144, 60, 211, 178, 16
 //: #import "ZZZInputEmoticonTabView.h"
 #import "TitleureControl.h"
 //: #import "ZZZInputEmoticonDefine.h"
-#import "ZZZInputEmoticonDefine.h"
+
 //: #import "UIImage+AppleProjectKit.h"
 #import "UIImage+ModestGal.h"
 //: #import "ZZZMessageMaker.h"

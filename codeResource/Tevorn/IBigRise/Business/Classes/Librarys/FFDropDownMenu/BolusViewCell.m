@@ -251,7 +251,7 @@
 		//: OC_CUSTOM_IMAGE_INJECT
         [self addSubview:_below];
     }
-	_menuModel = menuModel;
+	menuModel = menuModel;
 
     //: FFDropDownMenuModel *realMenuModel = (FFDropDownMenuModel *)menuModel;
     FilmBasedModel *realMenuModel = (FilmBasedModel *)menuModel;

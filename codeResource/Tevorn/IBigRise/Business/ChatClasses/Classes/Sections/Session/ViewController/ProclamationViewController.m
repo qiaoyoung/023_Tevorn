@@ -225,12 +225,12 @@ typedef struct {
 //
 
 // __M_A_C_R_O__
-//: #import "ZZZSessionConfigurateProtocol.h"
-#import "ZZZSessionConfigurateProtocol.h"
+//: #import "SessionConfigurateDelegate.h"
+#import "SessionConfigurateDelegate.h"
 //: #import "AppleProjectKit.h"
 #import "ModestGal.h"
-//: #import "ZZZMessageCellProtocol.h"
-#import "ZZZMessageCellProtocol.h"
+//: #import "SetServiceKitTexture.h"
+#import "SetServiceKitTexture.h"
 //: #import "ZZZMessageModel.h"
 #import "RayFilter.h"
 //: #import "ZZZKitUtil.h"
@@ -253,8 +253,7 @@ typedef struct {
 #import "DoormatInform.h"
 //: #import "ZZZReplyContentView.h"
 #import "RacerView.h"
-//: #import "ZZZKitDependency.h"
-#import "ZZZKitDependency.h"
+#import "AcquiredTasteTextView.h"
 //: #import "ZZZKitQuickCommentUtil.h"
 #import "AverageCostUtil.h"
 //: #import "ZZZBubbleMenuView.h"
@@ -268,7 +267,7 @@ typedef struct {
 //: #import "ZZZBubbleButtonModel.h"
 #import "AccommodateModel.h"
 //: #import "ZZZInputEmoticonDefine.h"
-#import "ZZZInputEmoticonDefine.h"
+
 //: #import "ZZZInputAudioView.h"
 #import "SparkDryView.h"
 //: #import "UIView+NTES.h"
@@ -363,9 +362,9 @@ typedef struct {
     //: BOOL should = YES;
     BOOL should = YES;
     //: if ([self.sessionConfig respondsToSelector:@selector(disableReceiveNewMessages)]) {
-    if ([self.rice respondsToSelector:@selector(decideTable)]) {
+    if ([self.sessionConfig respondsToSelector:@selector(decideTable)]) {
         //: should = ![self.sessionConfig disableReceiveNewMessages];
-        should = ![self.rice decideTable];
+        should = ![self.sessionConfig decideTable];
 	[self setForwardRemove:_filter];
     }
     //: return should;
@@ -800,11 +799,11 @@ typedef struct {
     self.sameView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
 
     //: if ([self.sessionConfig respondsToSelector:@selector(sessionBackgroundImage)] && [self.sessionConfig sessionBackgroundImage]) {
-    if ([self.rice respondsToSelector:@selector(dramatiseIssue)] && [self.rice dramatiseIssue]) {
+    if ([self.sessionConfig respondsToSelector:@selector(dramatiseIssue)] && [self.sessionConfig dramatiseIssue]) {
         //: UIImageView *imgView = [[UIImageView alloc] initWithFrame:self.view.bounds];
         UIImageView *imgView = [[UIImageView alloc] initWithFrame:self.view.bounds];
         //: imgView.image = [self.sessionConfig sessionBackgroundImage];
-        imgView.image = [self.rice dramatiseIssue];
+        imgView.image = [self.sessionConfig dramatiseIssue];
         //: imgView.contentMode = UIViewContentModeScaleAspectFill;
         imgView.contentMode = UIViewContentModeScaleAspectFill;
 	[self setIssue:_fadeSubLabel];
@@ -956,7 +955,7 @@ typedef struct {
 	[self foundDarkened:self.countRelationView].image = [UIImage imageNamed:@"announcement_i"];
 	[self setIssue:_fadeSubLabel];
     //: [self.interactor setReferenceMessage:message];
-    [self.titleSessionQuantityeractor setLibraryMessage:message];
+    [self.titleSessionQuantityeractor setReferenceMessage:message];
 
     //: handle = [self shouldShowMenuByMessage:message];
     handle = [self reject:message];
@@ -1183,7 +1182,7 @@ typedef struct {
     if ([self trackView])
     {
         //: self.sessionInputView = [[ZZZInputView alloc] initWithFrame:CGRectMake(0, 0, self.view.device_width,0) config:self.sessionConfig];
-        self.hang = [[FrameView alloc] initWithPropertyWhen:CGRectMake(0, 0, self.view.playerPairOfTongs,0) independent:self.rice];
+        self.hang = [[FrameView alloc] initWithPropertyWhen:CGRectMake(0, 0, self.view.playerPairOfTongs,0) independent:self.sessionConfig];
 	[self setIssue:_fadeSubLabel];
 	self.countRelationView.image = [UIImage imageNamed:@"cart_person_icon"];
         //: self.sessionInputView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
@@ -1284,7 +1283,7 @@ typedef struct {
     _filter = message;
 	[self setQuality:_anti];
     //: [self.interactor setReferenceMessage:message];
-    [self.titleSessionQuantityeractor setLibraryMessage:message];
+    [self.titleSessionQuantityeractor setReferenceMessage:message];
     //: if (![self becomeFirstResponder]) {
     if (![self becomeFirstResponder]) {
         //: handle = NO;
@@ -1649,7 +1648,7 @@ typedef struct {
     _filter = message;
 	[self setSum:_today];
     //: [self.interactor setReferenceMessage:message];
-    [self.titleSessionQuantityeractor setLibraryMessage:message];
+    [self.titleSessionQuantityeractor setReferenceMessage:message];
     //: if (![self becomeFirstResponder]) {
     if (![self becomeFirstResponder]) {
         //: handle = NO;
@@ -1729,9 +1728,9 @@ typedef struct {
     //: NIMAudioType type = NIMAudioTypeAAC;
     NIMAudioType type = NIMAudioTypeAAC;
     //: if ([self.sessionConfig respondsToSelector:@selector(recordType)]) {
-    if ([self.rice respondsToSelector:@selector(traitRole)]) {
+    if ([self.sessionConfig respondsToSelector:@selector(traitRole)]) {
         //: type = [self.sessionConfig recordType];
-        type = [self.rice traitRole];
+        type = [self.sessionConfig traitRole];
 	[self setIssue:_fadeSubLabel];
 	[self foundDarkened:self.countRelationView].image = [UIImage imageNamed:@"up_select"];
     }
@@ -1829,7 +1828,7 @@ typedef struct {
 //: #pragma mark - 配置项
 #pragma mark - 配置项
 //: - (id<ZZZSessionConfig>)sessionConfig
-- (id<ProperFoundationDirection>)rice
+- (id<ProperFoundationDirection>)sessionConfig
 {
     //: return nil; 
     return nil; //使用默认配置
@@ -2035,9 +2034,9 @@ typedef struct {
     //: BOOL should = YES;
     BOOL should = YES;
     //: if ([self.sessionConfig respondsToSelector:@selector(disableInputView)]) {
-    if ([self.rice respondsToSelector:@selector(eachTool)]) {
+    if ([self.sessionConfig respondsToSelector:@selector(eachTool)]) {
         //: should = ![self.sessionConfig disableInputView];
-        should = ![self.rice eachTool];
+        should = ![self.sessionConfig eachTool];
 	[self setForwardRemove:_filter];
     }
     //: return should;
@@ -2045,7 +2044,7 @@ typedef struct {
 }
 
 //: - (void)onTapMenuItemCopy:(ZZZMediaItem *)item
-- (void)alongIn:(ViaItem *)item
+- (void)onTapMenuItemCopy:(ViaItem *)item
 {
     //: NIMMessage *message = [self messageForMenu];
     NIMMessage *message = [self filter];
@@ -2242,16 +2241,16 @@ typedef struct {
     //: NSArray *items;
     NSArray *items;
     //: if (!self.sessionConfig)
-    if (!self.rice)
+    if (!self.sessionConfig)
     {
         //: items = [[AppleProjectKit sharedKit].config defaultMenuItemsWithMessage:message];
         items = [[ModestGal reload].underlying butt:message];
     }
     //: else if([self.sessionConfig respondsToSelector:@selector(menuItemsWithMessage:)])
-    else if([self.rice respondsToSelector:@selector(localsing:)])
+    else if([self.sessionConfig respondsToSelector:@selector(localsing:)])
     {
         //: items = [self.sessionConfig menuItemsWithMessage:message];
-        items = [self.rice localsing:message];
+        items = [self.sessionConfig localsing:message];
 	[self setQuality:_anti];
 	[self foundDarkened:self.countRelationView].image = [UIImage imageNamed:@"circle_1"];
 	[self setSum:_today];
@@ -2648,10 +2647,10 @@ typedef struct {
     //: BOOL disable = NO;
     BOOL disable = NO;
     //: if ([self.sessionConfig respondsToSelector:@selector(disableAudioPlayedStatusIcon)])
-    if ([self.rice respondsToSelector:@selector(disenableSample)])
+    if ([self.sessionConfig respondsToSelector:@selector(disenableSample)])
     {
         //: disable = [self.sessionConfig disableAudioPlayedStatusIcon];
-        disable = [self.rice disenableSample];
+        disable = [self.sessionConfig disenableSample];
 	[self setSum:_today];
     }
     //: return disable;
@@ -2671,16 +2670,16 @@ typedef struct {
 	[self foundDarkened:self.countRelationView].image = [UIImage imageNamed:@"circle_1"];
 	[self setQuality:_anti];
     //: [self.interactor setReferenceMessage:nil];
-    [self.titleSessionQuantityeractor setLibraryMessage:nil];
+    [self.titleSessionQuantityeractor setReferenceMessage:nil];
 
     //: if ([self.sessionConfig respondsToSelector:@selector(clearThreadMessageAfterSent)])
-    if ([self.rice respondsToSelector:@selector(comprehensibleOn)])
+    if ([self.sessionConfig respondsToSelector:@selector(comprehensibleOn)])
     {
         //: if ([self.sessionConfig clearThreadMessageAfterSent])
-        if ([self.rice comprehensibleOn])
+        if ([self.sessionConfig comprehensibleOn])
         {
             //: [self.sessionConfig cleanThreadMessage];
-            [self.rice unitMapTip];
+            [self.sessionConfig unitMapTip];
         }
     }
 }
@@ -2721,9 +2720,9 @@ typedef struct {
     //: BOOL needProximityMonitor = YES;
     BOOL needProximityMonitor = YES;
     //: if ([self.sessionConfig respondsToSelector:@selector(disableProximityMonitor)]) {
-    if ([self.rice respondsToSelector:@selector(disableBreast)]) {
+    if ([self.sessionConfig respondsToSelector:@selector(disableBreast)]) {
         //: needProximityMonitor = !self.sessionConfig.disableProximityMonitor;
-        needProximityMonitor = !self.rice.disableBreast;
+        needProximityMonitor = !self.sessionConfig.disableBreast;
 	[self foundDarkened:self.countRelationView].image = [UIImage imageNamed:@"announcement_i"];
 	[self setForwardRemove:_filter];
     }

@@ -11,8 +11,8 @@
 // __M_A_C_R_O__
 //: #import "ZZZSessionConfigurator.h"
 #import "ConfiguratorSessionFrame.h"
-//: #import "ZZZSessionPrivateProtocol.h"
-#import "ZZZSessionPrivateProtocol.h"
+//: #import "GlobalSessionPrivateDelegate.h"
+#import "GlobalSessionPrivateDelegate.h"
 
 //: @interface ZZZSessionLayoutImpl : NSObject<NIMSessionLayout>
 @interface BeyondIndividual : NSObject<DecayDriver>

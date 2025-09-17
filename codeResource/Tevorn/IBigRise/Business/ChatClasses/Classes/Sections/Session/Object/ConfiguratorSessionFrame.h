@@ -11,8 +11,8 @@
 // __M_A_C_R_O__
 //: #import "ZZZSessionViewController.h"
 #import "ProclamationViewController.h"
-//: #import "ZZZSessionConfigurateProtocol.h"
-#import "ZZZSessionConfigurateProtocol.h"
+//: #import "SessionConfigurateDelegate.h"
+#import "SessionConfigurateDelegate.h"
 
 //: @class ZZZSessionViewController;
 @class ProclamationViewController;

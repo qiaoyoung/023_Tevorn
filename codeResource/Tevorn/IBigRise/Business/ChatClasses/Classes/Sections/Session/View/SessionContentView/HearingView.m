@@ -30,8 +30,8 @@ Byte showTeaTitle[] = {19, 22, 85, 6, 230, 108, 20, 25, 33, 12, 23, 20, 15, 203,
 #import "AcquiredTasteTextView+ModestGal.h"
 //: #import "ZZZMessageModel.h"
 #import "RayFilter.h"
-//: #import "ZZZGlobalMacro.h"
-#import "ZZZGlobalMacro.h"
+//: #import "NSString+ModestGal.h"
+#import "NSString+ModestGal.h"
 //: #import "UIViewNimKit.h"
 #import "UIViewNimKit.h"
 //: #import "AppleProjectKit.h"
@@ -333,7 +333,7 @@ Byte showTeaTitle[] = {19, 22, 85, 6, 230, 108, 20, 25, 33, 12, 23, 20, 15, 203,
                 //: self.textView.actionDelegate = vc;
                 self.stanza.old = vc;
                 //: self.textView.config = vc.sessionConfig;
-                self.stanza.media = vc.rice;
+                self.stanza.media = vc.sessionConfig;
             }
         //: }];
         }];

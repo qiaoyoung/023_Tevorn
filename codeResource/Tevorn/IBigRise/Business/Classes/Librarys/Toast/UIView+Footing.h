@@ -332,7 +332,7 @@ extern const NSString * dreamConnectConstantData;
  The image size. The default is `CGSizeMake(80.0, 80.0)`.
  */
 //: @property (assign, nonatomic) CGSize imageSize;
-@property (assign, nonatomic) CGSize run;
+@property (assign, nonatomic) CGSize imageSize;
 
 //: @property (strong, nonatomic) UIColor *backgroundColor;
 @property (strong, nonatomic) UIColor *notice;

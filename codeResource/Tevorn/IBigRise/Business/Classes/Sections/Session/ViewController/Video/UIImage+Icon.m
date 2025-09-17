@@ -39,7 +39,7 @@
     CGRect rect = CGRectMake(0.0f, 0.0f,radius * 2 + 4, radius * 2 + 4);
 
     //: UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0.0);
-    UIGraphicsBeginImageContextWithOptions(rect.manageSize, NO, 0.0);
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0.0);
     //: CGContextRef context =UIGraphicsGetCurrentContext();
     CGContextRef context =UIGraphicsGetCurrentContext();
     //: CGContextSetRGBStrokeColor(context,1,1,1,1.0);
@@ -69,7 +69,7 @@
     //: CGRect rect = theView.frame;
     CGRect rect = theView.frame;
     //: UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0.0);
-    UIGraphicsBeginImageContextWithOptions(rect.manageSize, NO, 0.0);
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0.0);
     //: CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextRef context = UIGraphicsGetCurrentContext();
     //: [theView.layer renderInContext:context];

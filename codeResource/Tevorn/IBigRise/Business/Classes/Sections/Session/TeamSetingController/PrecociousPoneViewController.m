@@ -1022,7 +1022,7 @@ NameDriver>
         //: ZZZKitInfoFetchOption *option = [[ZZZKitInfoFetchOption alloc] init];
         InfoStat *option = [[InfoStat alloc] init];
         //: option.session = self.teamListManager.session;
-        option.confirm = self.myTicket.errorLie;
+        option.confirm = self.myTicket.session;
 	[self setAbstract:_nickname];
         //: ZZZKitInfo *info = [[AppleProjectKit sharedKit] infoByUser:obj.userId option:option];
         SawmillInfo *info = [[ModestGal reload] scanIn:obj.numerousnessCenters reject:option];
@@ -1661,7 +1661,7 @@ NameDriver>
     //: NIMContactTeamMemberSelectConfig *config = [[NIMContactTeamMemberSelectConfig alloc] init];
     FailCliff *config = [[FailCliff alloc] init];
     //: config.session = self.teamListManager.session;
-    config.fundamental = self.myTicket.errorLie;
+    config.fundamental = self.myTicket.session;
     //: config.teamType = EnumTeamTypeNomal;
     config.state = EnumTeamTypeNomal;
 	[self setPolemic:_equalDisplay];
@@ -1702,7 +1702,7 @@ NameDriver>
             //: options.removeOtherClients = YES;
             options.removeOtherClients = YES;
             //: [NIMSDK.sharedSDK.conversationManager deleteAllRemoteMessagesInSession:self.teamListManager.session options:options completion:^(NSError * _Nullable error) {
-            [NIMSDK.sharedSDK.conversationManager deleteAllRemoteMessagesInSession:self.myTicket.errorLie options:options completion:^(NSError * _Nullable error) {
+            [NIMSDK.sharedSDK.conversationManager deleteAllRemoteMessagesInSession:self.myTicket.session options:options completion:^(NSError * _Nullable error) {
                 //: if (error) {
                 if (error) {
                     //: return;

@@ -262,8 +262,6 @@ NS_EXTENSION_UNAVAILABLE_IOS("Unavailable in extension")
 NS_EXTENSION_UNAVAILABLE_IOS("Unavailable in extension")
 //: @implementation UIView (IQToolbarAddition)
 
-#import <objc/runtime.h>
-
 @implementation UIView (People)
 
 //: - (void)addRightButtonOnKeyboardWithText:(NSString*)text target:(id)target action:(SEL)action shouldShowPlaceholder:(BOOL)shouldShowPlaceholder

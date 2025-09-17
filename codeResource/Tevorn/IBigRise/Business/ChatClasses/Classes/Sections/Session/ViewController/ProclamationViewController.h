@@ -15,10 +15,10 @@
 #import <NIMSDK/NIMSDK.h>
 //: #import "ZZZSessionConfig.h"
 #import "ProperFoundationDirection.h"
-//: #import "ZZZMessageCellProtocol.h"
-#import "ZZZMessageCellProtocol.h"
-//: #import "ZZZSessionConfigurateProtocol.h"
-#import "ZZZSessionConfigurateProtocol.h"
+//: #import "SetServiceKitTexture.h"
+#import "SetServiceKitTexture.h"
+//: #import "SessionConfigurateDelegate.h"
+#import "SessionConfigurateDelegate.h"
 //: #import "ZZZInputView.h"
 #import "FrameView.h"
 
@@ -243,7 +243,7 @@
  *  会话页详细配置
  */
 //: - (id<ZZZSessionConfig>)sessionConfig;
-- (id<ProperFoundationDirection>)rice;
+- (id<ProperFoundationDirection>)sessionConfig;
 
 /**
  *  语音不能发送的原因

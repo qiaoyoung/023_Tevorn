@@ -483,8 +483,8 @@
 // __M_A_C_R_O__
 //: #import "ZZZKitConfig.h"
 #import "KitConfig.h"
-//: #import "ZZZGlobalMacro.h"
-#import "ZZZGlobalMacro.h"
+//: #import "NSString+ModestGal.h"
+#import "NSString+ModestGal.h"
 //: #import "ZZZMediaItem.h"
 #import "ViaItem.h"
 //: #import "UIImage+AppleProjectKit.h"

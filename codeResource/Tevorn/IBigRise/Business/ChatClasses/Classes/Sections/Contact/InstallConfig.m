@@ -37,8 +37,8 @@ WealthData kAboutId = (WealthData){222, (Byte []){55, 94, 87, 56, 85, 119, 54, 9
 #import "InstallConfig.h"
 //: #import <NIMSDK/NIMSDK.h>
 #import <NIMSDK/NIMSDK.h>
-//: #import "ZZZGlobalMacro.h"
-#import "ZZZGlobalMacro.h"
+//: #import "NSString+ModestGal.h"
+#import "NSString+ModestGal.h"
 //: #import "ZZZLemonGroupedData.h"
 #import "PrimaryGroup.h"
 //: #import "AppleProjectKit.h"
@@ -360,7 +360,7 @@ WealthData kAboutId = (WealthData){222, (Byte []){55, 94, 87, 56, 85, 119, 54, 9
 
 - (void)setEntityDismiss:(BOOL)entityDismiss {
     //: OC_CUSTOM_PROPERTY_INJECT
-    _entityDismiss = entityDismiss;
+    entityDismiss = entityDismiss;
 }
 
 - (NIMSession *)cry:(NIMSession *)now {
@@ -384,7 +384,7 @@ WealthData kAboutId = (WealthData){222, (Byte []){55, 94, 87, 56, 85, 119, 54, 9
 
 - (BOOL)flushAreaEven:(BOOL)entityDismiss {
     //: OC_CUSTOM_PROPERTY_INJECT
-    _entityDismiss = entityDismiss;
+    entityDismiss = entityDismiss;
     return entityDismiss;
 }
 

@@ -204,8 +204,7 @@
 #import "UIViewNimKit.h"
 //: #import "ZZZLoadProgressView.h"
 #import "StandProgressView.h"
-//: #import "ZZZKitDependency.h"
-#import "ZZZKitDependency.h"
+#import "AcquiredTasteTextView.h"
 //: #import <YYImage/YYImage.h>
 #import <YYImage/YYImage.h>
 //: #import "AppleProjectKit.h"

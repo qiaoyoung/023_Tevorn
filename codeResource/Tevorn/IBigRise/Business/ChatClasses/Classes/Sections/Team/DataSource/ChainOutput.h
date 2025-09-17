@@ -173,7 +173,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NIMTeam *)immobilize;
 
 //: - (NIMSession *)session;
-- (NIMSession *)errorLie;
+- (NIMSession *)session;
 
 //: - (NSInteger)memberNumber;
 - (NSInteger)asShelterMagnitude;

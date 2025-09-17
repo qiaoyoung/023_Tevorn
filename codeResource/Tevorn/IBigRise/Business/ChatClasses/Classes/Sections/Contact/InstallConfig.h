@@ -13,8 +13,8 @@
 #import <Foundation/Foundation.h>
 //: #import "ZZZKitInfo.h"
 #import "SawmillInfo.h"
-//: #import "ZZZGroupedUsrInfo.h"
-#import "ZZZGroupedUsrInfo.h"
+//: #import "IconGroupedUsrInfo.h"
+#import "IconGroupedUsrInfo.h"
 
 /**
  *  联系人选择器数据回调
@@ -101,7 +101,7 @@ typedef void(^NIMContactDataProviderHandler)(NSDictionary *contentDic, NSArray *
 @property (nonatomic,copy) NSArray *greenFlagged;
 
 //: @property (nonatomic,assign) BOOL showSelectHeaderview;
-@property (nonatomic,assign) BOOL savingHeaderview;
+@property (nonatomic,assign) BOOL except;
 
 @property (nonatomic,copy) NSArray *bonTons;
 //: @property (nonatomic,copy) NSArray *alreadySelectedMemberId;
@@ -154,7 +154,7 @@ typedef void(^NIMContactDataProviderHandler)(NSDictionary *contentDic, NSArray *
 
 @property (nonatomic,assign) BOOL alongsideEnable;
 //: @property (nonatomic,assign) BOOL showSelectHeaderview;
-@property (nonatomic,assign) BOOL entityDismiss;
+@property (nonatomic,assign) BOOL except;
 
 //: @end
 @end
@@ -167,7 +167,7 @@ typedef void(^NIMContactDataProviderHandler)(NSDictionary *contentDic, NSArray *
 @interface FrameworkConfig : NSObject<InstallConfig>
 
 //: @property (nonatomic,assign) BOOL showSelectHeaderview;
-@property (nonatomic,assign) BOOL numberroduce;
+@property (nonatomic,assign) BOOL except;
 
 //: @property (nonatomic,assign) NSInteger maxSelectMemberCount;
 @property (nonatomic,assign) NSInteger crop;

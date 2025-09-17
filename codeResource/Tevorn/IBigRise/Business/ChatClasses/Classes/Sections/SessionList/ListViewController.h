@@ -11,8 +11,8 @@
 // __M_A_C_R_O__
 //: #import <UIKit/UIKit.h>
 #import <UIKit/UIKit.h>
-//: #import "ZZZCellConfig.h"
-#import "ZZZCellConfig.h"
+//: #import "GlobalCellConfig.h"
+#import "GlobalCellConfig.h"
 //: #import <NIMSDK/NIMSDK.h>
 #import <NIMSDK/NIMSDK.h>
 

@@ -35,8 +35,8 @@ Byte userSubtleUrl[] = {75, 11, 29, 6, 111, 157, 94, 27, 15, 21, 19, 15, 27, 15,
 #import "UIView+Family.h"
 //: #import "UIImage+AppleProjectKit.h"
 #import "UIImage+ModestGal.h"
-//: #import "NTESCustomAttachmentDefines.h"
-#import "NTESCustomAttachmentDefines.h"
+//: #import "ConnectTransformer.h"
+#import "ConnectTransformer.h"
 
 //: @interface NTESSessionRedPacketTipContentView()<MyAttributedLabelDelegate>
 @interface ViewPacketSessionRedAggregationTipControl()<BeggarMyNeighbourPolicyDelegate>

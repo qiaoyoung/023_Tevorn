@@ -13,8 +13,8 @@
 #import <Foundation/Foundation.h>
 //: #import <NIMSDK/NIMSDK.h>
 #import <NIMSDK/NIMSDK.h>
-//: #import "ZZZGlobalMacro.h"
-#import "ZZZGlobalMacro.h"
+//: #import "NSString+ModestGal.h"
+#import "NSString+ModestGal.h"
 
 //: @interface ZZZKitUtil : NSObject
 @interface ArrayUtil : NSObject

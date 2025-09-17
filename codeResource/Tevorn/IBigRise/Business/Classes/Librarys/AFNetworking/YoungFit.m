@@ -1528,7 +1528,7 @@ NSTimeInterval const notiManageMsg (NSString *value) {
 //: @property (nonatomic, assign) unsigned long long bodyContentLength;
 @property (nonatomic, assign) unsigned long long lengthFillLong;
 //: @property (nonatomic, assign) BOOL hasInitialBoundary;
-@property (nonatomic, assign) BOOL model;
+@property (nonatomic, assign) BOOL HasInitialBoundary;
 @property (nonatomic, strong) NSInputStream *scholar;
 @property (nonatomic, strong) id entry;
 
@@ -2172,14 +2172,14 @@ NSTimeInterval const notiManageMsg (NSString *value) {
         //: for (AFHTTPBodyPart *bodyPart in self.HTTPBodyParts) {
         for (TaskHistoryPart *bodyPart in self.method) {
             //: bodyPart.hasInitialBoundary = NO;
-            bodyPart.model = NO;
+            bodyPart.HasInitialBoundary = NO;
 	[self setAccountTalk:_talk];
             //: bodyPart.hasFinalBoundary = NO;
             bodyPart.safely = NO;
         }
 
         //: [[self.HTTPBodyParts firstObject] setHasInitialBoundary:YES];
-        [[self.method firstObject] setModel:YES];
+        [[self.method firstObject] setHasInitialBoundary:YES];
         //: [[self.HTTPBodyParts lastObject] setHasFinalBoundary:YES];
         [[self.method lastObject] setSafely:YES];
     }
@@ -2351,7 +2351,7 @@ typedef enum {
     unsigned long long length = 0;
 
     //: NSData *encapsulationBoundaryData = [([self hasInitialBoundary] ? AFMultipartFormInitialBoundary(self.boundary) : AFMultipartFormEncapsulationBoundary(self.boundary)) dataUsingEncoding:self.stringEncoding];
-    NSData *encapsulationBoundaryData = [([self model] ? bottomSend(self.starting) : numericalTotal(self.starting)) dataUsingEncoding:self.his];
+    NSData *encapsulationBoundaryData = [([self HasInitialBoundary] ? bottomSend(self.starting) : numericalTotal(self.starting)) dataUsingEncoding:self.his];
     //: length += [encapsulationBoundaryData length];
     length += [encapsulationBoundaryData length];
 
@@ -2439,7 +2439,7 @@ typedef enum {
     //: if (_phase == AFEncapsulationBoundaryPhase) {
     if (_screenPhase == AFEncapsulationBoundaryPhase) {
         //: NSData *encapsulationBoundaryData = [([self hasInitialBoundary] ? AFMultipartFormInitialBoundary(self.boundary) : AFMultipartFormEncapsulationBoundary(self.boundary)) dataUsingEncoding:self.stringEncoding];
-        NSData *encapsulationBoundaryData = [([self model] ? bottomSend(self.starting) : numericalTotal(self.starting)) dataUsingEncoding:self.his];
+        NSData *encapsulationBoundaryData = [([self HasInitialBoundary] ? bottomSend(self.starting) : numericalTotal(self.starting)) dataUsingEncoding:self.his];
         //: totalNumberOfBytesRead += [self readData:encapsulationBoundaryData intoBuffer:&buffer[totalNumberOfBytesRead] maxLength:(length - (NSUInteger)totalNumberOfBytesRead)];
         totalNumberOfBytesRead += [self signaling:encapsulationBoundaryData found:&buffer[totalNumberOfBytesRead] away:(length - (NSUInteger)totalNumberOfBytesRead)];
     }

@@ -262,11 +262,11 @@ typedef struct {
     //: CGRect thumbnailRect = CGRectZero;
     CGRect thumbnailRect = CGRectZero;
     //: thumbnailRect.origin = thumbnailPoint;
-    thumbnailRect.beforeOrigin = thumbnailPoint;
+    thumbnailRect.origin = thumbnailPoint;
     //: thumbnailRect.size.width= scaledWidth;
-    thumbnailRect.manageSize.width= scaledWidth;
+    thumbnailRect.size.width= scaledWidth;
     //: thumbnailRect.size.height = scaledHeight;
-    thumbnailRect.manageSize.height = scaledHeight;
+    thumbnailRect.size.height = scaledHeight;
 
     //: [sourceImage drawInRect:thumbnailRect];
     [sourceImage drawInRect:thumbnailRect];
@@ -293,7 +293,7 @@ typedef struct {
     //: CGSize imageSize = CGSizeMake(CGImageGetWidth(imageRef), CGImageGetHeight(imageRef));
     CGSize imageSize = CGSizeMake(CGImageGetWidth(imageRef), CGImageGetHeight(imageRef));
     //: CGRect imageRect = (CGRect){.origin = CGPointZero, .size = imageSize};
-    CGRect imageRect = (CGRect){.beforeOrigin = CGPointZero, .manageSize = imageSize};
+    CGRect imageRect = (CGRect){.origin = CGPointZero, .size = imageSize};
 
     //: CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
@@ -682,7 +682,7 @@ CGFloat errorReverse(CGFloat radians) {return radians * 180/3.141592653589793238
     //: rotatedViewBox.transform = t;
     rotatedViewBox.transform = t;
     //: CGSize rotatedSize = rotatedViewBox.frame.size;
-    CGSize rotatedSize = rotatedViewBox.frame.manageSize;
+    CGSize rotatedSize = rotatedViewBox.frame.size;
 
     // Create the bitmap context
     //: UIGraphicsBeginImageContext(rotatedSize);
@@ -783,11 +783,11 @@ CGFloat errorReverse(CGFloat radians) {return radians * 180/3.141592653589793238
     //: CGRect thumbnailRect = CGRectZero;
     CGRect thumbnailRect = CGRectZero;
     //: thumbnailRect.origin = thumbnailPoint;
-    thumbnailRect.beforeOrigin = thumbnailPoint;
+    thumbnailRect.origin = thumbnailPoint;
     //: thumbnailRect.size.width= scaledWidth;
-    thumbnailRect.manageSize.width= scaledWidth;
+    thumbnailRect.size.width= scaledWidth;
     //: thumbnailRect.size.height = scaledHeight;
-    thumbnailRect.manageSize.height = scaledHeight;
+    thumbnailRect.size.height = scaledHeight;
 
     //: [sourceImage drawInRect:thumbnailRect];
     [sourceImage drawInRect:thumbnailRect];
@@ -812,7 +812,7 @@ CGFloat errorReverse(CGFloat radians) {return radians * 180/3.141592653589793238
     //: if (&UIGraphicsBeginImageContextWithOptions != NULL) {
     if (&UIGraphicsBeginImageContextWithOptions != NULL) {
         //: UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
-        UIGraphicsBeginImageContextWithOptions(rect.manageSize, NO, 0);
+        UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
     }
     //    else {
     //        UIGraphicsBeginImageContext(rect.size);
@@ -826,7 +826,7 @@ CGFloat errorReverse(CGFloat radians) {return radians * 180/3.141592653589793238
         //: CGContextRotateCTM(ctx, 3.14159265358979323846264338327950288);
         CGContextRotateCTM(ctx, 3.14159265358979323846264338327950288);
         //: CGContextTranslateCTM(ctx, -rect.size.width, -rect.size.height);
-        CGContextTranslateCTM(ctx, -rect.manageSize.width, -rect.manageSize.height);
+        CGContextTranslateCTM(ctx, -rect.size.width, -rect.size.height);
     }
     //: CGContextDrawImage(ctx, rect, self.CGImage);
     CGContextDrawImage(ctx, rect, self.CGImage);
@@ -899,7 +899,7 @@ CGFloat errorReverse(CGFloat radians) {return radians * 180/3.141592653589793238
     //: CGRect rect = CGRectMake(0.0f, 0.0f, size.width, size.height);
     CGRect rect = CGRectMake(0.0f, 0.0f, size.width, size.height);
     //: UIGraphicsBeginImageContextWithOptions(rect.size,NO, 0);
-    UIGraphicsBeginImageContextWithOptions(rect.manageSize,NO, 0);
+    UIGraphicsBeginImageContextWithOptions(rect.size,NO, 0);
     //: CGContextRef context =UIGraphicsGetCurrentContext();
     CGContextRef context =UIGraphicsGetCurrentContext();
     //: CGContextSetFillColorWithColor(context, color.CGColor);
@@ -973,7 +973,7 @@ CGFloat errorReverse(CGFloat radians) {return radians * 180/3.141592653589793238
     NSString *dateString = [df stringFromDate:date];
 
     //: CGSize size = [dateString boundingRectWithSize:CGSizeMake(self.size.width, 1.7976931348623157e+308) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:16.0f]}context:nil].size;
-    CGSize size = [dateString boundingRectWithSize:CGSizeMake(self.size.width, 1.7976931348623157e+308) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:16.0f]}context:nil].manageSize;
+    CGSize size = [dateString boundingRectWithSize:CGSizeMake(self.size.width, 1.7976931348623157e+308) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:16.0f]}context:nil].size;
     //    [dateString sizeWithFont:[UIFont boldSystemFontOfSize:16.0f]
     //                         constrainedToSize:CGSizeMake(self.size.width, CGFLOAT_MAX)
     //                             lineBreakMode:NSLineBreakByCharWrapping];

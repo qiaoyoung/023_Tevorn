@@ -271,8 +271,8 @@ typedef struct {
 #import "FilterUtil.h"
 //: #import <NIMSDK/NIMSDK.h>
 #import <NIMSDK/NIMSDK.h>
-//: #import "ZZZGlobalMacro.h"
-#import "ZZZGlobalMacro.h"
+//: #import "NSString+ModestGal.h"
+#import "NSString+ModestGal.h"
 //: #import "ZZZKitUtil.h"
 #import "ArrayUtil.h"
 //: #import "AppleProjectKit.h"

@@ -11,8 +11,8 @@
 // __M_A_C_R_O__
 //: #import <UIKit/UIKit.h>
 #import <UIKit/UIKit.h>
-//: #import "ZZZContactDefines.h"
-#import "ZZZContactDefines.h"
+//: #import "AuthenticateFlexibleLayer.h"
+#import "AuthenticateFlexibleLayer.h"
 //: #import "ZZZKitInfo.h"
 #import "SawmillInfo.h"
 

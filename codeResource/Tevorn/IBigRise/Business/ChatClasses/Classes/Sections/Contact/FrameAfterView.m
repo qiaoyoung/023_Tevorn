@@ -98,8 +98,8 @@
 #import "UIViewNimKit.h"
 //: #import "UIImage+AppleProjectKit.h"
 #import "UIImage+ModestGal.h"
-//: #import "ZZZGlobalMacro.h"
-#import "ZZZGlobalMacro.h"
+//: #import "NSString+ModestGal.h"
+#import "NSString+ModestGal.h"
 //: #import "AppleProjectKit.h"
 #import "ModestGal.h"
 

@@ -11,14 +11,14 @@
 // __M_A_C_R_O__
 //: #import "ZZZCommonTableDelegate.h"
 #import "DelegateFit.h"
-//: #import "ZZZCommonTableData.h"
-#import "ZZZCommonTableData.h"
+//: #import "GlobalCommonTableData.h"
+#import "GlobalCommonTableData.h"
 //: #import "ZZZCommonTableViewCell.h"
 #import "RustPresent.h"
 //: #import "UIViewNimKit.h"
 #import "UIViewNimKit.h"
-//: #import "ZZZGlobalMacro.h"
-#import "ZZZGlobalMacro.h"
+//: #import "NSString+ModestGal.h"
+#import "NSString+ModestGal.h"
 
 //: static NSString *DefaultTableCell = @"UITableViewCell";
 static NSString *userLevelName = @"UITableViewCell";

@@ -22,8 +22,8 @@ Byte userRadiationPath[] = {26, 27, 49, 4, 127, 133, 118, 132, 116, 153, 146, 16
 #import "YardConfig.h"
 //: #import "MyAttributedLabel+AppleProjectKit.h"
 #import "AcquiredTasteTextView+ModestGal.h"
-//: #import "ZZZGlobalMacro.h"
-#import "ZZZGlobalMacro.h"
+//: #import "NSString+ModestGal.h"
+#import "NSString+ModestGal.h"
 
 //: @interface NTESChatroomTextContentConfig()
 @interface YardConfig()

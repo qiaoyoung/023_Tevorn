@@ -11,8 +11,8 @@
 // __M_A_C_R_O__
 //: #import <Foundation/Foundation.h>
 #import <Foundation/Foundation.h>
-//: #import "NTESCustomAttachmentDefines.h"
-#import "NTESCustomAttachmentDefines.h"
+//: #import "ConnectTransformer.h"
+#import "ConnectTransformer.h"
 
 //: @interface NTESSnapchatAttachment : NSObject<NIMCustomAttachment,NTESCustomAttachmentInfo>
 @interface ContentRemAttachment : NSObject<NIMCustomAttachment,HistoryMultiple>

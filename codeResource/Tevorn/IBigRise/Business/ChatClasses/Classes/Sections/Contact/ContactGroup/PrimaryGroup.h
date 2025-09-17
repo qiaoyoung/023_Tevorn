@@ -13,8 +13,8 @@
 #import <Foundation/Foundation.h>
 //: #import <NIMSDK/NIMSDK.h>
 #import <NIMSDK/NIMSDK.h>
-//: #import "ZZZContactDefines.h"
-#import "ZZZContactDefines.h"
+//: #import "AuthenticateFlexibleLayer.h"
+#import "AuthenticateFlexibleLayer.h"
 
 //: @interface ZZZLemonGroupedData : NSObject
 @interface PrimaryGroup : NSObject

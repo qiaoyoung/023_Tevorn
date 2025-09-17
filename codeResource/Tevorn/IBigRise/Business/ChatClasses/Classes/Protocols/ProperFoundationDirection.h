@@ -11,8 +11,8 @@
 #import <Foundation/Foundation.h>
 //: #import "ZZZMediaItem.h"
 #import "ViaItem.h"
-//: #import "ZZZCellConfig.h"
-#import "ZZZCellConfig.h"
+//: #import "GlobalCellConfig.h"
+#import "GlobalCellConfig.h"
 //: #import "ZZZKitMessageProvider.h"
 #import "BlackMarketeerProvider.h"
 //: #import "EnumInputBarItemType.h"

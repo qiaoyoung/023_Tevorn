@@ -48,7 +48,7 @@ Byte show_infoMessage[] = {48, 4, 14, 10, 150, 129, 25, 93, 93, 214, 91, 96, 88,
 //: #import "ZZZInputEmoticonManager.h"
 #import "FailManager.h"
 //: #import "ZZZInputEmoticonDefine.h"
-#import "ZZZInputEmoticonDefine.h"
+
 //: #import "NSString+AppleProjectKit.h"
 #import "NSString+ModestGal.h"
 //: #import "AppleProjectKit.h"

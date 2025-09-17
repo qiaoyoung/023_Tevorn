@@ -91,12 +91,12 @@
 // __M_A_C_R_O__
 //: #import "NTESSubscribeManager.h"
 #import "ManagerProp.h"
-//: #import "NTESSubscribeDefine.h"
-#import "NTESSubscribeDefine.h"
+//: #import "GrandPerform.h"
+#import "GrandPerform.h"
 //: #import "NTESDevice.h"
 #import "SunrayDevice.h"
-//: #import "ZZZExtensionHelper.h"
-#import "ZZZExtensionHelper.h"
+//: #import "IconExtensionHelper.h"
+#import "IconExtensionHelper.h"
 
 //: @interface NTESSubscribeManager()<NIMEventSubscribeManagerDelegate,NIMConversationManagerDelegate,NIMLoginManagerDelegate,NIMUserManagerDelegate>
 @interface ManagerProp()<NIMEventSubscribeManagerDelegate,NIMConversationManagerDelegate,NIMLoginManagerDelegate,NIMUserManagerDelegate>

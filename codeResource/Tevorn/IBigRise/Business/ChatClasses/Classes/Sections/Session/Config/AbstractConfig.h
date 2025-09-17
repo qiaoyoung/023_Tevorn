@@ -9,8 +9,8 @@
 //
 
 // __M_A_C_R_O__
-//: #import "ZZZCellConfig.h"
-#import "ZZZCellConfig.h"
+//: #import "GlobalCellConfig.h"
+#import "GlobalCellConfig.h"
 
 //: @interface ZZZCellLayoutConfig : NSObject<ZZZCellLayoutConfig>
 @interface AbstractConfig : NSObject<AbstractConfig>

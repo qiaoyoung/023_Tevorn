@@ -23,8 +23,8 @@
 #import "UIImage+ModestGal.h"
 //: #import "ZZZMessageModel.h"
 #import "RayFilter.h"
-//: #import "ZZZBaseSessionContentConfig.h"
-#import "ZZZBaseSessionContentConfig.h"
+//: #import "MyBaseSessionContentConfig.h"
+#import "MyBaseSessionContentConfig.h"
 //: #import "AppleProjectKit.h"
 #import "ModestGal.h"
 

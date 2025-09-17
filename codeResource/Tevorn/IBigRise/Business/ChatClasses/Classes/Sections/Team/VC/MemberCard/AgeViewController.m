@@ -479,8 +479,8 @@ typedef struct {
 // __M_A_C_R_O__
 //: #import "ZZZTeamMemberCardViewController.h"
 #import "AgeViewController.h"
-//: #import "ZZZCommonTableData.h"
-#import "ZZZCommonTableData.h"
+//: #import "GlobalCommonTableData.h"
+#import "GlobalCommonTableData.h"
 //: #import "ZZZCommonTableDelegate.h"
 #import "DelegateFit.h"
 //: #import "ZZZAvatarImageView.h"
@@ -489,8 +489,7 @@ typedef struct {
 #import "DriverFail.h"
 //: #import "ZZZKitUtil.h"
 #import "ArrayUtil.h"
-//: #import "ZZZKitDependency.h"
-#import "ZZZKitDependency.h"
+#import "AcquiredTasteTextView.h"
 //: #import "AppleProjectKit.h"
 #import "ModestGal.h"
 //: #import "UIViewNimKit.h"
@@ -546,7 +545,7 @@ typedef struct {
     //: ZZZKitInfoFetchOption *option = [[ZZZKitInfoFetchOption alloc] init];
     InfoStat *option = [[InfoStat alloc] init];
     //: option.session = _dataSource.session;
-    option.confirm = _tab.errorLie;
+    option.confirm = _tab.session;
     //: ZZZKitInfo *usrInfo = [[AppleProjectKit sharedKit] infoByUser:_member.userId option:option];
     SawmillInfo *usrInfo = [[ModestGal reload] scanIn:_carrier.numerousnessCenters reject:option];
     //: NSDictionary *headerItem = @{
@@ -724,7 +723,6 @@ typedef struct {
 
 //: #pragma mark - UIActionSheetDelegate
 #pragma mark - UIActionSheetDelegate
-//: - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex{
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex{
     //: if(buttonIndex == 0) {
     if(buttonIndex == 0) {
@@ -789,8 +787,7 @@ typedef struct {
 
 //: #pragma mark - UIAlertViewDelegate
 #pragma mark - UIAlertViewDelegate
-//: - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
-- (void)button:(UIAlertView *)alertView haveAlert:(NSInteger)buttonIndex{
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
     //: if (alertView == _kickAlertView) {
     if (alertView == _directionTake) {
         //: if(alertView.cancelButtonIndex != buttonIndex) {

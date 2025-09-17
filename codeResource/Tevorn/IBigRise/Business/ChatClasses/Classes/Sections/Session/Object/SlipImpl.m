@@ -182,7 +182,7 @@ dispatch_queue_t cutQueue()
 @interface SlipImpl()<NIMMediaManagerDelegate>
 
 //: @property (nonatomic,strong) NIMMessage *referenceMessage;
-@property (nonatomic,strong) NIMMessage *bootCalendar;
+@property (nonatomic,strong) NIMMessage *referenceMessage;
 
 //: @property (nonatomic,strong) NSMutableArray *pendingChatroomModels;
 @property (nonatomic,strong) NSMutableArray *center;
@@ -735,7 +735,7 @@ dispatch_queue_t cutQueue()
                                                   completion:^(NSError * _Nullable error)
     {
         //: weakSelf.referenceMessage = nil;
-        weakSelf.bootCalendar = nil;
+        weakSelf.referenceMessage = nil;
         //: [weakSelf refreshQuickComments:message completion:nil];
         [weakSelf automaticRemoveSequence:message shapeNumbereractorHandler:nil];
         //: if (completion)
@@ -1186,7 +1186,7 @@ dispatch_queue_t cutQueue()
              anSearch:(void(^)(NSError *error))completion
 {
     //: NIMMessage *message = self.referenceMessage;
-    NIMMessage *message = self.bootCalendar;
+    NIMMessage *message = self.referenceMessage;
     //: if (message)
     if (message)
     {
@@ -1206,7 +1206,7 @@ dispatch_queue_t cutQueue()
         //: }];
         }];
         //: self.referenceMessage = nil;
-        self.bootCalendar = nil;
+        self.referenceMessage = nil;
 	[self setDeliver:_audience];
     }
 }

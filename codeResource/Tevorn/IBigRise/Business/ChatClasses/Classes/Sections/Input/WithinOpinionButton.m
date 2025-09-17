@@ -16,7 +16,7 @@
 //: #import "ZZZInputEmoticonManager.h"
 #import "FailManager.h"
 //: #import "ZZZInputEmoticonDefine.h"
-#import "ZZZInputEmoticonDefine.h"
+
 //: #import "AppleProjectKit.h"
 #import "ModestGal.h"
 //: #import "ZZZKitDevice.h"

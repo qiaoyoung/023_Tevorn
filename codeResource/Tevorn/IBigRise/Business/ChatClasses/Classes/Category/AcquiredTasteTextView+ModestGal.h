@@ -9,8 +9,7 @@
 //
 
 // __M_A_C_R_O__
-//: #import "ZZZKitDependency.h"
-#import "ZZZKitDependency.h"
+#import "AcquiredTasteTextView.h"
 
 //: @interface MyAttributedLabel (AppleProjectKit)
 @interface AcquiredTasteTextView (ModestGal)

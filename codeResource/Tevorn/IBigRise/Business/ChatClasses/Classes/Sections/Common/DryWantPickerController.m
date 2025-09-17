@@ -52,10 +52,9 @@ WitnessData dreamInspireKey = (WitnessData){232, (Byte []){13, 115, 86, 15, 97, 
 #import "DryWantPickerController.h"
 //: #import "ZZZKitProgressHUD.h"
 #import "KitView.h"
-//: #import "ZZZKitDependency.h"
-#import "ZZZKitDependency.h"
-//: #import "ZZZGlobalMacro.h"
-#import "ZZZGlobalMacro.h"
+#import "AcquiredTasteTextView.h"
+//: #import "NSString+ModestGal.h"
+#import "NSString+ModestGal.h"
 //: #import "ZZZKitFileLocationHelper.h"
 #import "GalAbs.h"
 //: #import <MobileCoreServices/MobileCoreServices.h>

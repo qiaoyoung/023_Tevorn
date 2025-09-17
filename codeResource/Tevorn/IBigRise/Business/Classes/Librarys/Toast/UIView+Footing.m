@@ -152,7 +152,7 @@ static const NSString * appBarrierColorName = @"CSToastQueueKey";
         //: imageView.contentMode = UIViewContentModeScaleAspectFit;
         imageView.contentMode = UIViewContentModeScaleAspectFit;
         //: imageView.frame = CGRectMake(style.horizontalPadding, style.verticalPadding, style.imageSize.width, style.imageSize.height);
-        imageView.frame = CGRectMake(style.torsoFile, style.flutterFloat, style.run.width, style.run.height);
+        imageView.frame = CGRectMake(style.torsoFile, style.flutterFloat, style.imageSize.width, style.imageSize.height);
     }
 
     //: CGRect imageRect = CGRectZero;
@@ -814,7 +814,7 @@ static const NSString * appBarrierColorName = @"CSToastQueueKey";
         //: self.shadowOffset = CGSizeMake(4.0, 4.0);
         self.quality = CGSizeMake(4.0, 4.0);
         //: self.imageSize = CGSizeMake(80.0, 80.0);
-        self.run = CGSizeMake(80.0, 80.0);
+        self.imageSize = CGSizeMake(80.0, 80.0);
 	[self setSinMore:_flutterFloat];
         //: self.activitySize = CGSizeMake(100.0, 100.0);
         self.change = CGSizeMake(100.0, 100.0);

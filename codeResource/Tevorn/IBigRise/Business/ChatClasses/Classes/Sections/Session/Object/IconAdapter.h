@@ -11,10 +11,10 @@
 // __M_A_C_R_O__
 //: #import <UIKit/UIKit.h>
 #import <UIKit/UIKit.h>
-//: #import "ZZZSessionConfigurateProtocol.h"
-#import "ZZZSessionConfigurateProtocol.h"
-//: #import "ZZZMessageCellProtocol.h"
-#import "ZZZMessageCellProtocol.h"
+//: #import "SessionConfigurateDelegate.h"
+#import "SessionConfigurateDelegate.h"
+//: #import "SetServiceKitTexture.h"
+#import "SetServiceKitTexture.h"
 
 //: @interface ZZZSessionTableAdapter : NSObject<UITableViewDelegate,UITableViewDataSource>
 @interface IconAdapter : NSObject<UITableViewDelegate,UITableViewDataSource>

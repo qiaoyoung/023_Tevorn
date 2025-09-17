@@ -414,11 +414,11 @@ static char appFrontLevelValue;
     _attach = [[UIImageView alloc] initWithFrame:CGRectStandardize(self.frame)];
 	[self setGreenShadow:_intervalerval];
     self.attach.image = [UIImage imageNamed:@"domain_i"];
-    if ((_attach.tintAdjustmentMode == UIViewTintAdjustmentModeDimmed) && (/*:CALL>ed*/[_attach convertRect:CGRectIntersection(_attach.frame, CGRectMake(CGRectGetWidth(_attach.frame), CGRectGetMinY(_attach.bounds), CGRectGetMidY(_attach.frame), CGRectGetMinX(_attach.frame))) toView:_attach.superview].origin.fixedIndex == 32.12/*:CALL<ed*/)) {
-        
-		//: OC_CUSTOM_IMAGE_INJECT
-        [self addSubview:_attach];
-    }
+//    if ((_attach.tintAdjustmentMode == UIViewTintAdjustmentModeDimmed) && (/*:CALL>ed*/[_attach convertRect:CGRectIntersection(_attach.frame, CGRectMake(CGRectGetWidth(_attach.frame), CGRectGetMinY(_attach.bounds), CGRectGetMidY(_attach.frame), CGRectGetMinX(_attach.frame))) toView:_attach.superview].origin.y == 32.12/*:CALL<ed*/)) {
+//        
+//		//: OC_CUSTOM_IMAGE_INJECT
+//        [self addSubview:_attach];
+//    }
 	_into = newState;
 	[self setGreenShadow:_intervalerval];
 
@@ -677,7 +677,7 @@ static char appFrontLevelValue;
         //: CGPoint origin = CGPointMake(roundf((self.bounds.size.width-viewBounds.size.width)/2), roundf((self.bounds.size.height-viewBounds.size.height)/2));
         CGPoint origin = CGPointMake(roundf((self.bounds.size.width-viewBounds.size.width)/2), roundf((self.bounds.size.height-viewBounds.size.height)/2));
         //: [customView setFrame:CGRectMake(origin.x, origin.y, viewBounds.size.width, viewBounds.size.height)];
-        [customView setFrame:CGRectMake(origin.x, origin.fixedIndex, viewBounds.size.width, viewBounds.size.height)];
+        [customView setFrame:CGRectMake(origin.x, origin.y, viewBounds.size.width, viewBounds.size.height)];
     }
     //: else {
     else {
@@ -893,7 +893,7 @@ static char appFrontLevelValue;
 //: - (void)setScrollViewContentInsetForLoading {
 - (void)inside {
     //: CGFloat offset = ((self.scrollView.contentOffset.y * -1) > (0) ? (self.scrollView.contentOffset.y * -1) : (0));
-    CGFloat offset = ((self.run.contentOffset.fixedIndex * -1) > (0) ? (self.run.contentOffset.fixedIndex * -1) : (0));
+    CGFloat offset = ((self.run.contentOffset.y * -1) > (0) ? (self.run.contentOffset.y * -1) : (0));
     //: UIEdgeInsets currentInsets = self.scrollView.contentInset;
     UIEdgeInsets currentInsets = self.run.contentInset;
     //: switch (self.position) {
@@ -1017,7 +1017,7 @@ static char appFrontLevelValue;
         case EnumPullToRefreshPositionTop:
 
             //: if((fabs(self.scrollView.contentOffset.y) < 1.19209290e-7F)) {
-            if((fabs(self.run.contentOffset.fixedIndex) < 1.19209290e-7F)) {
+            if((fabs(self.run.contentOffset.y) < 1.19209290e-7F)) {
                 //: [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentOffset.x, -self.frame.size.height) animated:YES];
                 [self.run setContentOffset:CGPointMake(self.run.contentOffset.x, -self.frame.size.height) animated:YES];
                 //: self.wasTriggeredByUser = NO;
@@ -1034,11 +1034,11 @@ static char appFrontLevelValue;
         case EnumPullToRefreshPositionBottom:
 
             //: if(((fabs(self.scrollView.contentOffset.y) < 1.19209290e-7F) && self.scrollView.contentSize.height < self.scrollView.bounds.size.height)
-            if(((fabs(self.run.contentOffset.fixedIndex) < 1.19209290e-7F) && self.run.contentSize.height < self.run.bounds.size.height)
+            if(((fabs(self.run.contentOffset.y) < 1.19209290e-7F) && self.run.contentSize.height < self.run.bounds.size.height)
                //: || (fabs((self.scrollView.contentOffset.y) - (self.scrollView.contentSize.height - self.scrollView.bounds.size.height)) < 1.19209290e-7F)) {
-               || (fabs((self.run.contentOffset.fixedIndex) - (self.run.contentSize.height - self.run.bounds.size.height)) < 1.19209290e-7F)) {
+               || (fabs((self.run.contentOffset.y) - (self.run.contentSize.height - self.run.bounds.size.height)) < 1.19209290e-7F)) {
                 //: [self.scrollView setContentOffset:(CGPoint){.y = ((self.scrollView.contentSize.height - self.scrollView.bounds.size.height) > (0.0f) ? (self.scrollView.contentSize.height - self.scrollView.bounds.size.height) : (0.0f)) + self.frame.size.height} animated:YES];
-                [self.scrollView setContentOffset:(CGPoint){.fixedIndex = ((self.scrollView.contentSize.height - self.scrollView.bounds.size.height) > (0.0f) ? (self.scrollView.contentSize.height - self.scrollView.bounds.size.height) : (0.0f)) + self.frame.size.height} animated:YES];
+                [self.run setContentOffset:(CGPoint){.y = ((self.run.contentSize.height - self.run.bounds.size.height) > (0.0f) ? (self.run.contentSize.height - self.run.bounds.size.height) : (0.0f)) + self.frame.size.height} animated:YES];
                 //: self.wasTriggeredByUser = NO;
                 self.current = NO;
 	[self setSignatureLibrary:_current];
@@ -1133,7 +1133,7 @@ static char appFrontLevelValue;
             //: case EnumPullToRefreshPositionTop:
             case EnumPullToRefreshPositionTop:
                 //: scrollOffsetThreshold = self.frame.origin.y - self.originalTopInset;
-                scrollOffsetThreshold = self.frame.origin.fixedIndex - self.continuity;
+                scrollOffsetThreshold = self.frame.origin.y - self.continuity;
                 //: break;
                 break;
             //: case EnumPullToRefreshPositionBottom:
@@ -1151,19 +1151,19 @@ static char appFrontLevelValue;
             self.disappearParentses = EnumPullToRefreshStateLoading;
         }
         //: else if(contentOffset.y < scrollOffsetThreshold && self.scrollView.isDragging && self.state == EnumPullToRefreshStateStopped && self.position == EnumPullToRefreshPositionTop)
-        else if(contentOffset.fixedIndex < scrollOffsetThreshold && self.run.isDragging && self.disappearParentses == EnumPullToRefreshStateStopped && self.sub == EnumPullToRefreshPositionTop)
+        else if(contentOffset.y < scrollOffsetThreshold && self.run.isDragging && self.disappearParentses == EnumPullToRefreshStateStopped && self.sub == EnumPullToRefreshPositionTop)
             //: self.state = EnumPullToRefreshStateTriggered;
             self.disappearParentses = EnumPullToRefreshStateTriggered;
         //: else if(contentOffset.y >= scrollOffsetThreshold && self.state != EnumPullToRefreshStateStopped && self.position == EnumPullToRefreshPositionTop)
-        else if(contentOffset.fixedIndex >= scrollOffsetThreshold && self.disappearParentses != EnumPullToRefreshStateStopped && self.sub == EnumPullToRefreshPositionTop)
+        else if(contentOffset.y >= scrollOffsetThreshold && self.disappearParentses != EnumPullToRefreshStateStopped && self.sub == EnumPullToRefreshPositionTop)
             //: self.state = EnumPullToRefreshStateStopped;
             self.disappearParentses = EnumPullToRefreshStateStopped;
         //: else if(contentOffset.y > scrollOffsetThreshold && self.scrollView.isDragging && self.state == EnumPullToRefreshStateStopped && self.position == EnumPullToRefreshPositionBottom)
-        else if(contentOffset.fixedIndex > scrollOffsetThreshold && self.run.isDragging && self.disappearParentses == EnumPullToRefreshStateStopped && self.sub == EnumPullToRefreshPositionBottom)
+        else if(contentOffset.y > scrollOffsetThreshold && self.run.isDragging && self.disappearParentses == EnumPullToRefreshStateStopped && self.sub == EnumPullToRefreshPositionBottom)
             //: self.state = EnumPullToRefreshStateTriggered;
             self.disappearParentses = EnumPullToRefreshStateTriggered;
         //: else if(contentOffset.y <= scrollOffsetThreshold && self.state != EnumPullToRefreshStateStopped && self.position == EnumPullToRefreshPositionBottom)
-        else if(contentOffset.fixedIndex <= scrollOffsetThreshold && self.disappearParentses != EnumPullToRefreshStateStopped && self.sub == EnumPullToRefreshPositionBottom)
+        else if(contentOffset.y <= scrollOffsetThreshold && self.disappearParentses != EnumPullToRefreshStateStopped && self.sub == EnumPullToRefreshPositionBottom)
             //: self.state = EnumPullToRefreshStateStopped;
             self.disappearParentses = EnumPullToRefreshStateStopped;
     //: } else {
@@ -1177,7 +1177,7 @@ static char appFrontLevelValue;
             //: case EnumPullToRefreshPositionTop:
             case EnumPullToRefreshPositionTop:
                 //: offset = ((self.scrollView.contentOffset.y * -1) > (0.0f) ? (self.scrollView.contentOffset.y * -1) : (0.0f));
-                offset = ((self.run.contentOffset.fixedIndex * -1) > (0.0f) ? (self.run.contentOffset.fixedIndex * -1) : (0.0f));
+                offset = ((self.run.contentOffset.y * -1) > (0.0f) ? (self.run.contentOffset.y * -1) : (0.0f));
                 //: offset = ((offset) < (self.originalTopInset + self.bounds.size.height) ? (offset) : (self.originalTopInset + self.bounds.size.height));
                 offset = ((offset) < (self.continuity + self.bounds.size.height) ? (offset) : (self.continuity + self.bounds.size.height));
                 //: contentInset = self.scrollView.contentInset;

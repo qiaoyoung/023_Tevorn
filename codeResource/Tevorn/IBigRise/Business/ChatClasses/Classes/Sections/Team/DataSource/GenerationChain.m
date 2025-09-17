@@ -280,8 +280,8 @@
 // __M_A_C_R_O__
 //: #import "ZZZTeamListDataManager.h"
 #import "GenerationChain.h"
-//: #import "ZZZGlobalMacro.h"
-#import "ZZZGlobalMacro.h"
+//: #import "NSString+ModestGal.h"
+#import "NSString+ModestGal.h"
 //: #import "AppleProjectKit.h"
 #import "ModestGal.h"
 

@@ -332,8 +332,8 @@ typedef struct {
 // __M_A_C_R_O__
 //: #import "NTESCustomAttachmentDecoder.h"
 #import "SearFeather.h"
-//: #import "NTESCustomAttachmentDefines.h"
-#import "NTESCustomAttachmentDefines.h"
+//: #import "ConnectTransformer.h"
+#import "ConnectTransformer.h"
 //: #import "NTESJanKenPonAttachment.h"
 #import "ReasonSlip.h"
 //: #import "NTESSnapchatAttachment.h"

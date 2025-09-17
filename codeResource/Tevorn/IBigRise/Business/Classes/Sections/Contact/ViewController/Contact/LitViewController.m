@@ -383,7 +383,7 @@
     config.greenFlagged = users;
 	self.fossilizationImageView.image = [UIImage imageNamed:@"reading_refresh"];
     //: config.showSelectHeaderview = NO;
-    config.savingHeaderview = NO;
+    config.except = NO;
     //: ZZZContactSelectViewController *vc = [[ZZZContactSelectViewController alloc] initWithConfig:config];
     ContactCommaBeingViewController *vc = [[ContactCommaBeingViewController alloc] initWithSafelyConfig:config];
     //: vc.delegate = self;

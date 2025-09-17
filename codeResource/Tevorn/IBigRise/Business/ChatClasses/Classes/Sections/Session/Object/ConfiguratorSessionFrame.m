@@ -19,8 +19,8 @@
 #import "UIViewNimKit.h"
 //: #import "ZZZMessageModel.h"
 #import "RayFilter.h"
-//: #import "ZZZGlobalMacro.h"
-#import "ZZZGlobalMacro.h"
+//: #import "NSString+ModestGal.h"
+#import "NSString+ModestGal.h"
 //: #import "ZZZSessionInteractorImpl.h"
 #import "SlipImpl.h"
 //: #import "ZZZSessionDataSourceImpl.h"
@@ -87,7 +87,7 @@
     //: NIMSession *session = vc.session;
     NIMSession *session = vc.that;
     //: id<ZZZSessionConfig> sessionConfig = vc.sessionConfig;
-    id<ProperFoundationDirection> sessionConfig = vc.rice;
+    id<ProperFoundationDirection> sessionConfig = vc.sessionConfig;
     //: UITableView *tableView = vc.tableView;
     UITableView *tableView = vc.sameView;
     //: ZZZInputView *inputView = vc.sessionInputView;
@@ -113,7 +113,7 @@
     _drag.frameExtent = layout;
 
     //: [layout setDelegate:_interactor];
-    [layout setHouse:_drag];
+    [layout setDelegate:_drag];
 
     //: _tableAdapter = [[ZZZSessionTableAdapter alloc] init];
     _exception = [[IconAdapter alloc] init];

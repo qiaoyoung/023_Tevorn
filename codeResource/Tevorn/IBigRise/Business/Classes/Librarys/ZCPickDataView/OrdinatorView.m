@@ -489,7 +489,7 @@
 //: - (void)rightButtonClicked:(id)sender{
 - (void)applications:(id)sender{
     //: Class currentClass = object_getClass(self.delegate);
-    Class currentClass = waterSwitchd(self.sweepResignsed);
+    Class currentClass = object_getClass(self.sweepResignsed);
     //: if ((currentClass == delegateClass) && [self.delegate respondsToSelector:@selector(dismissDataPickerView)]) {
     if ((currentClass == create) && [self.sweepResignsed respondsToSelector:@selector(observerAttribute)]) {
         //: [self.delegate dismissDataPickerView];
@@ -524,7 +524,7 @@
 //: - (void)leftButtonClicked:(id)sender{
 - (void)standarded:(id)sender{
     //: Class currentClass = object_getClass(self.delegate);
-    Class currentClass = waterSwitchd(self.sweepResignsed);
+    Class currentClass = object_getClass(self.sweepResignsed);
     //: if ((currentClass == delegateClass) && [self.delegate respondsToSelector:@selector(dismissDataPickerView)]) {
     if ((currentClass == create) && [self.sweepResignsed respondsToSelector:@selector(observerAttribute)]) {
         //: [self.delegate dismissDataPickerView];
@@ -751,7 +751,7 @@
     //: self.delegate = delegate;
     self.sweepResignsed = delegate;
     //: delegateClass = object_getClass(delegate);
-    create = waterSwitchd(delegate);
+    create = object_getClass(delegate);
 }
 
 

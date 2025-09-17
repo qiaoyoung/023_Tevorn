@@ -13,8 +13,6 @@
 #import "PresentQuantityerpretation.h"
 //: #import "SNLeadCompleteInfo.h"
 #import "GrassRootsView.h"
-//: #import "SNWeakStrongMacro.h"
-#import "SNWeakStrongMacro.h"
 
 //: @interface SNLeadCompleteManager ()
 @interface PresentQuantityerpretation ()

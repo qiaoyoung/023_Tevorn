@@ -84,8 +84,8 @@
 #import "IconView.h"
 //: #import "UIViewNimKit.h"
 #import "UIViewNimKit.h"
-//: #import "ZZZCommonTableData.h"
-#import "ZZZCommonTableData.h"
+//: #import "GlobalCommonTableData.h"
+#import "GlobalCommonTableData.h"
 //: #import "UIImage+AppleProjectKit.h"
 #import "UIImage+ModestGal.h"
 

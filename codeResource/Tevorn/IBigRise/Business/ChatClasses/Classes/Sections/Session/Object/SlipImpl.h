@@ -11,10 +11,10 @@
 // __M_A_C_R_O__
 //: #import <Foundation/Foundation.h>
 #import <Foundation/Foundation.h>
-//: #import "ZZZSessionPrivateProtocol.h"
-#import "ZZZSessionPrivateProtocol.h"
-//: #import "ZZZSessionConfigurateProtocol.h"
-#import "ZZZSessionConfigurateProtocol.h"
+//: #import "GlobalSessionPrivateDelegate.h"
+#import "GlobalSessionPrivateDelegate.h"
+//: #import "SessionConfigurateDelegate.h"
+#import "SessionConfigurateDelegate.h"
 
 //: @interface ZZZSessionInteractorImpl : NSObject<NIMSessionInteractor,NIMSessionLayoutDelegate>
 @interface SlipImpl : NSObject<FilmTotaleractor,MatRay>

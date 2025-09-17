@@ -9,8 +9,8 @@
 //
 
 // __M_A_C_R_O__
-//: #import "ZZZBaseSessionContentConfig.h"
-#import "ZZZBaseSessionContentConfig.h"
+//: #import "MyBaseSessionContentConfig.h"
+#import "MyBaseSessionContentConfig.h"
 
 //: NS_ASSUME_NONNULL_BEGIN
 NS_ASSUME_NONNULL_BEGIN

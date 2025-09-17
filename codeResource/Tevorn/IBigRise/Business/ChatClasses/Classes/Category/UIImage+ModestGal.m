@@ -33,7 +33,7 @@ Byte appWageUrl[] = {17, 3, 84, 10, 232, 232, 156, 133, 154, 92, 148, 135, 204, 
 //: #import "UIImage+AppleProjectKit.h"
 #import "UIImage+ModestGal.h"
 //: #import "ZZZInputEmoticonDefine.h"
-#import "ZZZInputEmoticonDefine.h"
+
 //: #import "AppleProjectKit.h"
 #import "ModestGal.h"
 //: #import "ZZZKitDevice.h"

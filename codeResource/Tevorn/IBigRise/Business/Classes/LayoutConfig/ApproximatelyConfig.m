@@ -73,8 +73,8 @@
 // __M_A_C_R_O__
 //: #import "NTESSessionCustomContentConfig.h"
 #import "ApproximatelyConfig.h"
-//: #import "NTESCustomAttachmentDefines.h"
-#import "NTESCustomAttachmentDefines.h"
+//: #import "ConnectTransformer.h"
+#import "ConnectTransformer.h"
 
 //: @interface NTESSessionCustomContentConfig()
 @interface ApproximatelyConfig()

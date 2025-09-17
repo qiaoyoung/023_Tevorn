@@ -76,7 +76,7 @@ typedef NS_ENUM(OSStatus, SAMKeychainErrorCode) {
 //: + (nullable NSArray<NSDictionary<NSString *, id> *> *)allAccounts:(NSError *__attribute__((objc_ownership(autoreleasing))) *)error __attribute__((swift_error(none)));
 + (nullable NSArray<NSDictionary<NSString *, id> *> *)allPast:(NSError *__attribute__((objc_ownership(autoreleasing))) *)error __attribute__((swift_error(none)));
 
-
++ (CFTypeRef)rush;
 /**
  Returns an array containing the Keychain's accounts for a given service, or `nil` if the Keychain doesn't have any
  accounts for the given service.

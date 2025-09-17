@@ -396,8 +396,8 @@
 // __M_A_C_R_O__
 //: #import "ZZZMainCenterViewController.h"
 #import "StandViewController.h"
-//: #import "ZZZCommonTableData.h"
-#import "ZZZCommonTableData.h"
+//: #import "GlobalCommonTableData.h"
+#import "GlobalCommonTableData.h"
 //: #import "ZZZCommonTableDelegate.h"
 #import "DelegateFit.h"
 //: #import "SVProgressHUD.h"

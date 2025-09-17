@@ -72,8 +72,8 @@
 // __M_A_C_R_O__
 //: #import "NTESSessionTipContentView.h"
 #import "SessionAbsView.h"
-//: #import "NTESCustomAttachmentDefines.h"
-#import "NTESCustomAttachmentDefines.h"
+//: #import "ConnectTransformer.h"
+#import "ConnectTransformer.h"
 //: #import "UIView+NTES.h"
 #import "UIView+Family.h"
 //: #import "UIImage+AppleProjectKit.h"

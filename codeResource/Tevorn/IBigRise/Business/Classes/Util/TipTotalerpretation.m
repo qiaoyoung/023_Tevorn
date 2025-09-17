@@ -29,9 +29,7 @@ TransitData app_recName = (TransitData){255, (Byte []){146, 158, 135, 150, 146, 
 // __M_A_C_R_O__
 //: #import "NTESAVNotifier.h"
 #import "TipTotalerpretation.h"
-//: #import "NTESGlobalMacro.h"
-#import "NTESGlobalMacro.h"
-
+ 
 //: @import AudioToolbox;
 @import AudioToolbox;
 
@@ -47,7 +45,7 @@ static void aLaCarte(SystemSoundID soundID, void *data)
         //: SEL selector = NSSelectorFromString(@"vibrate");
         SEL selector = NSSelectorFromString(StringFromTransitData(&app_recName));
         //: SuppressPerformSelectorLeakWarning([(NTESAVNotifier *)notifier performSelector:selector withObject:nil afterDelay:1.0]);
-        SuppressPerformSelectorLeakWarning([(TipTotalerpretation *)notifier performSelector:selector withObject:nil afterDelay:1.0]);
+        [(TipTotalerpretation *)notifier performSelector:selector withObject:nil afterDelay:1.0];
     }
 }
 

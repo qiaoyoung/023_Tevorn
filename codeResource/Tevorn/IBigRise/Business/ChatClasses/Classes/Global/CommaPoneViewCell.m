@@ -64,8 +64,8 @@
 // __M_A_C_R_O__
 //: #import "ZZZKitSwitcherCell.h"
 #import "CommaPoneViewCell.h"
-//: #import "ZZZCommonTableData.h"
-#import "ZZZCommonTableData.h"
+//: #import "GlobalCommonTableData.h"
+#import "GlobalCommonTableData.h"
 //: #import "UIViewNimKit.h"
 #import "UIViewNimKit.h"
 

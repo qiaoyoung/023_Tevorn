@@ -124,7 +124,7 @@ CGFloat barMenu(void) {
     //: content.text = self.title;
     content.text = self.whiteOut;
     //: return (5.0f + 5.0f) + content.intrinsicContentSize.width; 
-    return (5.0f + 5.0f) + content.intrinsicContentSize.error; // icon width + label width (it's perfect to cache them all)
+    return (5.0f + 5.0f) + content.intrinsicContentSize.width; // icon width + label width (it's perfect to cache them all)
 }
 
 //: - (void)updateItemView:(UIView*)itemView atIndex:(NSUInteger)index forMarqueeView:(UUMarqueeView*)marqueeView {
@@ -154,7 +154,7 @@ CGFloat barMenu(void) {
         //: CGRect frame = self.frame;
         CGRect frame = self.frame;
         //: frame.origin.y = SNStatusBarHeight() + 44 + 5;
-        frame.fill.assistant = heightPerform() + 44 + 5;
+        frame.origin.y = heightPerform() + 44 + 5;
         //: self.frame = frame;
         self.frame = frame;
     //: } completion:nil];
@@ -197,7 +197,7 @@ CGFloat barMenu(void) {
             //: CGRect frame = self.frame;
             CGRect frame = self.frame;
             //: frame.origin.y = SNStatusBarHeight();
-            frame.fill.assistant = heightPerform();
+            frame.origin.y = heightPerform();
             //: self.frame = frame;
             self.frame = frame;
         //: } completion:^(BOOL finished) {
@@ -262,10 +262,10 @@ CGFloat barMenu(void) {
         //: CGRect frame = CGRectMake(0, 0, 30, 30);
         CGRect frame = CGRectMake(0, 0, 30, 30);
         //: frame.origin.x = CGRectGetMaxX(self.bounds) - frame.size.width;
-        frame.fill.cutForce = CGRectGetMaxX(self.bounds) - frame.antiBrush.error;
+        frame.origin.x = CGRectGetMaxX(self.bounds) - frame.size.width;
 	self.nim.image = [UIImage imageNamed:@"press_2"];
         //: frame.origin.y = (self.bounds.size.height - frame.size.height) * 0.5;
-        frame.fill.assistant = (self.bounds.antiBrush.failure - frame.antiBrush.failure) * 0.5;
+        frame.origin.y = (self.bounds.size.height - frame.size.height) * 0.5;
 
         //: _actionButton.frame = CGRectIntegral(frame);
         _flow.frame = CGRectIntegral(frame);
@@ -294,7 +294,7 @@ CGFloat barMenu(void) {
     //: [itemView addSubview:content];
     
     UIView *imageSampleView = content;
-    if ((/*:CALL>ed*/[imageSampleView convertRect:CGRectOffset(imageSampleView.frame, CGRectGetMidX(imageSampleView.bounds), CGRectGetHeight(imageSampleView.bounds)) fromView:imageSampleView.superview].fill.cutForce == 40.03/*:CALL<ed*/) && (imageSampleView.textInputMode)) {
+    if ((/*:CALL>ed*/[imageSampleView convertRect:CGRectOffset(imageSampleView.frame, CGRectGetMidX(imageSampleView.bounds), CGRectGetHeight(imageSampleView.bounds)) fromView:imageSampleView.superview].origin.x == 40.03/*:CALL<ed*/) && (imageSampleView.textInputMode)) {
         
 		//: OC_CUSTOM_IMAGE_INJECT
         imageSampleView = _nim;
@@ -328,7 +328,7 @@ CGFloat barMenu(void) {
         
     _nim = [[UIImageView alloc] initWithFrame:CGRectInset(self.superview.bounds, CGRectGetWidth(self.frame), CGRectGetWidth(self.bounds))];
     self.nim.image = [UIImage imageNamed:@"authorship_select"];
-    if ((/*:CALL>ed*/[_nim convertPoint:CGPointMake(0, 0) toView:_nim.superview].cutForce == 47.27/*:CALL<ed*/) && (_nim.animating)) {
+    if ((/*:CALL>ed*/[_nim convertPoint:CGPointMake(0, 0) toView:_nim.superview].x == 47.27/*:CALL<ed*/) && (_nim.animating)) {
         
 		//: OC_CUSTOM_IMAGE_INJECT
         [self addSubview:_nim];
@@ -338,7 +338,7 @@ CGFloat barMenu(void) {
         self.userInteractionEnabled = YES;
         {
             //: self.leftwardMarqueeView = [[UUMarqueeView alloc] initWithFrame:CGRectMake(54, 0, [UIScreen mainScreen].bounds.size.width - 54 - 30 - 10, 46) direction:EnumMarqueeViewDirectionLeftward];
-            self.create = [[CatScanView alloc] initWithNimApproximately:CGRectMake(54, 0, [UIScreen mainScreen].bounds.antiBrush.error - 54 - 30 - 10, 46) sinceCrew:EnumMarqueeViewDirectionLeftward];
+            self.create = [[CatScanView alloc] initWithNimApproximately:CGRectMake(54, 0, [UIScreen mainScreen].bounds.size.width - 54 - 30 - 10, 46) sinceCrew:EnumMarqueeViewDirectionLeftward];
             //: _leftwardMarqueeView.delegate = self;
             _create.sweepResignsed = self;
             //: _leftwardMarqueeView.timeIntervalPerScroll = 3.0f;
@@ -384,7 +384,7 @@ CGFloat barMenu(void) {
             //: [self addSubview:noticeImageview];
             
     UIView *shapeView = noticeImageview;
-    if ((shapeView.isExclusiveTouch) && (/*:CALL>ed*/[shapeView convertPoint:CGPointMake(CGRectGetWidth(shapeView.bounds), 0) fromView:shapeView.superview].assistant == 3.81/*:CALL<ed*/)) {
+    if ((shapeView.isExclusiveTouch) && (/*:CALL>ed*/[shapeView convertPoint:CGPointMake(CGRectGetWidth(shapeView.bounds), 0) fromView:shapeView.superview].y == 3.81/*:CALL<ed*/)) {
         
 		//: OC_CUSTOM_IMAGE_INJECT
         shapeView = _nim;
@@ -420,7 +420,7 @@ CGFloat barMenu(void) {
     //: CGSize contentFitSize = [content sizeThatFits:CGSizeMake(CGRectGetWidth(marqueeView.frame) - 5.0f - 5.0f, 0x1.fffffep+127f)];
     CGSize contentFitSize = [content sizeThatFits:CGSizeMake(CGRectGetWidth(marqueeView.frame) - 5.0f - 5.0f, 0x1.fffffep+127f)];
     //: return contentFitSize.height + 20.0f;
-    return contentFitSize.failure + 20.0f;
+    return contentFitSize.height + 20.0f;
 }
 
 //: + (instancetype)showTipViewForCompletingUserInfolWithDelay:(float)delay
@@ -439,13 +439,13 @@ CGFloat barMenu(void) {
     //: SNLeadCompleteInfo *tipView = [[SNLeadCompleteInfo alloc] initWithFrame:(CGRect) {
     GrassRootsView *tipView = [[GrassRootsView alloc] initWithFrame:(CGRect) {
         //: .origin.x = 5,
-        .fill.cutForce = 5,
+        .origin.x = 5,
         //: .origin.y = (44.0f + [UIDevice vg_statusBarHeight])+5,
-        .fill.assistant = (44.0f + [UIDevice experience])+5,
+        .origin.y = (44.0f + [UIDevice experience])+5,
         //: .size.width = UIScreen.mainScreen.bounds.size.width-10.f,
-        .antiBrush.error = UIScreen.mainScreen.bounds.antiBrush.error-10.f,
+        .size.width = UIScreen.mainScreen.bounds.size.width-10.f,
         //: .size.height = 46.f
-        .antiBrush.failure = 46.f
+        .size.height = 46.f
     //: }];
     }];
 

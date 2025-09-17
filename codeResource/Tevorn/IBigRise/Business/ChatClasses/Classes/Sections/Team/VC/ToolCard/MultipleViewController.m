@@ -156,8 +156,8 @@
 // __M_A_C_R_O__
 //: #import "ZZZTeamCardSelectedViewController.h"
 #import "MultipleViewController.h"
-//: #import "ZZZGlobalMacro.h"
-#import "ZZZGlobalMacro.h"
+//: #import "NSString+ModestGal.h"
+#import "NSString+ModestGal.h"
 //: #import "ZMONTeamCartSetTableViewCell.h"
 #import "CommaOutputView.h"
 

@@ -13,8 +13,8 @@
 #import <UIKit/UIKit.h>
 //: #import "ZZZSessionConfig.h"
 #import "ProperFoundationDirection.h"
-//: #import "ZZZInputProtocol.h"
-#import "ZZZInputProtocol.h"
+//: #import "BeyondUniqueFacadeSnow.h"
+#import "BeyondUniqueFacadeSnow.h"
 
 //: @interface ZZZInputMoreContainerView : UIView
 @interface FailView : UIView

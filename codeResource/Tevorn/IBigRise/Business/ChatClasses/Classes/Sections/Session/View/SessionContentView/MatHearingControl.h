@@ -11,8 +11,7 @@
 // __M_A_C_R_O__
 //: #import "ZZZSessionMessageContentView.h"
 #import "AwfulControl.h"
-//: #import "ZZZKitDependency.h"
-#import "ZZZKitDependency.h"
+#import "AcquiredTasteTextView.h"
 
 //: @interface ZZZSessionNetChatNotifyContentView : ZZZSessionMessageContentView
 @interface MatHearingControl : AwfulControl

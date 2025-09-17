@@ -50,8 +50,8 @@ NaturallyData kMyIdent = (NaturallyData){186, (Byte []){238, 223, 219, 215, 247,
 #import "UIImage+ModestGal.h"
 //: #import "ZZZTeamHelper.h"
 #import "OrdinatorIconTab.h"
-//: #import "ZZZCardDataSourceProtocol.h"
-#import "ZZZCardDataSourceProtocol.h"
+//: #import "OakenPearlCoordinator.h"
+#import "OakenPearlCoordinator.h"
 
 //: @interface NIMTeamMemberView : UIView{
 @interface AssociateView : UIView{

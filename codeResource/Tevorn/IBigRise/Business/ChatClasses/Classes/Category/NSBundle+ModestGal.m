@@ -153,8 +153,6 @@ typedef struct {
 #import "NSBundle+ModestGal.h"
 //: #import "AppleProjectKit.h"
 #import "ModestGal.h"
-//: #import "ZZZInputEmoticonDefine.h"
-#import "ZZZInputEmoticonDefine.h"
 //: #import "SSZipArchiveManager.h"
 #import "ApproximatelyFeather.h"
 

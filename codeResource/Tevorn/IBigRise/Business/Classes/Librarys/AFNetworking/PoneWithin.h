@@ -30,8 +30,6 @@
 #import "YoungFit.h"
 //: #import "AFSecurityPolicy.h"
 #import "VenturePolicy.h"
-//: #import "AFCompatibilityMacros.h"
-#import "AFCompatibilityMacros.h"
 //: #import "AFNetworkReachabilityManager.h"
 #import "FrameReachabilityGal.h"
 

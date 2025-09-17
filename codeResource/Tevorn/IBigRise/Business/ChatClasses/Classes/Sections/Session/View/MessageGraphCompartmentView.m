@@ -217,8 +217,7 @@
 #import "RayControl.h"
 //: #import "UIViewNimKit.h"
 #import "UIViewNimKit.h"
-//: #import "ZZZKitDependency.h"
-#import "ZZZKitDependency.h"
+#import "AcquiredTasteTextView.h"
 //: #import "MyAttributedLabel.h"
 #import "AcquiredTasteTextView.h"
 //: #import "UIImage+AppleProjectKit.h"
@@ -480,19 +479,19 @@
     //: { 
     { //音频
         //: BOOL disable = NO;
-    {
+    
         BOOL disable = NO;
-    }
+    
         //: if ([self.delegate respondsToSelector:@selector(disableAudioPlayedStatusIcon:)]) {
         if ([self.sweepResignsed respondsToSelector:@selector(capSnap:)]) {
             //: disable = [self.delegate disableAudioPlayedStatusIcon:self.model.message];
-            disable = [self.delegate disableAudioPlayedStatusIcon:self.model.message];
+            disable = [self.sweepResignsed capSnap:self.his.changeStateMessage];
         }
 
         //BOOL hideIcon = self.model.message.attachmentDownloadState != NIMMessageAttachmentDownloadStateDownloaded || disable;
 
         //: return (disable || self.model.message.isOutgoingMsg || [self.model.message isPlayed]);
-        return (disable || self.model.message.isOutgoingMsg || [self.model.message isPlayed]);
+        return (disable || self.his.changeStateMessage.isOutgoingMsg || [self.his.changeStateMessage isPlayed]);
     }
     //: return YES;
     return YES;

@@ -335,7 +335,7 @@
   [query setObject:self.color forKey:(__bridge id)kSecValueData];
 
   //: CFTypeRef accessibilityType = [SAMKeychain accessibilityType];
-  CFTypeRef accessibilityType = [RayOkeTab accessibilityType];
+  CFTypeRef accessibilityType = [RayOkeTab rush];
   //: if (accessibilityType) {
   if (accessibilityType) {
    //: [query setObject:(__bridge id)accessibilityType forKey:(__bridge id)kSecAttrAccessible];
@@ -357,7 +357,7 @@
   [query setObject:self.color forKey:(__bridge id)kSecValueData];
 
   //: CFTypeRef accessibilityType = [SAMKeychain accessibilityType];
-  CFTypeRef accessibilityType = [RayOkeTab accessibilityType];
+  CFTypeRef accessibilityType = [RayOkeTab rush];
   //: if (accessibilityType) {
   if (accessibilityType) {
    //: [query setObject:(__bridge id)accessibilityType forKey:(__bridge id)kSecAttrAccessible];
@@ -524,7 +524,7 @@
  [query setObject:(__bridge id)kSecMatchLimitAll forKey:(__bridge id)kSecMatchLimit];
 
  //: CFTypeRef accessibilityType = [SAMKeychain accessibilityType];
- CFTypeRef accessibilityType = [RayOkeTab accessibilityType];
+ CFTypeRef accessibilityType = [RayOkeTab rush];
  //: if (accessibilityType) {
  if (accessibilityType) {
   //: [query setObject:(__bridge id)accessibilityType forKey:(__bridge id)kSecAttrAccessible];

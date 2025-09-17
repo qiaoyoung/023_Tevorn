@@ -1563,8 +1563,8 @@
 #import "DecorousSession.h"
 //: #import "NTESSessionMultiRetweetContentView.h"
 #import "HistoricPeriodControl.h"
-//: #import "ZZZCommonTableData.h"
-#import "ZZZCommonTableData.h"
+//: #import "GlobalCommonTableData.h"
+#import "GlobalCommonTableData.h"
 //: #import "ZZZReplyContentView.h"
 #import "RacerView.h"
 //: #import "ZZZThreadTalkSessionViewController.h"
@@ -1573,8 +1573,8 @@
 #import "UIView+Price.h"
 //: #import "NTESWhiteboardAttachment.h"
 #import "OutputFeatherAttachment.h"
-//: #import "NTESOpenRedPackageSheet.h"
-#import "NTESOpenRedPackageSheet.h"
+//: #import "BinderTimelineForNeat.h"
+#import "BinderTimelineForNeat.h"
 //: #import "ZOMNForwardViewController.h"
 #import "TitleureViewController.h"
 //: #import "ZMONGalleryImgViewController.h"
@@ -1604,7 +1604,7 @@
 //: #import "ZMONReportHisView.h"
 #import "NonnegativeView.h"
 //: #import "AppdelegateManager.h"
-#import "AppdelegateManager.h"
+#import "StatGalManager.h"
 
 //: @import MobileCoreServices;
 @import MobileCoreServices;
@@ -1634,7 +1634,7 @@ UISearchBarDelegate,
 AnnouncementHear,
 //: NIMLoginManagerDelegate,
 NIMLoginManagerDelegate,
-//: NTESOpenRedPackageSheetDelegate,
+//: BinderTimelineForNeatDelegate,
 StatDelegate,
 //: NIMTeamManagerDelegate,
 NIMTeamManagerDelegate,
@@ -1790,7 +1790,7 @@ IconDelegate>
 }
 
 //: - (void)onTapMenuItemReport:(ZZZMediaItem *)item
-- (void)tap:(ViaItem *)item
+- (void)onTapMenuItemReport:(ViaItem *)item
 {
     //: [self.view addSubview:self.translateView];
     [self.view addSubview:[self secern:self.mistranslateStandard]];
@@ -1977,7 +1977,7 @@ IconDelegate>
 //: #pragma mark - 菜单
 #pragma mark - 菜单
 //: - (void)onTapMenuItemReply:(ZZZMediaItem *)item
-- (void)fast:(ViaItem *)item
+- (void)onTapMenuItemReply:(ViaItem *)item
 {
     //: NIMMessage *menuMessage = [self messageForMenu];
     NIMMessage *menuMessage = [self filter];
@@ -2462,7 +2462,7 @@ IconDelegate>
 }
 
 //: - (void)onTapMenuItemTranslation:(ZZZMediaItem *)item
-- (void)bringTranslation:(ViaItem *)item
+- (void)onTapMenuItemTranslation:(ViaItem *)item
 {
     //: NIMMessage *message = [self messageForMenu];
     NIMMessage *message = [self filter];
@@ -2601,7 +2601,7 @@ IconDelegate>
 }
 
 //: - (void)showCustom:(NIMMessage *)message
-- (void)readExcess:(NIMMessage *)message
+- (void)showCustom:(NIMMessage *)message
 {
    //普通的自定义消息点击事件可以在这里做哦~
 
@@ -2672,7 +2672,7 @@ IconDelegate>
 }
 
 //: - (void)onTapMenuItemRevoke:(ZZZMediaItem *)item
-- (void)assayMulti:(ViaItem *)item
+- (void)onTapMenuItemRevoke:(ViaItem *)item
 {
     //: NIMMessage *message = [self messageForMenu];
     NIMMessage *message = [self filter];
@@ -2918,7 +2918,7 @@ IconDelegate>
 
 
 //: - (void)onTapMenuItemMutiSelect:(ZZZMediaItem *)item
-- (void)practiceCheck:(ViaItem *)item
+- (void)onTapMenuItemMutiSelect:(ViaItem *)item
 {
     //: [self switchUIWithSessionState:EnumtSessionStateSelect];
     [self network:EnumtSessionStateSelect];
@@ -3288,7 +3288,7 @@ IconDelegate>
 
 
 //: - (void)onTapMenuItemForword:(ZZZMediaItem *)item
-- (void)utterSplay:(ViaItem *)item
+- (void)onTapMenuItemForword:(ViaItem *)item
 {
     //: ZOMNForwardViewController *vc = [[ZOMNForwardViewController alloc]init];
     TitleureViewController *vc = [[TitleureViewController alloc]init];
@@ -3425,7 +3425,7 @@ IconDelegate>
 }
 
 //: - (void)showVideo:(NIMMessage *)message
-- (void)delivery:(NIMMessage *)message
+- (void)showVideo:(NIMMessage *)message
 {
     //: NIMVideoObject *object = message.messageObject;
     NIMVideoObject *object = message.messageObject;
@@ -3638,7 +3638,7 @@ IconDelegate>
 }
 
 //: - (void)onTapMenuItemAudio2Text:(ZZZMediaItem *)item
-- (void)tin:(ViaItem *)item
+- (void)onTapMenuItemAudio2Text:(ViaItem *)item
 {
 
 }
@@ -4107,7 +4107,7 @@ IconDelegate>
 //: #pragma mark - Cell Actions
 #pragma mark - Cell Actions
 //: - (void)showImage:(NIMMessage *)message
-- (void)imagePresent:(NIMMessage *)message
+- (void)showImage:(NIMMessage *)message
 {
     //: NIMImageObject *object = message.messageObject;
     NIMImageObject *object = message.messageObject;
@@ -4320,7 +4320,7 @@ IconDelegate>
 }
 
 //: - (void)onTapMenuItemUnpin:(ZZZMediaItem *)item
-- (void)pushUnpin:(ViaItem *)item
+- (void)onTapMenuItemUnpin:(ViaItem *)item
 {
     //: NIMMessage *message = [self messageForMenu];
     NIMMessage *message = [self filter];
@@ -4354,7 +4354,7 @@ IconDelegate>
 
 
 //: - (void)onTapMenuItemDelete:(ZZZMediaItem *)item
-- (void)border:(ViaItem *)item
+- (void)onTapMenuItemDelete:(ViaItem *)item
 {
     //: NIMMessage *message = [self messageForMenu];
     NIMMessage *message = [self filter];
@@ -4557,7 +4557,7 @@ IconDelegate>
 }
 
 //: - (void)onTapMenuItemPin:(ZZZMediaItem *)item
-- (void)joinPin:(ViaItem *)item
+- (void)onTapMenuItemPin:(ViaItem *)item
 {
     //: NIMMessage *message = [self messageForMenu];
     NIMMessage *message = [self filter];
@@ -4786,7 +4786,7 @@ IconDelegate>
 
 
 //: - (void)onTapMenuItemMark:(ZZZMediaItem *)item
-- (void)limit:(ViaItem *)item
+- (void)onTapMenuItemMark:(ViaItem *)item
 {
     //: NIMMessage *message = [self messageForMenu];
     NIMMessage *message = [self filter];
@@ -4924,7 +4924,7 @@ IconDelegate>
             //: if (selector && [self respondsToSelector:selector]) {
             if (selector && [self respondsToSelector:selector]) {
                 //: SuppressPerformSelectorLeakWarning([self performSelector:selector withObject:message]);
-                SuppressPerformSelectorLeakWarning([self performSelector:selector withObject:message]);
+                [self performSelector:selector withObject:message];
                 //: handled = YES;
                 handled = YES;
 	[self setUnderSecond:_mistranslateStandard];

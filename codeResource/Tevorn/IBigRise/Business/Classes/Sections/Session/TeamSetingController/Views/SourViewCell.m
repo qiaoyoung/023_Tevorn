@@ -679,7 +679,7 @@ typedef struct {
         //: ZZZKitInfoFetchOption *option = [[ZZZKitInfoFetchOption alloc] init];
         InfoStat *option = [[InfoStat alloc] init];
         //: option.session = teamListManager.session;
-        option.confirm = teamListManager.errorLie;
+        option.confirm = teamListManager.session;
         //: ZZZKitInfo *info = [[AppleProjectKit sharedKit] infoByUser:obj.userId option:option];
         SawmillInfo *info = [[ModestGal reload] scanIn:obj.numerousnessCenters reject:option];
 
@@ -1128,7 +1128,7 @@ typedef struct {
     //: BOOL isTop = switchview.on;
     BOOL isTop = switchview.on;
     //: NIMSession *session = _teamListManager.session;
-    NIMSession *session = _remainDataManager.errorLie;
+    NIMSession *session = _remainDataManager.session;
     //: NIMRecentSession *recent = [[NIMSDK sharedSDK].conversationManager recentSessionBySession:session];
     NIMRecentSession *recent = [[NIMSDK sharedSDK].conversationManager recentSessionBySession:session];
     //: if (isTop) {
@@ -1555,7 +1555,7 @@ typedef struct {
     }
 	option.start = 0;
     //: [[NIMSDK sharedSDK].conversationManager deleteMessagesInSession:_teamListManager.session option:option completion:^(NSError * _Nullable error) {
-    [[NIMSDK sharedSDK].conversationManager deleteMessagesInSession:_listVantage.errorLie option:option completion:^(NSError * _Nullable error) {
+    [[NIMSDK sharedSDK].conversationManager deleteMessagesInSession:_listVantage.session option:option completion:^(NSError * _Nullable error) {
 
     //: }];
     }];

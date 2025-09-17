@@ -103,7 +103,7 @@
 //: - (void)setMenuModel:(id)menuModel {
 - (void)setInfoModel:(id)menuModel {
     //: _menuModel = menuModel;
-    _menuModel = menuModel;
+    menuModel = menuModel;
 	self.second.image = [UIImage imageNamed:@"leave_counteraction_c"];
 
     //: FFDropDownMenuModel *realMenuModel = (FFDropDownMenuModel *)menuModel;

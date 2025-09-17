@@ -183,7 +183,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy, readonly) LEEConfigToFloat gradeToFloat;
 
-@property (nonatomic, copy, readonly) LEEConfigToUserInterfaceStyle counterrupt
+@property (nonatomic, copy, readonly) LEEConfigToUserInterfaceStyle counterrupt;
 /** 设置 是否支持显示方向 -> 格式: .LeeShouldAutorotate(UIInterfaceOrientationMaskAll) */
 //: @property (nonatomic, copy, readonly) LEEConfigToInterfaceOrientationMask LeeSupportedInterfaceOrientations;
 @property (nonatomic, copy, readonly) LEEConfigToInterfaceOrientationMask translate;
@@ -669,15 +669,20 @@ API_AVAILABLE(ios(13.0), tvos(13.0));
 @end
 
 //: @interface LEEAlertViewController: LEEBaseViewController @end
-@interface OrientationViewController: FilterViewController @property (nonatomic, strong) UIImageView *select;
+@interface OrientationViewController: FilterViewController
 
-@end
+@property (nonatomic, strong) UIImageView *select;
 
 @property (nonatomic, strong) NSMutableDictionary *ruleDictionary;
 
 @property (nonatomic, assign) NSInteger failOrientationTotal;
+
+@end
+
 //: @interface LEEActionSheetViewController: LEEBaseViewController @end
-@interface SearViewController: FilterViewController @property (nonatomic, strong) UIImageView *distance;
+@interface SearViewController: FilterViewController
+
+@property (nonatomic, strong) UIImageView *distance;
 @property (nonatomic, strong) NSMutableArray *pinArray;
 @property (nonatomic, assign) double cameraTotal;
 

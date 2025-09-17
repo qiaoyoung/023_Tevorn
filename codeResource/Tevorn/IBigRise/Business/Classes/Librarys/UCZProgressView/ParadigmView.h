@@ -55,7 +55,7 @@ NS_AVAILABLE_IOS(8_0);// UI_APPEARANCE_SELECTOR;
 @property (nonatomic, assign) NSInteger movieDownNumber;
 
 //: @property (nonatomic) UIBlurEffect *blurEffect NS_AVAILABLE_IOS(8_0); 
-@property (nonatomic) UIBlurEffect *maker//: @property (nonatomic) IBInspectable UIColor *textColor; 
+@property (nonatomic) UIBlurEffect *maker;//: @property (nonatomic) IBInspectable UIColor *textColor;
 @property (nonatomic) IBInspectable UIColor *indianFile;// UI_APPEARANCE_SELECTOR;
 //: @property (nonatomic, copy) void(^animationDidStopBlock)();
 @property (nonatomic, copy) void(^blink)();

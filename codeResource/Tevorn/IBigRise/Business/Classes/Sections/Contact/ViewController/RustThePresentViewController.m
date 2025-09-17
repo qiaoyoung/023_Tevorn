@@ -487,8 +487,8 @@
 #import "ExpensivenessArray.h"
 //: #import "NTESSessionViewController.h"
 #import "CornbreadViewController.h"
-//: #import "NTESContactDefines.h"
-#import "NTESContactDefines.h"
+//: #import "WorkbenchVitalTestAdapter.h"
+#import "WorkbenchVitalTestAdapter.h"
 //: #import "NTESGroupedContacts.h"
 #import "FilterDataCollection.h"
 //: #import "UIView+Toast.h"
@@ -608,7 +608,7 @@ FrameDelegate> {
 @property (nonatomic ,strong) NSArray *policyResistance;
 ;//: @property (nonatomic ,strong) NSArray *normalTeamArray;
 @property (nonatomic ,strong) NSArray *emotion;
-@property (nonatomic, strong) BeyondView *forbidPull//: @property (nonatomic ,strong) MuseView *headerView;
+@property (nonatomic, strong) BeyondView *forbidPull;//: @property (nonatomic ,strong) MuseView *headerView;
 @property (nonatomic ,strong) MuseView *globalLimit;
 
 //: @property (nonatomic ,strong) NSMutableArray *tempOpenArray;
@@ -701,7 +701,7 @@ FrameDelegate> {
     config.info = YES;
 	[self setPolicyResistance:_matrixMerge];
     //: config.showSelectHeaderview = YES;
-    config.savingHeaderview = YES;
+    config.except = YES;
 	[self setClewAway:_quitKeep];
     //初始化联系人选择器
     //: ZZZContactSelectViewController *vc = [[ZZZContactSelectViewController alloc] initWithConfig:config];
@@ -1535,9 +1535,9 @@ FrameDelegate> {
         //: id<NTESContactItem> contactItem = (id<NTESContactItem>)[_contacts memberOfIndex:indexPath];
         id<HearTask> contactItem = (id<HearTask>)[_thread event:indexPath];
         //: if([contactItem respondsToSelector:@selector(userId)]){
-        if([contactItem respondsToSelector:@selector(numerousnessCenters)]){
+        if([contactItem respondsToSelector:@selector(userId)]){
             //: NSString * friendId = contactItem.userId;
-            NSString * friendId = contactItem.contactLow;
+            NSString * friendId = contactItem.userId;
             //: if ([ids containsObject:friendId]) {
             if ([ids containsObject:friendId]) {
                 //: [indexPaths addObject:indexPath];
@@ -1569,20 +1569,20 @@ FrameDelegate> {
             //: SEL sel = NSSelectorFromString([contactItem selName]);
             SEL sel = NSSelectorFromString([contactItem hiddenAlways]);
             //: SuppressPerformSelectorLeakWarning([self performSelector:sel withObject:nil]);
-            SuppressPerformSelectorLeakWarning([self performSelector:sel withObject:nil]);
+            [self performSelector:sel withObject:nil];
         }
         //: else if (contactItem.vcName.length) {
-        else if (contactItem.isCrewUtter.length) {
+        else if (contactItem.vcName.length) {
             //: Class clazz = NSClassFromString(contactItem.vcName);
-            Class clazz = NSClassFromString(contactItem.isCrewUtter);
+            Class clazz = NSClassFromString(contactItem.vcName);
             //: UIViewController * vc = [[clazz alloc] initWithNibName:nil bundle:nil];
             UIViewController * vc = [[clazz alloc] initWithNibName:nil bundle:nil];
             //: [self.navigationController pushViewController:vc animated:YES];
             [self.navigationController pushViewController:vc animated:YES];
         //: }else if([contactItem respondsToSelector:@selector(userId)]){
-        }else if([contactItem respondsToSelector:@selector(numerousnessCenters)]){
+        }else if([contactItem respondsToSelector:@selector(userId)]){
             //: NSString * friendId = contactItem.userId;
-            NSString * friendId = contactItem.contactLow;
+            NSString * friendId = contactItem.userId;
             //: [self enterPersonalCard:friendId];
             [self row:friendId];
         }

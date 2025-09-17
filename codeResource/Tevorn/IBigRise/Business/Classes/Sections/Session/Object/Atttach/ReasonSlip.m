@@ -142,10 +142,10 @@
 @implementation ReasonSlip
 
 //: - (UIImage *)showCoverImage
-- (UIImage *)dark
+- (UIImage *)showCoverImage
 {
     //: if (_showCoverImage == nil)
-    if (_dark == nil)
+    if (_showCoverImage == nil)
     {
         //: UIImage *image;
         UIImage *image;
@@ -175,10 +175,10 @@
                 break;
         }
         //: _showCoverImage = image;
-        _dark = image;
+        _showCoverImage = image;
     }
     //: return _showCoverImage;
-    return _dark;
+    return _showCoverImage;
 }
 
 
@@ -225,7 +225,7 @@
 - (CGSize)dredgeUp:(NIMMessage *)message write:(CGFloat)width{
 
     //: return self.showCoverImage.size;
-    return self.dark.size;
+    return self.showCoverImage.size;
 }
 
 //: - (NSString *)cellContent:(NIMMessage *)message{

@@ -11,8 +11,8 @@
 // __M_A_C_R_O__
 //: #import "ZZZKitDevice.h"
 #import "WithinGroup.h"
-//: #import "ZZZGlobalMacro.h"
-#import "ZZZGlobalMacro.h"
+//: #import "NSString+ModestGal.h"
+#import "NSString+ModestGal.h"
 
 //: @interface ZZZKitDevice ()
 @interface WithinGroup ()

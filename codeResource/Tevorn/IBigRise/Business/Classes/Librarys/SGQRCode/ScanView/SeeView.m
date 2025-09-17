@@ -635,7 +635,7 @@
     //: if (self.link == nil) {
     if (self.timing == nil) {
         //: self.link = [CADisplayLink displayLinkWithTarget:[SGWeakProxy weakProxyWithTarget:self] selector:@selector(updateUI)];
-        self.timing = [CADisplayLink displayLinkWithTarget:[ChainProxy mainStreetCagey:self] selector:@selector(updateUI)];
+        self.timing = [CADisplayLink displayLinkWithTarget:[ChainProxy mainStreetCagey:self] selector:@selector(change)];
 	[self setAfford:_facilityEventParadigm];
         //: [self.link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
         [self.timing addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];

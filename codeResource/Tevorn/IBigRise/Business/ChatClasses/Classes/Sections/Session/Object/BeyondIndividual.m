@@ -81,8 +81,8 @@
 #import "UITableView+NIMScrollToBottom.h"
 //: #import "ZZZMessageCell.h"
 #import "MessageGraphCompartmentView.h"
-//: #import "ZZZGlobalMacro.h"
-#import "ZZZGlobalMacro.h"
+//: #import "NSString+ModestGal.h"
+#import "NSString+ModestGal.h"
 //: #import "ZZZSessionTableAdapter.h"
 #import "IconAdapter.h"
 //: #import "UIViewNimKit.h"
@@ -112,7 +112,7 @@
 @property (nonatomic,strong) id<ProperFoundationDirection> track;
 
 //: @property (nonatomic,weak) id<NIMSessionLayoutDelegate> delegate;
-@property (nonatomic,weak) id<MatRay> sweepResignsed;
+@property (nonatomic,weak) id<MatRay> delegate;
 
 //: @end
 @end
@@ -435,10 +435,10 @@
 - (void)titing:(id)sender
 {
     //: if ([self.delegate respondsToSelector:@selector(onRefresh)])
-    if ([self.sweepResignsed respondsToSelector:@selector(adminAdded)])
+    if ([self.delegate respondsToSelector:@selector(adminAdded)])
     {
         //: [self.delegate onRefresh];
-        [self.sweepResignsed adminAdded];
+        [self.delegate adminAdded];
     }
 }
 

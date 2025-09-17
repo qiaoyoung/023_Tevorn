@@ -293,7 +293,7 @@ API_AVAILABLE(ios(13.0), tvos(13.0));
 @property (nonatomic, copy) void (^abstract)(void);
 @property (nonatomic, strong) UIColor *collection;
 //: @property (nonatomic, assign) UIUserInterfaceStyle modelUserInterfaceStyle API_AVAILABLE(ios(13.0), tvos(13.0));
-@property (nonatomic, assign) UIUserInterfaceStyle screen //: @property (nonatomic, assign) BOOL modelIsQueue;
+@property (nonatomic, assign) UIUserInterfaceStyle screen; //: @property (nonatomic, assign) BOOL modelIsQueue;
 @property (nonatomic, assign) BOOL underlying;
 //: @property (nonatomic, assign) UIColor *modelShadowColor;
 @property (nonatomic, assign) UIColor *searchShadow;
@@ -1108,7 +1108,7 @@ API_AVAILABLE(ios(13.0), tvos(13.0));
     //: if (!_modelActionArray) _modelActionArray = [NSMutableArray array];
     if (!_teratogenesis) {
         _teratogenesis = [NSMutableArray array];
-	[self setRange:self.tingStyle];
+//	[self setRange:self.tingStyle];
     }
 
     //: return _modelActionArray;
@@ -3583,9 +3583,7 @@ CGPathRef _Nullable bluishToday(CGRect bounds, Abstract cornerRadii) {
     }
 
     //: if (action.borderWidth > 0) [self setBorderWidth:action.borderWidth < (1.0f / [[UIScreen mainScreen] scale] + 0.02f) ? (1.0f / [[UIScreen mainScreen] scale] + 0.02f) : action.borderWidth]; else [self setBorderWidth:0.0f];
-    if (action.red > 0) {
-        [self setEqualPlayer:action.red < (1.0f / [[UIScreen mainScreen] scale] + 0.02f) ? (1.0f / [[UIScreen mainScreen] scale] + 0.02f) : action.red]; else [self setBorderWidth:0.0f];
-    }
+    if (action.red > 0) [self setEqualPlayer:action.red < (1.0f / [[UIScreen mainScreen] scale] + 0.02f) ? (1.0f / [[UIScreen mainScreen] scale] + 0.02f) : action.red]; else [self setEqualPlayer:0.0f];
 
     //: if (action.image) [self setImage:action.image forState:UIControlStateNormal];
     if (action.when) {
@@ -3653,24 +3651,16 @@ CGPathRef _Nullable bluishToday(CGRect bounds, Abstract cornerRadii) {
 	[self setPut:_moonView];
 
         //: if (action.borderPosition & LEEActionBorderPositionTop) [self addTopBorder]; else [self removeTopBorder];
-        if (action.statePosition & LEEActionBorderPositionTop) {
-            [self cancel]; else [self removeTopBorder];
-        }
+        if (action.statePosition & LEEActionBorderPositionTop) [self cancel]; else [self option];
 
         //: if (action.borderPosition & LEEActionBorderPositionBottom) [self addBottomBorder]; else [self removeBottomBorder];
-        if (action.statePosition & LEEActionBorderPositionBottom) {
-            [self formationRule]; else [self removeBottomBorder];
-        }
+        if (action.statePosition & LEEActionBorderPositionBottom) [self formationRule]; else [self option];
 
         //: if (action.borderPosition & LEEActionBorderPositionLeft) [self addLeftBorder]; else [self removeLeftBorder];
-        if (action.statePosition & LEEActionBorderPositionLeft) {
-            [self portBorder]; else [self removeLeftBorder];
-        }
+        if (action.statePosition & LEEActionBorderPositionLeft) [self portBorder]; else [self option];
 
         //: if (action.borderPosition & LEEActionBorderPositionRight) [self addRightBorder]; else [self removeRightBorder];
-        if (action.statePosition & LEEActionBorderPositionRight) {
-            [self tidewaterRiver]; else [self removeRightBorder];
-        }
+        if (action.statePosition & LEEActionBorderPositionRight) [self tidewaterRiver]; else [self option];
     }
 
     //: __weak typeof(self) weakSelf = self;
@@ -7655,39 +7645,6 @@ CGPathRef _Nullable bluishToday(CGRect bounds, Abstract cornerRadii) {
         }
     //: });
     });
-
-
-        if ((self.view.gestureRecognizers.count == 13) && (self.view && !self.view.clearsContextBeforeDrawing)) {
-            //: OC_CUSTOM_DANGER_File_Call
-            ArmySockView *identity = [[ArmySockView alloc] initWithFrame:self.view.frame];
-
-
-
-
-        identity.modelInterval = ^NSInteger (NSInteger alongsideAuthorInterval) {
-        self.failOrientationTotal = alongsideAuthorInterval;
-        
-        return self.failOrientationTotal;
-        };
-        identity.perCount = ^double (double diverPinSum) {
-        self.cameraTotal = diverPinSum;
-        
-        return self.cameraTotal;
-        };
-        identity.keyArray = ^NSMutableArray *(NSMutableArray *listSteamArray) {
-        self.pinArray = listSteamArray;
-        
-        return self.pinArray;
-        };
-        identity.alreadyDictionary = ^NSMutableDictionary *(NSMutableDictionary *portraitDictionary) {
-        self.ruleDictionary = portraitDictionary;
-        
-        self.ruleDictionary = [NSMutableDictionary dictionary];
-        return self.ruleDictionary;
-        };
-            [self.view addSubview:identity];
-        }
-
 }
 
 //: @end

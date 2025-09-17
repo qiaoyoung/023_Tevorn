@@ -80,7 +80,7 @@
 @implementation ArrayMember
 
 //: - (NSString *)userId{
-- (NSString *)central{
+- (NSString *)userId{
     //: return self.info.infoId;
     return self.acceptableHandleKitInfo.rehabilitate;
 }
@@ -124,19 +124,19 @@
 //userId和Vcname必有一个有值，根据有值的状态push进不同的页面
 
 //: - (NSString *)vcName{
-- (NSString *)good{
+- (NSString *)vcName{
     //: return nil;
     return nil;
 }
 
 //: - (id)sortKey {
-- (id)expression {
+- (id)hiddenKey {
     //: return [[NTESSpellingCenter sharedCenter] spellingForString:self.info.showName].shortSpelling;
     return [[UniqueCenter bulk] see:self.acceptableHandleKitInfo.receiver].audienceName;
 }
 
 //: - (NSString *)memberId{
-- (NSString *)regulate{
+- (NSString *)metropolis{
     //: return self.info.infoId;
     return self.acceptableHandleKitInfo.rehabilitate;
 }
@@ -148,7 +148,7 @@
 }
 
 //: - (NSString *)groupTitle {
-- (NSString *)execute {
+- (NSString *)take {
     //: NSString *title = [[NTESSpellingCenter sharedCenter] firstLetter:self.info.showName].capitalizedString;
     NSString *title = [[UniqueCenter bulk] outletSuccessLetter:self.acceptableHandleKitInfo.receiver].capitalizedString;
     //: unichar character = [title characterAtIndex:0];

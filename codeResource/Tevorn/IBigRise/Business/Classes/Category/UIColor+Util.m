@@ -274,11 +274,11 @@ void hourGuide(CGContextRef c, color_t color) {
     return [UIColor run:hex[0] privilege:hex[1] controlBounce:hex[2] corner:hex[3]];
 }
 
-- (fcolor_t)ignore {
-    //: OC_CUSTOM_PROPERTY_INJECT
-    fcolor_t ignore = objc_getAssociatedObject(self, dream_keepIdent(nil));
-    return ignore;
-}
+//- (fcolor_t)ignore {
+//    //: OC_CUSTOM_PROPERTY_INJECT
+////    fcolor_t ignore = objc_getAssociatedObject(self, dream_keepIdent(nil));
+////    return ignore;
+//}
 
 //: @end
 
@@ -290,10 +290,10 @@ static const char *dream_keepIdent (NSString *value) {
     return  "ignore";
 };
 
-- (void)setIgnore:(fcolor_t)ignore {
+//- (void)setIgnore:(fcolor_t)ignore {
     //: OC_CUSTOM_PROPERTY_INJECT
-    objc_setAssociatedObject(self, dream_keepIdent(nil), ignore, OBJC_ASSOCIATION_RETAIN);
-}
+//    objc_setAssociatedObject(self, dream_keepIdent(nil), ignore, OBJC_ASSOCIATION_RETAIN);
+//}
 
 //: -(ecolor_t)intGreen {
 -(ecolor_t)phone {
@@ -491,7 +491,7 @@ static const char *dream_keepIdent (NSString *value) {
 
 - (fcolor_t)pan:(fcolor_t)ignore {
     //: OC_CUSTOM_PROPERTY_INJECT
-    self.ignore = ignore;
+//    self.ignore = ignore;
     return ignore;
 }
 

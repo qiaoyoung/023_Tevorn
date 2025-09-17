@@ -21,8 +21,8 @@
 #import "ModestGal.h"
 //: #import "NSString+AppleProjectKit.h"
 #import "NSString+ModestGal.h"
-//: #import "ZZZGlobalMacro.h"
-#import "ZZZGlobalMacro.h"
+//: #import "NSString+ModestGal.h"
+#import "NSString+ModestGal.h"
 
 //: @interface ZZZSessionUnknowContentView()
 @interface BoundTextView()

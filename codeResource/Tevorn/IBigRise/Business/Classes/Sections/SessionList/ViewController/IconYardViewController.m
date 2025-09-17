@@ -606,7 +606,7 @@
 
 //: @property (nonatomic, strong) UIButton *resqBtn;
 @property (nonatomic, strong) UIButton *physical;
-@property (nonatomic, strong) BeyondView *carteDuJour
+@property (nonatomic, strong) BeyondView *carteDuJour;
 //: @property (nonatomic, strong) NTESNotificationView *noticeView;
 @property (nonatomic, strong) NotificationView *simultaneouslyGeneral;
 //: @property (nonatomic, strong) ZMONCustomLoadingView *loadingView;
@@ -1337,7 +1337,7 @@
     config.info = YES;
 	[self setProcess:_tag];
     //: config.showSelectHeaderview = YES;
-    config.savingHeaderview = YES;
+    config.except = YES;
     //初始化联系人选择器
     //: ZZZContactSelectViewController *vc = [[ZZZContactSelectViewController alloc] initWithConfig:config];
     ContactCommaBeingViewController *vc = [[ContactCommaBeingViewController alloc] initWithSafelyConfig:config];
@@ -1602,7 +1602,7 @@
 
 
     //: dispatch_after(dispatch_time((0ull), (int64_t)(1 * 1000000000ull)), dispatch_get_main_queue(), ^{
-    dispatch_after(dispatch_time((0ull), (int64_t)(1 * 1000000000ull)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time((DISPATCH_TIME_NOW), (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         //: id<NIMApnsManager> apnsManager = [[NIMSDK sharedSDK] apnsManager];
         id<NIMApnsManager> apnsManager = [[NIMSDK sharedSDK] apnsManager];
         //: NIMPushNotificationSetting *setting = [apnsManager currentSetting];

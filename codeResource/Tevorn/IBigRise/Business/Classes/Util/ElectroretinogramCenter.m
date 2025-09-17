@@ -161,8 +161,6 @@
 #import "UIView+Footing.h"
 //: #import "NTESCustomSysNotificationSender.h"
 #import "OkeSender.h"
-//: #import "NTESGlobalMacro.h"
-#import "NTESGlobalMacro.h"
 //: #import <AVFoundation/AVFoundation.h>
 #import <AVFoundation/AVFoundation.h>
 //: #import "NTESSessionMsgConverter.h"

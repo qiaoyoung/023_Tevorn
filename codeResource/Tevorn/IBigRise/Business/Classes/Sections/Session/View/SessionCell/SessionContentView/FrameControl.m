@@ -94,7 +94,7 @@
     //: if ([attachment isKindOfClass:[NTESJanKenPonAttachment class]]) {
     if ([attachment isKindOfClass:[ReasonSlip class]]) {
         //: self.imageView.image = [attachment showCoverImage];
-        self.visualizationCorrectOrientation.image = [attachment run];
+        self.visualizationCorrectOrientation.image = [attachment showCoverImage];
 	[self compare:self.pageHide].image = [UIImage imageNamed:@"resistance_b"];
         //: [self.imageView sizeToFit];
         [self.visualizationCorrectOrientation sizeToFit];
