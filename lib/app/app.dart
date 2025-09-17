@@ -3,6 +3,8 @@ import 'package:tevorn/app/theme.dart';
 import 'package:tevorn/features/home/home_page.dart';
 import 'package:tevorn/features/library/library_page.dart';
 import 'package:tevorn/features/profile/profile_page.dart';
+import 'package:tevorn/features/welcome/welcome_page.dart';
+import 'package:tevorn/features/legal/privacy_policy_page.dart';
 
 class TevornApp extends StatelessWidget {
   const TevornApp({super.key});
@@ -12,7 +14,11 @@ class TevornApp extends StatelessWidget {
     return MaterialApp(
       title: 'Tevorn',
       theme: buildAppTheme(),
-      home: const _RootTabScaffold(),
+      routes: {
+        '/': (_) => const WelcomePage(),
+        '/root': (_) => const _RootTabScaffold(),
+        '/privacy': (_) => const PrivacyPolicyPage(),
+      },
       debugShowCheckedModeBanner: false,
     );
   }
