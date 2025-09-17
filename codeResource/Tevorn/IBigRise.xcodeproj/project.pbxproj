@@ -1918,7 +1918,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		0E5440F1AE6DBD99C00DF780 /* other_activity_file */ = {
+		0E5440F1AE6DBD99C00DF780 /* AbundantIndexerBeyond */ = {
 			isa = PBXGroup;
 			children = (
 				19CA4B9A823169CA207E3537 /* tool */,
@@ -1928,7 +1928,7 @@
 				2C3E43A9BDCD91BE3E019A7B /* net */,
 				7C974AE5BB4AFE98076420A1 /* data */,
 			);
-			path = other_activity_file;
+			path = AbundantIndexerBeyond;
 			sourceTree = "<group>";
 		};
 		19CA4B9A823169CA207E3537 /* tool */ = {
@@ -2299,40 +2299,7 @@
 			path = view;
 			sourceTree = "<group>";
 		};
-		B146537D2DC0B4E300C4D5B8 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				B14653632DC0B4E300C4D5B8 /* AVAsset+ModestGal.h */,
-				B14653642DC0B4E300C4D5B8 /* AVAsset+ModestGal.m */,
-				B14653652DC0B4E300C4D5B8 /* AcquiredTasteTextView+ModestGal.h */,
-				B14653662DC0B4E300C4D5B8 /* AcquiredTasteTextView+ModestGal.m */,
-				B14653672DC0B4E300C4D5B8 /* NSBundle+ModestGal.h */,
-				B14653682DC0B4E300C4D5B8 /* NSBundle+ModestGal.m */,
-				B14653692DC0B4E300C4D5B8 /* NSDictionary+ModestGal.h */,
-				B146536A2DC0B4E300C4D5B8 /* NSDictionary+ModestGal.m */,
-				B146536B2DC0B4E300C4D5B8 /* NSString+ModestGal.h */,
-				B146536C2DC0B4E300C4D5B8 /* NSString+ModestGal.m */,
-				B146536D2DC0B4E300C4D5B8 /* UIButton+ModestGal.h */,
-				B146536E2DC0B4E300C4D5B8 /* UIButton+ModestGal.m */,
-				B146536F2DC0B4E300C4D5B8 /* UIColor+ModestGal.h */,
-				B14653702DC0B4E300C4D5B8 /* UIColor+ModestGal.m */,
-				B14653712DC0B4E300C4D5B8 /* UIImage+ModestGal.h */,
-				B14653722DC0B4E300C4D5B8 /* UIImage+ModestGal.m */,
-				B14653732DC0B4E300C4D5B8 /* UITableView+NIMScrollToBottom.h */,
-				B14653742DC0B4E300C4D5B8 /* UITableView+NIMScrollToBottom.m */,
-				B14653752DC0B4E300C4D5B8 /* UIView+Price.h */,
-				B14653762DC0B4E300C4D5B8 /* UIView+Price.m */,
-				B14653772DC0B4E300C4D5B8 /* UIViewNimKit.h */,
-				B14653782DC0B4E300C4D5B8 /* UIViewNimKit.m */,
-				B14653792DC0B4E300C4D5B8 /* YYAnimatedImageView+Peaceful.h */,
-				B146537A2DC0B4E300C4D5B8 /* YYAnimatedImageView+Peaceful.m */,
-				B146537B2DC0B4E300C4D5B8 /* IconExtensionHelper.h */,
-				B146537C2DC0B4E300C4D5B8 /* IconExtensionHelper.m */,
-			);
-			path = Category;
-			sourceTree = "<group>";
-		};
-		B14653952DC0B4E300C4D5B8 /* Global */ = {
+		B14653952DC0B4E300C4D5B8 /* DelegateFit */ = {
 			isa = PBXGroup;
 			children = (
 				B146537E2DC0B4E300C4D5B8 /* GlobalCommonTableData.h */,
@@ -2357,24 +2324,10 @@
 				B14653932DC0B4E300C4D5B8 /* ViaLevelFactory.h */,
 				B14653942DC0B4E300C4D5B8 /* ViaLevelFactory.m */,
 			);
-			path = Global;
+			path = DelegateFit;
 			sourceTree = "<group>";
 		};
-		B146539D2DC0B4E300C4D5B8 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				B14653962DC0B4E300C4D5B8 /* GlobalCellConfig.h */,
-				B14653972DC0B4E300C4D5B8 /* DuringDomainTrueOwner.h */,
-				B14653982DC0B4E300C4D5B8 /* BeyondUniqueFacadeSnow.h */,
-				B14653992DC0B4E300C4D5B8 /* TurningGroup.h */,
-				B146539A2DC0B4E300C4D5B8 /* BlackMarketeerProvider.h */,
-				B146539B2DC0B4E300C4D5B8 /* SetServiceKitTexture.h */,
-				B146539C2DC0B4E300C4D5B8 /* ProperFoundationDirection.h */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		B14653B32DC0B4E300C4D5B8 /* Common */ = {
+		B14653B32DC0B4E300C4D5B8 /* SparkPresentView */ = {
 			isa = PBXGroup;
 			children = (
 				B146539E2DC0B4E300C4D5B8 /* BoundView.h */,
@@ -2397,35 +2350,15 @@
 				B14653B12DC0B4E300C4D5B8 /* WantView.h */,
 				B14653B22DC0B4E300C4D5B8 /* WantView.m */,
 			);
-			path = Common;
+			path = SparkPresentView;
 			sourceTree = "<group>";
 		};
-		B14653B72DC0B4E300C4D5B8 /* Cell */ = {
+		B14653C72DC0B4E300C4D5B8 /* InstallConfig */ = {
 			isa = PBXGroup;
 			children = (
 				B14653B42DC0B4E300C4D5B8 /* SummitView.h */,
 				B14653B52DC0B4E300C4D5B8 /* SummitView.m */,
 				B14653B62DC0B4E300C4D5B8 /* AuthenticateFlexibleLayer.h */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		B14653BC2DC0B4E300C4D5B8 /* ContactGroup */ = {
-			isa = PBXGroup;
-			children = (
-				B14653B82DC0B4E300C4D5B8 /* IconGroupedUsrInfo.h */,
-				B14653B92DC0B4E300C4D5B8 /* IconGroupedUsrInfo.m */,
-				B14653BA2DC0B4E300C4D5B8 /* PrimaryGroup.h */,
-				B14653BB2DC0B4E300C4D5B8 /* PrimaryGroup.m */,
-			);
-			path = ContactGroup;
-			sourceTree = "<group>";
-		};
-		B14653C72DC0B4E300C4D5B8 /* Contact */ = {
-			isa = PBXGroup;
-			children = (
-				B14653B72DC0B4E300C4D5B8 /* Cell */,
-				B14653BC2DC0B4E300C4D5B8 /* ContactGroup */,
 				B14653BD2DC0B4E300C4D5B8 /* SightView.h */,
 				B14653BE2DC0B4E300C4D5B8 /* SightView.m */,
 				B14653BF2DC0B4E300C4D5B8 /* InstallConfig.h */,
@@ -2436,25 +2369,21 @@
 				B14653C42DC0B4E300C4D5B8 /* ContactCommaBeingViewController.m */,
 				B14653C52DC0B4E300C4D5B8 /* TabularArrayView.h */,
 				B14653C62DC0B4E300C4D5B8 /* TabularArrayView.m */,
+				B14653B82DC0B4E300C4D5B8 /* IconGroupedUsrInfo.h */,
+				B14653B92DC0B4E300C4D5B8 /* IconGroupedUsrInfo.m */,
+				B14653BA2DC0B4E300C4D5B8 /* PrimaryGroup.h */,
+				B14653BB2DC0B4E300C4D5B8 /* PrimaryGroup.m */,
 			);
-			path = Contact;
+			path = InstallConfig;
 			sourceTree = "<group>";
 		};
-		B14653CC2DC0B4E300C4D5B8 /* GrowingTextView */ = {
+		B14653E92DC0B4E300C4D5B8 /* YardLitContentHighlight */ = {
 			isa = PBXGroup;
 			children = (
 				B14653C82DC0B4E300C4D5B8 /* CommaTextView.h */,
 				B14653C92DC0B4E300C4D5B8 /* CommaTextView.m */,
 				B14653CA2DC0B4E300C4D5B8 /* LightScrollView.h */,
 				B14653CB2DC0B4E300C4D5B8 /* LightScrollView.m */,
-			);
-			path = GrowingTextView;
-			sourceTree = "<group>";
-		};
-		B14653E92DC0B4E300C4D5B8 /* Input */ = {
-			isa = PBXGroup;
-			children = (
-				B14653CC2DC0B4E300C4D5B8 /* GrowingTextView */,
 				B14653CD2DC0B4E300C4D5B8 /* YardLitContentHighlight.h */,
 				B14653CE2DC0B4E300C4D5B8 /* YardLitContentHighlight.m */,
 				B14653CF2DC0B4E300C4D5B8 /* FamilyPreference.h */,
@@ -2480,8 +2409,9 @@
 				B14653E62DC0B4E300C4D5B8 /* FrameView.m */,
 				B14653E72DC0B4E300C4D5B8 /* RacerView.h */,
 				B14653E82DC0B4E300C4D5B8 /* RacerView.m */,
+				B14653F62DC0B4E300C4D5B8 /* Model */,
 			);
-			path = Input;
+			path = YardLitContentHighlight;
 			sourceTree = "<group>";
 		};
 		B14653F62DC0B4E300C4D5B8 /* Model */ = {
@@ -2532,24 +2462,16 @@
 			path = Content;
 			sourceTree = "<group>";
 		};
-		B14654102DC0B4E300C4D5B8 /* ReplyContentConfig */ = {
+		B14654132DC0B4E300C4D5B8 /* DirectionConfig */ = {
 			isa = PBXGroup;
 			children = (
 				B146540E2DC0B4E300C4D5B8 /* DirectionConfig.h */,
 				B146540F2DC0B4E300C4D5B8 /* DirectionConfig.m */,
-			);
-			path = ReplyContentConfig;
-			sourceTree = "<group>";
-		};
-		B14654132DC0B4E300C4D5B8 /* Config */ = {
-			isa = PBXGroup;
-			children = (
 				B146540D2DC0B4E300C4D5B8 /* Content */,
-				B14654102DC0B4E300C4D5B8 /* ReplyContentConfig */,
 				B14654112DC0B4E300C4D5B8 /* AbstractConfig.h */,
 				B14654122DC0B4E300C4D5B8 /* AbstractConfig.m */,
 			);
-			path = Config;
+			path = DirectionConfig;
 			sourceTree = "<group>";
 		};
 		B14654182DC0B4E300C4D5B8 /* Manager */ = {
@@ -2658,20 +2580,7 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		B14654602DC0B4E300C4D5B8 /* LeadCompleteInfo */ = {
-			isa = PBXGroup;
-			children = (
-				B14654582DC0B4E300C4D5B8 /* GrassRootsView.h */,
-				B14654592DC0B4E300C4D5B8 /* GrassRootsView.m */,
-				B146545A2DC0B4E300C4D5B8 /* PresentQuantityerpretation.h */,
-				B146545B2DC0B4E300C4D5B8 /* PresentQuantityerpretation.m */,
-				B146545E2DC0B4E300C4D5B8 /* CatScanView.h */,
-				B146545F2DC0B4E300C4D5B8 /* CatScanView.m */,
-			);
-			path = LeadCompleteInfo;
-			sourceTree = "<group>";
-		};
-		B14654662DC0B4E300C4D5B8 /* MyAttributedLabel */ = {
+		B14654722DC0B4E300C4D5B8 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				B14654612DC0B4E300C4D5B8 /* AcquiredTasteTextView.h */,
@@ -2679,13 +2588,12 @@
 				B14654632DC0B4E300C4D5B8 /* MyAttributedLabelDefines.h */,
 				B14654642DC0B4E300C4D5B8 /* NSMutableAttributedString+My.h */,
 				B14654652DC0B4E300C4D5B8 /* NSMutableAttributedString+My.m */,
-			);
-			path = MyAttributedLabel;
-			sourceTree = "<group>";
-		};
-		B146546F2DC0B4E300C4D5B8 /* BubbleMenu */ = {
-			isa = PBXGroup;
-			children = (
+				B14654582DC0B4E300C4D5B8 /* GrassRootsView.h */,
+				B14654592DC0B4E300C4D5B8 /* GrassRootsView.m */,
+				B146545A2DC0B4E300C4D5B8 /* PresentQuantityerpretation.h */,
+				B146545B2DC0B4E300C4D5B8 /* PresentQuantityerpretation.m */,
+				B146545E2DC0B4E300C4D5B8 /* CatScanView.h */,
+				B146545F2DC0B4E300C4D5B8 /* CatScanView.m */,
 				B14654672DC0B4E300C4D5B8 /* NSObject+Investigator.h */,
 				B14654682DC0B4E300C4D5B8 /* NSObject+Investigator.m */,
 				B14654692DC0B4E300C4D5B8 /* AccommodateModel.h */,
@@ -2694,62 +2602,34 @@
 				B146546C2DC0B4E300C4D5B8 /* LevelBeyondView.m */,
 				B146546D2DC0B4E300C4D5B8 /* PositionScrollView.h */,
 				B146546E2DC0B4E300C4D5B8 /* PositionScrollView.m */,
-			);
-			path = BubbleMenu;
-			sourceTree = "<group>";
-		};
-		B14654722DC0B4E300C4D5B8 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				B14654602DC0B4E300C4D5B8 /* LeadCompleteInfo */,
-				B14654662DC0B4E300C4D5B8 /* MyAttributedLabel */,
-				B146546F2DC0B4E300C4D5B8 /* BubbleMenu */,
 				B14654702DC0B4E300C4D5B8 /* ProclamationViewController.h */,
 				B14654712DC0B4E300C4D5B8 /* ProclamationViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		B14654732DC0B4E300C4D5B8 /* Session */ = {
+		B14654732DC0B4E300C4D5B8 /* AccelerateGetBuilder */ = {
 			isa = PBXGroup;
 			children = (
-				B14654132DC0B4E300C4D5B8 /* Config */,
+				B14654132DC0B4E300C4D5B8 /* DirectionConfig */,
 				B14654182DC0B4E300C4D5B8 /* Manager */,
 				B146541D2DC0B4E300C4D5B8 /* Model */,
 				B14654302DC0B4E300C4D5B8 /* Object */,
 				B14654572DC0B4E300C4D5B8 /* View */,
 				B14654722DC0B4E300C4D5B8 /* ViewController */,
 			);
-			path = Session;
+			path = AccelerateGetBuilder;
 			sourceTree = "<group>";
 		};
-		B14654762DC0B4E300C4D5B8 /* View */ = {
+		B14654792DC0B4E300C4D5B8 /* PillViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				B14654742DC0B4E300C4D5B8 /* PillViewCell.h */,
 				B14654752DC0B4E300C4D5B8 /* PillViewCell.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		B14654792DC0B4E300C4D5B8 /* SessionList */ = {
-			isa = PBXGroup;
-			children = (
-				B14654762DC0B4E300C4D5B8 /* View */,
 				B14654772DC0B4E300C4D5B8 /* ListViewController.h */,
 				B14654782DC0B4E300C4D5B8 /* ListViewController.m */,
 			);
-			path = SessionList;
-			sourceTree = "<group>";
-		};
-		B146547D2DC0B4E300C4D5B8 /* DataSource */ = {
-			isa = PBXGroup;
-			children = (
-				B146547A2DC0B4E300C4D5B8 /* GenerationChain.h */,
-				B146547B2DC0B4E300C4D5B8 /* GenerationChain.m */,
-				B146547C2DC0B4E300C4D5B8 /* ChainOutput.h */,
-			);
-			path = DataSource;
+			path = PillViewCell;
 			sourceTree = "<group>";
 		};
 		B146548B2DC0B4E300C4D5B8 /* Model */ = {
@@ -2763,61 +2643,6 @@
 				B14654862DC0B4E300C4D5B8 /* AnnouncementTotalmit.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		B14654902DC0B4E300C4D5B8 /* MemberCard */ = {
-			isa = PBXGroup;
-			children = (
-				B146548C2DC0B4E300C4D5B8 /* AgeViewController.h */,
-				B146548D2DC0B4E300C4D5B8 /* AgeViewController.m */,
-				B146548E2DC0B4E300C4D5B8 /* MatViewController.h */,
-				B146548F2DC0B4E300C4D5B8 /* MatViewController.m */,
-			);
-			path = MemberCard;
-			sourceTree = "<group>";
-		};
-		B14654952DC0B4E300C4D5B8 /* BaseCard */ = {
-			isa = PBXGroup;
-			children = (
-				B14654912DC0B4E300C4D5B8 /* MaisonnetteViewController.h */,
-				B14654922DC0B4E300C4D5B8 /* MaisonnetteViewController.m */,
-				B14654932DC0B4E300C4D5B8 /* CuttingEdgeViewController.h */,
-				B14654942DC0B4E300C4D5B8 /* CuttingEdgeViewController.m */,
-			);
-			path = BaseCard;
-			sourceTree = "<group>";
-		};
-		B14654962DC0B4E300C4D5B8 /* TeamCard */ = {
-			isa = PBXGroup;
-			children = (
-				B14654952DC0B4E300C4D5B8 /* BaseCard */,
-			);
-			path = TeamCard;
-			sourceTree = "<group>";
-		};
-		B146549F2DC0B4E300C4D5B8 /* ToolCard */ = {
-			isa = PBXGroup;
-			children = (
-				B14654972DC0B4E300C4D5B8 /* ShortTermSummitPromulgationViewController.h */,
-				B14654982DC0B4E300C4D5B8 /* ShortTermSummitPromulgationViewController.m */,
-				B14654992DC0B4E300C4D5B8 /* GalViewController.h */,
-				B146549A2DC0B4E300C4D5B8 /* GalViewController.m */,
-				B146549B2DC0B4E300C4D5B8 /* MultipleViewController.h */,
-				B146549C2DC0B4E300C4D5B8 /* MultipleViewController.m */,
-				B146549D2DC0B4E300C4D5B8 /* ArmyViewController.h */,
-				B146549E2DC0B4E300C4D5B8 /* ArmyViewController.m */,
-			);
-			path = ToolCard;
-			sourceTree = "<group>";
-		};
-		B14654A02DC0B4E300C4D5B8 /* VC */ = {
-			isa = PBXGroup;
-			children = (
-				B14654902DC0B4E300C4D5B8 /* MemberCard */,
-				B14654962DC0B4E300C4D5B8 /* TeamCard */,
-				B146549F2DC0B4E300C4D5B8 /* ToolCard */,
-			);
-			path = VC;
 			sourceTree = "<group>";
 		};
 		B14654B32DC0B4E300C4D5B8 /* View */ = {
@@ -2843,17 +2668,34 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		B14654B62DC0B4E300C4D5B8 /* Team */ = {
+		B14654B62DC0B4E300C4D5B8 /* AccessDefineScheduleDecompress */ = {
 			isa = PBXGroup;
 			children = (
-				B146547D2DC0B4E300C4D5B8 /* DataSource */,
-				B146548B2DC0B4E300C4D5B8 /* Model */,
-				B14654A02DC0B4E300C4D5B8 /* VC */,
-				B14654B32DC0B4E300C4D5B8 /* View */,
+				B14654972DC0B4E300C4D5B8 /* ShortTermSummitPromulgationViewController.h */,
+				B14654982DC0B4E300C4D5B8 /* ShortTermSummitPromulgationViewController.m */,
+				B14654992DC0B4E300C4D5B8 /* GalViewController.h */,
+				B146549A2DC0B4E300C4D5B8 /* GalViewController.m */,
+				B146549B2DC0B4E300C4D5B8 /* MultipleViewController.h */,
+				B146549C2DC0B4E300C4D5B8 /* MultipleViewController.m */,
+				B146549D2DC0B4E300C4D5B8 /* ArmyViewController.h */,
+				B146549E2DC0B4E300C4D5B8 /* ArmyViewController.m */,
+				B146548C2DC0B4E300C4D5B8 /* AgeViewController.h */,
+				B146548D2DC0B4E300C4D5B8 /* AgeViewController.m */,
+				B146548E2DC0B4E300C4D5B8 /* MatViewController.h */,
+				B146548F2DC0B4E300C4D5B8 /* MatViewController.m */,
 				B14654B42DC0B4E300C4D5B8 /* OrdinatorIconTab.h */,
 				B14654B52DC0B4E300C4D5B8 /* OrdinatorIconTab.m */,
+				B146547A2DC0B4E300C4D5B8 /* GenerationChain.h */,
+				B146547B2DC0B4E300C4D5B8 /* GenerationChain.m */,
+				B14654912DC0B4E300C4D5B8 /* MaisonnetteViewController.h */,
+				B14654922DC0B4E300C4D5B8 /* MaisonnetteViewController.m */,
+				B14654932DC0B4E300C4D5B8 /* CuttingEdgeViewController.h */,
+				B14654942DC0B4E300C4D5B8 /* CuttingEdgeViewController.m */,
+				B146547C2DC0B4E300C4D5B8 /* ChainOutput.h */,
+				B146548B2DC0B4E300C4D5B8 /* Model */,
+				B14654B32DC0B4E300C4D5B8 /* View */,
 			);
-			path = Team;
+			path = AccessDefineScheduleDecompress;
 			sourceTree = "<group>";
 		};
 		B14654BB2DC0B4E300C4D5B8 /* Spelling */ = {
@@ -2889,45 +2731,74 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
-		B14654CB2DC0B4E300C4D5B8 /* Sections */ = {
+		B14654CB2DC0B4E300C4D5B8 /* DrawUpgradeMark */ = {
 			isa = PBXGroup;
 			children = (
-				B14653B32DC0B4E300C4D5B8 /* Common */,
-				B14653C72DC0B4E300C4D5B8 /* Contact */,
-				B14653E92DC0B4E300C4D5B8 /* Input */,
-				B14653F62DC0B4E300C4D5B8 /* Model */,
-				B14654732DC0B4E300C4D5B8 /* Session */,
-				B14654792DC0B4E300C4D5B8 /* SessionList */,
-				B14654B62DC0B4E300C4D5B8 /* Team */,
+				B14653B32DC0B4E300C4D5B8 /* SparkPresentView */,
+				B14653C72DC0B4E300C4D5B8 /* InstallConfig */,
+				B14653E92DC0B4E300C4D5B8 /* YardLitContentHighlight */,
+				B14654732DC0B4E300C4D5B8 /* AccelerateGetBuilder */,
+				B14654792DC0B4E300C4D5B8 /* PillViewCell */,
+				B14654B62DC0B4E300C4D5B8 /* AccessDefineScheduleDecompress */,
 				B14654CA2DC0B4E300C4D5B8 /* Util */,
 			);
-			path = Sections;
+			path = DrawUpgradeMark;
 			sourceTree = "<group>";
 		};
-		B14654CC2DC0B4E300C4D5B8 /* Classes */ = {
+		B14654CC2DC0B4E300C4D5B8 /* AmbientRationalAfterModal */ = {
 			isa = PBXGroup;
 			children = (
-				B146537D2DC0B4E300C4D5B8 /* Category */,
-				B14653952DC0B4E300C4D5B8 /* Global */,
-				B146539D2DC0B4E300C4D5B8 /* Protocols */,
-				B14654CB2DC0B4E300C4D5B8 /* Sections */,
+				B14653632DC0B4E300C4D5B8 /* AVAsset+ModestGal.h */,
+				B14653642DC0B4E300C4D5B8 /* AVAsset+ModestGal.m */,
+				B14653652DC0B4E300C4D5B8 /* AcquiredTasteTextView+ModestGal.h */,
+				B14653662DC0B4E300C4D5B8 /* AcquiredTasteTextView+ModestGal.m */,
+				B14653672DC0B4E300C4D5B8 /* NSBundle+ModestGal.h */,
+				B14653682DC0B4E300C4D5B8 /* NSBundle+ModestGal.m */,
+				B14653692DC0B4E300C4D5B8 /* NSDictionary+ModestGal.h */,
+				B146536A2DC0B4E300C4D5B8 /* NSDictionary+ModestGal.m */,
+				B146536B2DC0B4E300C4D5B8 /* NSString+ModestGal.h */,
+				B146536C2DC0B4E300C4D5B8 /* NSString+ModestGal.m */,
+				B146536D2DC0B4E300C4D5B8 /* UIButton+ModestGal.h */,
+				B146536E2DC0B4E300C4D5B8 /* UIButton+ModestGal.m */,
+				B146536F2DC0B4E300C4D5B8 /* UIColor+ModestGal.h */,
+				B14653702DC0B4E300C4D5B8 /* UIColor+ModestGal.m */,
+				B14653712DC0B4E300C4D5B8 /* UIImage+ModestGal.h */,
+				B14653722DC0B4E300C4D5B8 /* UIImage+ModestGal.m */,
+				B14653732DC0B4E300C4D5B8 /* UITableView+NIMScrollToBottom.h */,
+				B14653742DC0B4E300C4D5B8 /* UITableView+NIMScrollToBottom.m */,
+				B14653752DC0B4E300C4D5B8 /* UIView+Price.h */,
+				B14653762DC0B4E300C4D5B8 /* UIView+Price.m */,
+				B14653772DC0B4E300C4D5B8 /* UIViewNimKit.h */,
+				B14653782DC0B4E300C4D5B8 /* UIViewNimKit.m */,
+				B14653792DC0B4E300C4D5B8 /* YYAnimatedImageView+Peaceful.h */,
+				B146537A2DC0B4E300C4D5B8 /* YYAnimatedImageView+Peaceful.m */,
+				B146537B2DC0B4E300C4D5B8 /* IconExtensionHelper.h */,
+				B146537C2DC0B4E300C4D5B8 /* IconExtensionHelper.m */,
+				B14653962DC0B4E300C4D5B8 /* GlobalCellConfig.h */,
+				B14653972DC0B4E300C4D5B8 /* DuringDomainTrueOwner.h */,
+				B14653982DC0B4E300C4D5B8 /* BeyondUniqueFacadeSnow.h */,
+				B14653992DC0B4E300C4D5B8 /* TurningGroup.h */,
+				B146539A2DC0B4E300C4D5B8 /* BlackMarketeerProvider.h */,
+				B146539B2DC0B4E300C4D5B8 /* SetServiceKitTexture.h */,
+				B146539C2DC0B4E300C4D5B8 /* ProperFoundationDirection.h */,
+				B14653952DC0B4E300C4D5B8 /* DelegateFit */,
 			);
-			path = Classes;
+			path = AmbientRationalAfterModal;
 			sourceTree = "<group>";
 		};
-		B14654D22DC0B4E300C4D5B8 /* ChatClasses */ = {
+		B14654D22DC0B4E300C4D5B8 /* AfterDataConsolidateNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				B14654CC2DC0B4E300C4D5B8 /* AmbientRationalAfterModal */,
 				B1F4ED872E719FF100195A20 /* MultipleManager.h */,
 				B1F4ED882E719FF100195A20 /* MultipleManager.m */,
 				B1F4ED892E719FF100195A20 /* AssesseeReader.h */,
 				B1F4ED8A2E719FF100195A20 /* AssesseeReader.m */,
-				B14654CC2DC0B4E300C4D5B8 /* Classes */,
 			);
-			path = ChatClasses;
+			path = AfterDataConsolidateNetwork;
 			sourceTree = "<group>";
 		};
-		B14655032DC0B4E300C4D5B8 /* Category */ = {
+		B14655032DC0B4E300C4D5B8 /* AmongReturnChannelPlanner */ = {
 			isa = PBXGroup;
 			children = (
 				B14654D32DC0B4E300C4D5B8 /* NSData+Family.h */,
@@ -2979,10 +2850,10 @@
 				B14655012DC0B4E300C4D5B8 /* UIViewController+Texture.h */,
 				B14655022DC0B4E300C4D5B8 /* UIViewController+Texture.m */,
 			);
-			path = Category;
+			path = AmongReturnChannelPlanner;
 			sourceTree = "<group>";
 		};
-		B146550D2DC0B4E300C4D5B8 /* Addons */ = {
+		B14655272DC0B4E300C4D5B8 /* ArchiveFirmBasin */ = {
 			isa = PBXGroup;
 			children = (
 				B14655042DC0B4E300C4D5B8 /* SwizzlingDefine.h */,
@@ -2994,33 +2865,16 @@
 				B146550A2DC0B4E300C4D5B8 /* UIView+OfTab.m */,
 				B146550B2DC0B4E300C4D5B8 /* UIViewController+OfTab.h */,
 				B146550C2DC0B4E300C4D5B8 /* UIViewController+OfTab.m */,
-			);
-			path = Addons;
-			sourceTree = "<group>";
-		};
-		B14655102DC0B4E300C4D5B8 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
+				B1465EFE2DC0C09100C4D5B8 /* SlipView.h */,
+				B1465EFF2DC0C09100C4D5B8 /* SlipView.m */,
+				B1465F002DC0C09100C4D5B8 /* OfViewController.h */,
+				B1465F012DC0C09100C4D5B8 /* OfViewController.m */,
 				B146550E2DC0B4E300C4D5B8 /* OutputBarController.h */,
 				B146550F2DC0B4E300C4D5B8 /* OutputBarController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		B14655152DC0B4E300C4D5B8 /* Delegate */ = {
-			isa = PBXGroup;
-			children = (
 				B14655112DC0B4E300C4D5B8 /* FoundationAnimator.h */,
 				B14655122DC0B4E300C4D5B8 /* FoundationAnimator.m */,
 				B14655132DC0B4E300C4D5B8 /* EkgComma.h */,
 				B14655142DC0B4E300C4D5B8 /* EkgComma.m */,
-			);
-			path = Delegate;
-			sourceTree = "<group>";
-		};
-		B14655262DC0B4E300C4D5B8 /* View */ = {
-			isa = PBXGroup;
-			children = (
 				B14655182DC0B4E300C4D5B8 /* StandView.h */,
 				B14655192DC0B4E300C4D5B8 /* StandView.m */,
 				B146551A2DC0B4E300C4D5B8 /* InvestigatorLabel.h */,
@@ -3032,22 +2886,10 @@
 				B14655242DC0B4E300C4D5B8 /* QuantityerpretationView.h */,
 				B14655252DC0B4E300C4D5B8 /* QuantityerpretationView.m */,
 			);
-			path = View;
+			path = ArchiveFirmBasin;
 			sourceTree = "<group>";
 		};
-		B14655272DC0B4E300C4D5B8 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				B1465F022DC0C09100C4D5B8 /* CustomTabBar */,
-				B146550D2DC0B4E300C4D5B8 /* Addons */,
-				B14655102DC0B4E300C4D5B8 /* Controller */,
-				B14655152DC0B4E300C4D5B8 /* Delegate */,
-				B14655262DC0B4E300C4D5B8 /* View */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		B146552E2DC0B4E300C4D5B8 /* LayoutConfig */ = {
+		B146552E2DC0B4E300C4D5B8 /* BaselineMagnetThick */ = {
 			isa = PBXGroup;
 			children = (
 				B14655282DC0B4E300C4D5B8 /* PeacefulLayoutConfig.h */,
@@ -3057,7 +2899,7 @@
 				B146552C2DC0B4E300C4D5B8 /* ApproximatelyConfig.h */,
 				B146552D2DC0B4E300C4D5B8 /* ApproximatelyConfig.m */,
 			);
-			path = LayoutConfig;
+			path = BaselineMagnetThick;
 			sourceTree = "<group>";
 		};
 		B14655352DC0B4E300C4D5B8 /* HMBaseClass */ = {
@@ -3090,46 +2932,6 @@
 				B146553F2DC0B4E300C4D5B8 /* LimitView.m */,
 			);
 			path = imageCrop;
-			sourceTree = "<group>";
-		};
-		B14655472DC0B4E300C4D5B8 /* KIImageCropperView */ = {
-			isa = PBXGroup;
-			children = (
-				B14655452DC0B4E300C4D5B8 /* HarvestMoonView.h */,
-				B14655462DC0B4E300C4D5B8 /* HarvestMoonView.m */,
-			);
-			path = KIImageCropperView;
-			sourceTree = "<group>";
-		};
-		B146554E2DC0B4E300C4D5B8 /* KIImagePickerController */ = {
-			isa = PBXGroup;
-			children = (
-				B14655482DC0B4E300C4D5B8 /* AntiquityView.h */,
-				B14655492DC0B4E300C4D5B8 /* AntiquityView.m */,
-				B146554A2DC0B4E300C4D5B8 /* SlipViewController.h */,
-				B146554B2DC0B4E300C4D5B8 /* SlipViewController.m */,
-				B146554C2DC0B4E300C4D5B8 /* BeyondOutput.h */,
-				B146554D2DC0B4E300C4D5B8 /* BeyondOutput.m */,
-			);
-			path = KIImagePickerController;
-			sourceTree = "<group>";
-		};
-		B146554F2DC0B4E300C4D5B8 /* KIImage */ = {
-			isa = PBXGroup;
-			children = (
-				B14655472DC0B4E300C4D5B8 /* KIImageCropperView */,
-				B146554E2DC0B4E300C4D5B8 /* KIImagePickerController */,
-			);
-			path = KIImage;
-			sourceTree = "<group>";
-		};
-		B14655522DC0B4E300C4D5B8 /* LCQRCodeUtil */ = {
-			isa = PBXGroup;
-			children = (
-				B14655502DC0B4E300C4D5B8 /* BushidoRustUtil.h */,
-				B14655512DC0B4E300C4D5B8 /* BushidoRustUtil.m */,
-			);
-			path = LCQRCodeUtil;
 			sourceTree = "<group>";
 		};
 		B14655572DC0B4E300C4D5B8 /* Manager */ = {
@@ -3204,7 +3006,7 @@
 			path = WeakProxy;
 			sourceTree = "<group>";
 		};
-		B14655782DC0B4E300C4D5B8 /* SGQRCode */ = {
+		B14655782DC0B4E300C4D5B8 /* StandLog */ = {
 			isa = PBXGroup;
 			children = (
 				B146555E2DC0B4E300C4D5B8 /* Permission */,
@@ -3217,16 +3019,7 @@
 				B14655762DC0B4E300C4D5B8 /* StandLog.h */,
 				B14655772DC0B4E300C4D5B8 /* StandLog.m */,
 			);
-			path = SGQRCode;
-			sourceTree = "<group>";
-		};
-		B146557B2DC0B4E300C4D5B8 /* TPPasswordTextView */ = {
-			isa = PBXGroup;
-			children = (
-				B14655792DC0B4E300C4D5B8 /* SearView.h */,
-				B146557A2DC0B4E300C4D5B8 /* SearView.m */,
-			);
-			path = TPPasswordTextView;
+			path = StandLog;
 			sourceTree = "<group>";
 		};
 		B146557E2DC0B4E300C4D5B8 /* GVUserDefaults */ = {
@@ -3265,7 +3058,7 @@
 			path = HttpRequest;
 			sourceTree = "<group>";
 		};
-		B14655912DC0B4E300C4D5B8 /* ZCPickDataView */ = {
+		B14655912DC0B4E300C4D5B8 /* CornbreadView */ = {
 			isa = PBXGroup;
 			children = (
 				B146558D2DC0B4E300C4D5B8 /* CornbreadView.h */,
@@ -3273,152 +3066,37 @@
 				B146558F2DC0B4E300C4D5B8 /* OrdinatorView.h */,
 				B14655902DC0B4E300C4D5B8 /* OrdinatorView.m */,
 			);
-			path = ZCPickDataView;
+			path = CornbreadView;
 			sourceTree = "<group>";
 		};
-		B14655942DC0B4E300C4D5B8 /* ZXPUnicode */ = {
+		B14655952DC0B4E300C4D5B8 /* AboveRendererFlora */ = {
 			isa = PBXGroup;
 			children = (
-				B14655922DC0B4E300C4D5B8 /* Oke.h */,
-				B14655932DC0B4E300C4D5B8 /* Oke.m */,
-			);
-			path = ZXPUnicode;
-			sourceTree = "<group>";
-		};
-		B14655952DC0B4E300C4D5B8 /* Librarys */ = {
-			isa = PBXGroup;
-			children = (
-				B1E420522E7A480D006AA71D /* LEEAlert */,
-				B1F4EDEE2E71A2C600195A20 /* TXScrollLabelView */,
-				B1F4EDE82E71A2A400195A20 /* Toast */,
-				B1F4EDE32E71A27700195A20 /* UCZProgressView */,
-				B1F4EDDB2E71A25A00195A20 /* SVProgressHUD */,
-				B1F4EDCB2E71A20900195A20 /* FFDropDownMenu */,
+				B1E420522E7A480D006AA71D /* TaskAlert */,
+				B1F4EDEE2E71A2C600195A20 /* FilterView */,
+				B1F4EDE82E71A2A400195A20 /* Footing */,
+				B1F4EDE32E71A27700195A20 /* ParadigmView */,
+				B1F4EDDB2E71A25A00195A20 /* AwfulView */,
+				B1F4EDCB2E71A20900195A20 /* CarteDuJourViewCell */,
 				B14655362DC0B4E300C4D5B8 /* BaseView */,
 				B14655442DC0B4E300C4D5B8 /* imageCrop */,
-				B146554F2DC0B4E300C4D5B8 /* KIImage */,
-				B14655522DC0B4E300C4D5B8 /* LCQRCodeUtil */,
 				B14655572DC0B4E300C4D5B8 /* Manager */,
-				B14655782DC0B4E300C4D5B8 /* SGQRCode */,
-				B146557B2DC0B4E300C4D5B8 /* TPPasswordTextView */,
+				B14655782DC0B4E300C4D5B8 /* StandLog */,
 				B14655832DC0B4E300C4D5B8 /* UserInfo */,
 				B146558C2DC0B4E300C4D5B8 /* HttpRequest */,
-				B14655912DC0B4E300C4D5B8 /* ZCPickDataView */,
-				B14655942DC0B4E300C4D5B8 /* ZXPUnicode */,
-				B1F4EDAE2E71A10D00195A20 /* AFNetworking */,
-				B1F4EE0D2E71A43600195A20 /* IQKeyboardManager */,
+				B14655912DC0B4E300C4D5B8 /* CornbreadView */,
+				B1F4EDAE2E71A10D00195A20 /* CommaNameDownloader */,
+				B1F4EE0D2E71A43600195A20 /* WeakenButtonItem */,
 				B1F4EE1F2E72835100195A20 /* Framework */,
 			);
-			path = Librarys;
+			path = AboveRendererFlora;
 			sourceTree = "<group>";
 		};
-		B146559A2DC0B4E300C4D5B8 /* SelectedListView */ = {
-			isa = PBXGroup;
-			children = (
-				B14655962DC0B4E300C4D5B8 /* IndividualModel.h */,
-				B14655972DC0B4E300C4D5B8 /* IndividualModel.m */,
-			);
-			path = SelectedListView;
-			sourceTree = "<group>";
-		};
-		B146559B2DC0B4E300C4D5B8 /* CardViews */ = {
-			isa = PBXGroup;
-			children = (
-				B146559A2DC0B4E300C4D5B8 /* SelectedListView */,
-			);
-			path = CardViews;
-			sourceTree = "<group>";
-		};
-		B14655AE2DC0B4E300C4D5B8 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				B14655A22DC0B4E300C4D5B8 /* FrameworkView.h */,
-				B14655A32DC0B4E300C4D5B8 /* FrameworkView.m */,
-				B14655A42DC0B4E300C4D5B8 /* FilmView.h */,
-				B14655A52DC0B4E300C4D5B8 /* FilmView.m */,
-				B14655A62DC0B4E300C4D5B8 /* NonnegativeView.h */,
-				B14655A72DC0B4E300C4D5B8 /* NonnegativeView.m */,
-				B14655A82DC0B4E300C4D5B8 /* BirdSEyeView.h */,
-				B14655A92DC0B4E300C4D5B8 /* BirdSEyeView.m */,
-				B14655AA2DC0B4E300C4D5B8 /* UtternessView.h */,
-				B14655AB2DC0B4E300C4D5B8 /* UtternessView.m */,
-				B14655AC2DC0B4E300C4D5B8 /* AudienceView.h */,
-				B14655AD2DC0B4E300C4D5B8 /* AudienceView.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		B14655B32DC0B4E300C4D5B8 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				B14655AF2DC0B4E300C4D5B8 /* FriendViewController.h */,
-				B14655B02DC0B4E300C4D5B8 /* FriendViewController.m */,
-				B14655B12DC0B4E300C4D5B8 /* IndividualViewController.h */,
-				B14655B22DC0B4E300C4D5B8 /* IndividualViewController.m */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		B14655B42DC0B4E300C4D5B8 /* Card */ = {
-			isa = PBXGroup;
-			children = (
-				B146559B2DC0B4E300C4D5B8 /* CardViews */,
-				B14655AE2DC0B4E300C4D5B8 /* View */,
-				B14655B32DC0B4E300C4D5B8 /* ViewController */,
-			);
-			path = Card;
-			sourceTree = "<group>";
-		};
-		B14655B72DC0B4E300C4D5B8 /* Helper */ = {
+		B14655E92DC0B4E300C4D5B8 /* VentureViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				B14655B52DC0B4E300C4D5B8 /* OkeSender.h */,
 				B14655B62DC0B4E300C4D5B8 /* OkeSender.m */,
-			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
-		B14655BE2DC0B4E300C4D5B8 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				B14655B82DC0B4E300C4D5B8 /* ArrayMember.h */,
-				B14655B92DC0B4E300C4D5B8 /* ArrayMember.m */,
-				B14655BA2DC0B4E300C4D5B8 /* FilterDataCollection.h */,
-				B14655BB2DC0B4E300C4D5B8 /* FilterDataCollection.m */,
-				B14655BC2DC0B4E300C4D5B8 /* OfRemThe.h */,
-				B14655BD2DC0B4E300C4D5B8 /* OfRemThe.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		B14655CA2DC0B4E300C4D5B8 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				B14655BF2DC0B4E300C4D5B8 /* CompartmentDataCell.h */,
-				B14655C02DC0B4E300C4D5B8 /* CompartmentDataCell.m */,
-				B14655C12DC0B4E300C4D5B8 /* WorkbenchVitalTestAdapter.h */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		B14655D32DC0B4E300C4D5B8 /* Contact */ = {
-			isa = PBXGroup;
-			children = (
-				B14655CB2DC0B4E300C4D5B8 /* AfterYoungViewController.h */,
-				B14655CC2DC0B4E300C4D5B8 /* AfterYoungViewController.m */,
-				B14655CD2DC0B4E300C4D5B8 /* FoundationViewController.h */,
-				B14655CE2DC0B4E300C4D5B8 /* FoundationViewController.m */,
-				B14655CF2DC0B4E300C4D5B8 /* LitViewController.h */,
-				B14655D02DC0B4E300C4D5B8 /* LitViewController.m */,
-				B14655D12DC0B4E300C4D5B8 /* ContemporariesViewController.h */,
-				B14655D22DC0B4E300C4D5B8 /* ContemporariesViewController.m */,
-			);
-			path = Contact;
-			sourceTree = "<group>";
-		};
-		B14655E02DC0B4E300C4D5B8 /* Views */ = {
-			isa = PBXGroup;
-			children = (
 				B14655D62DC0B4E300C4D5B8 /* MuseView.h */,
 				B14655D72DC0B4E300C4D5B8 /* MuseView.m */,
 				B14655DA2DC0B4E300C4D5B8 /* VentureViewCell.h */,
@@ -3427,15 +3105,14 @@
 				B14655DD2DC0B4E300C4D5B8 /* BeingGalView.m */,
 				B14655DE2DC0B4E300C4D5B8 /* DirectionView.h */,
 				B14655DF2DC0B4E300C4D5B8 /* DirectionView.m */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		B14655E92DC0B4E300C4D5B8 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				B14655D32DC0B4E300C4D5B8 /* Contact */,
-				B14655E02DC0B4E300C4D5B8 /* Views */,
+				B14655CB2DC0B4E300C4D5B8 /* AfterYoungViewController.h */,
+				B14655CC2DC0B4E300C4D5B8 /* AfterYoungViewController.m */,
+				B14655CD2DC0B4E300C4D5B8 /* FoundationViewController.h */,
+				B14655CE2DC0B4E300C4D5B8 /* FoundationViewController.m */,
+				B14655CF2DC0B4E300C4D5B8 /* LitViewController.h */,
+				B14655D02DC0B4E300C4D5B8 /* LitViewController.m */,
+				B14655D12DC0B4E300C4D5B8 /* ContemporariesViewController.h */,
+				B14655D22DC0B4E300C4D5B8 /* ContemporariesViewController.m */,
 				B14655E12DC0B4E300C4D5B8 /* NSString+Essential.h */,
 				B14655E22DC0B4E300C4D5B8 /* NSString+Essential.m */,
 				B14655E32DC0B4E300C4D5B8 /* TaskDriver.h */,
@@ -3445,21 +3122,27 @@
 				B14655E72DC0B4E300C4D5B8 /* RustThePresentViewController.h */,
 				B14655E82DC0B4E300C4D5B8 /* RustThePresentViewController.m */,
 			);
-			path = ViewController;
+			path = VentureViewCell;
 			sourceTree = "<group>";
 		};
-		B14655EA2DC0B4E300C4D5B8 /* Contact */ = {
+		B14655EA2DC0B4E300C4D5B8 /* CompartmentDataCell */ = {
 			isa = PBXGroup;
 			children = (
-				B14655B72DC0B4E300C4D5B8 /* Helper */,
-				B14655BE2DC0B4E300C4D5B8 /* Model */,
-				B14655CA2DC0B4E300C4D5B8 /* View */,
-				B14655E92DC0B4E300C4D5B8 /* ViewController */,
+				B14655BF2DC0B4E300C4D5B8 /* CompartmentDataCell.h */,
+				B14655C02DC0B4E300C4D5B8 /* CompartmentDataCell.m */,
+				B14655C12DC0B4E300C4D5B8 /* WorkbenchVitalTestAdapter.h */,
+				B14655B82DC0B4E300C4D5B8 /* ArrayMember.h */,
+				B14655B92DC0B4E300C4D5B8 /* ArrayMember.m */,
+				B14655BA2DC0B4E300C4D5B8 /* FilterDataCollection.h */,
+				B14655BB2DC0B4E300C4D5B8 /* FilterDataCollection.m */,
+				B14655BC2DC0B4E300C4D5B8 /* OfRemThe.h */,
+				B14655BD2DC0B4E300C4D5B8 /* OfRemThe.m */,
+				B14655E92DC0B4E300C4D5B8 /* VentureViewCell */,
 			);
-			path = Contact;
+			path = CompartmentDataCell;
 			sourceTree = "<group>";
 		};
-		B14655EF2DC0B4E300C4D5B8 /* COKeychain */ = {
+		B14655EF2DC0B4E300C4D5B8 /* RayOkeTab */ = {
 			isa = PBXGroup;
 			children = (
 				B146547E2DC0B4E300C4D5B8 /* OakenPearlCoordinator.h */,
@@ -3468,13 +3151,13 @@
 				B14655ED2DC0B4E300C4D5B8 /* KeychainSelect.h */,
 				B14655EE2DC0B4E300C4D5B8 /* KeychainSelect.m */,
 			);
-			path = COKeychain;
+			path = RayOkeTab;
 			sourceTree = "<group>";
 		};
-		B14655F62DC0B4E300C4D5B8 /* Manager */ = {
+		B14655F62DC0B4E300C4D5B8 /* HistoryManager */ = {
 			isa = PBXGroup;
 			children = (
-				B14655EF2DC0B4E300C4D5B8 /* COKeychain */,
+				B14655EF2DC0B4E300C4D5B8 /* RayOkeTab */,
 				B14655F02DC0B4E300C4D5B8 /* InstallDevice.h */,
 				B14655F12DC0B4E300C4D5B8 /* InstallDevice.m */,
 				B14655F22DC0B4E300C4D5B8 /* HistoryManager.h */,
@@ -3482,10 +3165,10 @@
 				B14655F42DC0B4E300C4D5B8 /* GenerationManager.h */,
 				B14655F52DC0B4E300C4D5B8 /* GenerationManager.m */,
 			);
-			path = Manager;
+			path = HistoryManager;
 			sourceTree = "<group>";
 		};
-		B14655FF2DC0B4E300C4D5B8 /* ViewController */ = {
+		B14655FF2DC0B4E300C4D5B8 /* AbstractViewController */ = {
 			isa = PBXGroup;
 			children = (
 				B14655F72DC0B4E300C4D5B8 /* AbstractViewController.h */,
@@ -3497,47 +3180,31 @@
 				B14655FD2DC0B4E300C4D5B8 /* YoungViewController.h */,
 				B14655FE2DC0B4E300C4D5B8 /* YoungViewController.m */,
 			);
-			path = ViewController;
+			path = AbstractViewController;
 			sourceTree = "<group>";
 		};
-		B14656002DC0B4E300C4D5B8 /* Login */ = {
+		B14656002DC0B4E300C4D5B8 /* AcrossBuildToolkit */ = {
 			isa = PBXGroup;
 			children = (
-				B14655F62DC0B4E300C4D5B8 /* Manager */,
-				B14655FF2DC0B4E300C4D5B8 /* ViewController */,
+				B14655F62DC0B4E300C4D5B8 /* HistoryManager */,
+				B14655FF2DC0B4E300C4D5B8 /* AbstractViewController */,
 			);
-			path = Login;
+			path = AcrossBuildToolkit;
 			sourceTree = "<group>";
 		};
-		B14656032DC0B4E300C4D5B8 /* DB */ = {
+		B146560B2DC0B4E300C4D5B8 /* ProperViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				B14656012DC0B4E300C4D5B8 /* KilnDriedInstall.h */,
 				B14656022DC0B4E300C4D5B8 /* KilnDriedInstall.m */,
-			);
-			path = DB;
-			sourceTree = "<group>";
-		};
-		B14656062DC0B4E300C4D5B8 /* Model */ = {
-			isa = PBXGroup;
-			children = (
 				B14656042DC0B4E300C4D5B8 /* CommaObject.h */,
 				B14656052DC0B4E300C4D5B8 /* CommaObject.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		B146560B2DC0B4E300C4D5B8 /* Notification */ = {
-			isa = PBXGroup;
-			children = (
-				B14656032DC0B4E300C4D5B8 /* DB */,
-				B14656062DC0B4E300C4D5B8 /* Model */,
 				B14656072DC0B4E300C4D5B8 /* ProperViewCell.h */,
 				B14656082DC0B4E300C4D5B8 /* ProperViewCell.m */,
 				B14656092DC0B4E300C4D5B8 /* BeingAbsViewController.h */,
 				B146560A2DC0B4E300C4D5B8 /* BeingAbsViewController.m */,
 			);
-			path = Notification;
+			path = ProperViewCell;
 			sourceTree = "<group>";
 		};
 		B14656102DC0B4E300C4D5B8 /* Config */ = {
@@ -3895,36 +3562,47 @@
 			path = Subscribe;
 			sourceTree = "<group>";
 		};
-		B14656FC2DC0B4E300C4D5B8 /* Sections */ = {
+		B14656FC2DC0B4E300C4D5B8 /* AcceleratePool */ = {
 			isa = PBXGroup;
 			children = (
-				B14655B42DC0B4E300C4D5B8 /* Card */,
-				B14655EA2DC0B4E300C4D5B8 /* Contact */,
-				B14656002DC0B4E300C4D5B8 /* Login */,
-				B146560B2DC0B4E300C4D5B8 /* Notification */,
+				B14655962DC0B4E300C4D5B8 /* IndividualModel.h */,
+				B14655972DC0B4E300C4D5B8 /* IndividualModel.m */,
+				B14655A22DC0B4E300C4D5B8 /* FrameworkView.h */,
+				B14655A32DC0B4E300C4D5B8 /* FrameworkView.m */,
+				B14655A42DC0B4E300C4D5B8 /* FilmView.h */,
+				B14655A52DC0B4E300C4D5B8 /* FilmView.m */,
+				B14655A62DC0B4E300C4D5B8 /* NonnegativeView.h */,
+				B14655A72DC0B4E300C4D5B8 /* NonnegativeView.m */,
+				B14655A82DC0B4E300C4D5B8 /* BirdSEyeView.h */,
+				B14655A92DC0B4E300C4D5B8 /* BirdSEyeView.m */,
+				B14655AA2DC0B4E300C4D5B8 /* UtternessView.h */,
+				B14655AB2DC0B4E300C4D5B8 /* UtternessView.m */,
+				B14655AC2DC0B4E300C4D5B8 /* AudienceView.h */,
+				B14655AD2DC0B4E300C4D5B8 /* AudienceView.m */,
+				B14655AF2DC0B4E300C4D5B8 /* FriendViewController.h */,
+				B14655B02DC0B4E300C4D5B8 /* FriendViewController.m */,
+				B14655B12DC0B4E300C4D5B8 /* IndividualViewController.h */,
+				B14655B22DC0B4E300C4D5B8 /* IndividualViewController.m */,
+				B14655EA2DC0B4E300C4D5B8 /* CompartmentDataCell */,
+				B14656002DC0B4E300C4D5B8 /* AcrossBuildToolkit */,
+				B146560B2DC0B4E300C4D5B8 /* ProperViewCell */,
 				B146569D2DC0B4E300C4D5B8 /* Session */,
 				B14656B22DC0B4E300C4D5B8 /* SessionList */,
 				B14656F72DC0B4E300C4D5B8 /* Setting */,
 				B14656FB2DC0B4E300C4D5B8 /* Subscribe */,
 			);
-			path = Sections;
+			path = AcceleratePool;
 			sourceTree = "<group>";
 		};
-		B14657012DC0B4E300C4D5B8 /* Spelling */ = {
+		B146571E2DC0B4E300C4D5B8 /* TipTotalerpretation */ = {
 			isa = PBXGroup;
 			children = (
+				B1F4ED842E7190BC00195A20 /* StatGalManager.h */,
+				B1F4ED852E7190BC00195A20 /* StatGalManager.m */,
 				B14656FD2DC0B4E300C4D5B8 /* RemPlusConverter.h */,
 				B14656FE2DC0B4E300C4D5B8 /* RemPlusConverter.m */,
 				B14656FF2DC0B4E300C4D5B8 /* UniqueCenter.h */,
 				B14657002DC0B4E300C4D5B8 /* UniqueCenter.m */,
-			);
-			path = Spelling;
-			sourceTree = "<group>";
-		};
-		B146571E2DC0B4E300C4D5B8 /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				B14657012DC0B4E300C4D5B8 /* Spelling */,
 				B14657022DC0B4E300C4D5B8 /* TipTotalerpretation.h */,
 				B14657032DC0B4E300C4D5B8 /* TipTotalerpretation.m */,
 				B14657042DC0B4E300C4D5B8 /* TheSetting.h */,
@@ -3946,34 +3624,33 @@
 				B14657182DC0B4E300C4D5B8 /* ExpensivenessArray.h */,
 				B14657192DC0B4E300C4D5B8 /* ExpensivenessArray.m */,
 			);
-			path = Util;
+			path = TipTotalerpretation;
 			sourceTree = "<group>";
 		};
-		B146571F2DC0B4E300C4D5B8 /* Classes */ = {
+		B146571F2DC0B4E300C4D5B8 /* AgainstHonestTranslateRare */ = {
 			isa = PBXGroup;
 			children = (
-				B14655032DC0B4E300C4D5B8 /* Category */,
-				B14655272DC0B4E300C4D5B8 /* Common */,
-				B146552E2DC0B4E300C4D5B8 /* LayoutConfig */,
-				B14655952DC0B4E300C4D5B8 /* Librarys */,
-				B14656FC2DC0B4E300C4D5B8 /* Sections */,
-				B146571E2DC0B4E300C4D5B8 /* Util */,
+				B14655032DC0B4E300C4D5B8 /* AmongReturnChannelPlanner */,
+				B14655272DC0B4E300C4D5B8 /* ArchiveFirmBasin */,
+				B146552E2DC0B4E300C4D5B8 /* BaselineMagnetThick */,
+				B14655952DC0B4E300C4D5B8 /* AboveRendererFlora */,
+				B14656FC2DC0B4E300C4D5B8 /* AcceleratePool */,
+				B146571E2DC0B4E300C4D5B8 /* TipTotalerpretation */,
 			);
-			path = Classes;
+			path = AgainstHonestTranslateRare;
 			sourceTree = "<group>";
 		};
 		B14657332DC0B4E300C4D5B8 /* Business */ = {
 			isa = PBXGroup;
 			children = (
-				0E5440F1AE6DBD99C00DF780 /* other_activity_file */,
-				B1F4ED832E71900A00195A20 /* Other */,
-				B14654D22DC0B4E300C4D5B8 /* ChatClasses */,
-				B146571F2DC0B4E300C4D5B8 /* Classes */,
+				B14654CB2DC0B4E300C4D5B8 /* DrawUpgradeMark */,
+				0E5440F1AE6DBD99C00DF780 /* AbundantIndexerBeyond */,
+				B1F4ED832E71900A00195A20 /* AccessVividRateSample */,
+				B14654D22DC0B4E300C4D5B8 /* AfterDataConsolidateNetwork */,
+				B146571F2DC0B4E300C4D5B8 /* AgainstHonestTranslateRare */,
 				B146572E2DC0B4E300C4D5B8 /* TevornHeader.pch */,
 				B146572F2DC0B4E300C4D5B8 /* AppDelegate.h */,
 				B14657302DC0B4E300C4D5B8 /* AppDelegate.m */,
-				B1F4ED842E7190BC00195A20 /* StatGalManager.h */,
-				B1F4ED852E7190BC00195A20 /* StatGalManager.m */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -3999,28 +3676,17 @@
 			path = IBigRise;
 			sourceTree = "<group>";
 		};
-		B1465F022DC0C09100C4D5B8 /* CustomTabBar */ = {
-			isa = PBXGroup;
-			children = (
-				B1465EFE2DC0C09100C4D5B8 /* SlipView.h */,
-				B1465EFF2DC0C09100C4D5B8 /* SlipView.m */,
-				B1465F002DC0C09100C4D5B8 /* OfViewController.h */,
-				B1465F012DC0C09100C4D5B8 /* OfViewController.m */,
-			);
-			path = CustomTabBar;
-			sourceTree = "<group>";
-		};
-		B1E420522E7A480D006AA71D /* LEEAlert */ = {
+		B1E420522E7A480D006AA71D /* TaskAlert */ = {
 			isa = PBXGroup;
 			children = (
 				B1E4204F2E7A480D006AA71D /* TaskAlert.h */,
 				B1E420502E7A480D006AA71D /* TaskAlert.m */,
 				B1E420512E7A480D006AA71D /* LEEAlertHelper.h */,
 			);
-			path = LEEAlert;
+			path = TaskAlert;
 			sourceTree = "<group>";
 		};
-		B1F4ED832E71900A00195A20 /* Other */ = {
+		B1F4ED832E71900A00195A20 /* AccessVividRateSample */ = {
 			isa = PBXGroup;
 			children = (
 				B1465F052DC0F58E00C4D5B8 /* ApproximatelyFeather.h */,
@@ -4046,10 +3712,10 @@
 				B14653602DC0B4E300C4D5B8 /* NSDictionaryExtend.h */,
 				B14653612DC0B4E300C4D5B8 /* NSDictionaryExtend.m */,
 			);
-			path = Other;
+			path = AccessVividRateSample;
 			sourceTree = "<group>";
 		};
-		B1F4EDAE2E71A10D00195A20 /* AFNetworking */ = {
+		B1F4EDAE2E71A10D00195A20 /* CommaNameDownloader */ = {
 			isa = PBXGroup;
 			children = (
 				B1F4ED8D2E71A10D00195A20 /* ImageCache.h */,
@@ -4085,10 +3751,10 @@
 				B1F4EDAC2E71A10D00195A20 /* WKWebView+Fit.h */,
 				B1F4EDAD2E71A10D00195A20 /* WKWebView+Fit.m */,
 			);
-			path = AFNetworking;
+			path = CommaNameDownloader;
 			sourceTree = "<group>";
 		};
-		B1F4EDCB2E71A20900195A20 /* FFDropDownMenu */ = {
+		B1F4EDCB2E71A20900195A20 /* CarteDuJourViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				B1F4EDBE2E71A20900195A20 /* FFDropDownMenu.h */,
@@ -4105,10 +3771,10 @@
 				B1F4EDC92E71A20900195A20 /* BeyondView.h */,
 				B1F4EDCA2E71A20900195A20 /* BeyondView.m */,
 			);
-			path = FFDropDownMenu;
+			path = CarteDuJourViewCell;
 			sourceTree = "<group>";
 		};
-		B1F4EDDB2E71A25A00195A20 /* SVProgressHUD */ = {
+		B1F4EDDB2E71A25A00195A20 /* AwfulView */ = {
 			isa = PBXGroup;
 			children = (
 				B1F4EDD22E71A25A00195A20 /* AwfulView.h */,
@@ -4121,29 +3787,39 @@
 				B1F4EDD92E71A25A00195A20 /* HistoryBoundLayer.h */,
 				B1F4EDDA2E71A25A00195A20 /* HistoryBoundLayer.m */,
 			);
-			path = SVProgressHUD;
+			path = AwfulView;
 			sourceTree = "<group>";
 		};
-		B1F4EDE32E71A27700195A20 /* UCZProgressView */ = {
+		B1F4EDE32E71A27700195A20 /* ParadigmView */ = {
 			isa = PBXGroup;
 			children = (
 				B1F4EDE12E71A27700195A20 /* ParadigmView.h */,
 				B1F4EDE22E71A27700195A20 /* ParadigmView.m */,
+				B14655502DC0B4E300C4D5B8 /* BushidoRustUtil.h */,
+				B14655512DC0B4E300C4D5B8 /* BushidoRustUtil.m */,
+				B14655452DC0B4E300C4D5B8 /* HarvestMoonView.h */,
+				B14655462DC0B4E300C4D5B8 /* HarvestMoonView.m */,
+				B14655482DC0B4E300C4D5B8 /* AntiquityView.h */,
+				B14655492DC0B4E300C4D5B8 /* AntiquityView.m */,
+				B146554A2DC0B4E300C4D5B8 /* SlipViewController.h */,
+				B146554B2DC0B4E300C4D5B8 /* SlipViewController.m */,
+				B146554C2DC0B4E300C4D5B8 /* BeyondOutput.h */,
+				B146554D2DC0B4E300C4D5B8 /* BeyondOutput.m */,
 			);
-			path = UCZProgressView;
+			path = ParadigmView;
 			sourceTree = "<group>";
 		};
-		B1F4EDE82E71A2A400195A20 /* Toast */ = {
+		B1F4EDE82E71A2A400195A20 /* Footing */ = {
 			isa = PBXGroup;
 			children = (
 				B1F4EDE52E71A2A400195A20 /* Footing.h */,
 				B1F4EDE62E71A2A400195A20 /* UIView+Footing.h */,
 				B1F4EDE72E71A2A400195A20 /* UIView+Footing.m */,
 			);
-			path = Toast;
+			path = Footing;
 			sourceTree = "<group>";
 		};
-		B1F4EDEE2E71A2C600195A20 /* TXScrollLabelView */ = {
+		B1F4EDEE2E71A2C600195A20 /* FilterView */ = {
 			isa = PBXGroup;
 			children = (
 				B1F4EDEA2E71A2C600195A20 /* FilterView.h */,
@@ -4151,12 +3827,16 @@
 				B1F4EDEC2E71A2C600195A20 /* UIView+Of.h */,
 				B1F4EDED2E71A2C600195A20 /* UIView+Of.m */,
 			);
-			path = TXScrollLabelView;
+			path = FilterView;
 			sourceTree = "<group>";
 		};
-		B1F4EE0D2E71A43600195A20 /* IQKeyboardManager */ = {
+		B1F4EE0D2E71A43600195A20 /* WeakenButtonItem */ = {
 			isa = PBXGroup;
 			children = (
+				B14655792DC0B4E300C4D5B8 /* SearView.h */,
+				B146557A2DC0B4E300C4D5B8 /* SearView.m */,
+				B14655922DC0B4E300C4D5B8 /* Oke.h */,
+				B14655932DC0B4E300C4D5B8 /* Oke.m */,
 				B1F4EDF12E71A43600195A20 /* WeakenButtonItem.h */,
 				B1F4EDF22E71A43600195A20 /* WeakenButtonItem.m */,
 				B1F4EDF32E71A43600195A20 /* FitCountmit.h */,
@@ -4186,7 +3866,7 @@
 				B1F4EE0B2E71A43600195A20 /* IQUIViewController+TabCounterpretation.h */,
 				B1F4EE0C2E71A43600195A20 /* IQUIViewController+TabCounterpretation.m */,
 			);
-			path = IQKeyboardManager;
+			path = WeakenButtonItem;
 			sourceTree = "<group>";
 		};
 		B1F4EE1F2E72835100195A20 /* Framework */ = {
