@@ -106,13 +106,22 @@ class _SubmissionCard extends StatelessWidget {
       ),
     );
 
-    final image = s.coverAsset.startsWith('assets/')
-        ? Image.asset(s.coverAsset, fit: BoxFit.cover)
-        : Image.file(File(s.coverAsset), fit: BoxFit.cover);
+    final imageWidget = FutureBuilder<String>(
+      future: s.coverAsset.startsWith('assets/')
+          ? Future.value(s.coverAsset)
+          : UserStore.resolveLocalPath(s.coverAsset),
+      builder: (context, snap) {
+        final p = snap.data;
+        if (p == null) return const ColoredBox(color: Color(0x11000000));
+        return p.startsWith('assets/')
+            ? Image.asset(p, fit: BoxFit.cover)
+            : Image.file(File(p), fit: BoxFit.cover);
+      },
+    );
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(12),
-      child: Stack(children: [Positioned.fill(child: image), badge]),
+      child: Stack(children: [Positioned.fill(child: imageWidget), badge]),
     );
   }
 }
@@ -144,9 +153,18 @@ class _DetailPageState extends State<_DetailPage> {
 
   @override
   Widget build(BuildContext context) {
-    final image = s.mediaAsset.startsWith('assets/')
-        ? Image.asset(s.mediaAsset, fit: BoxFit.contain)
-        : Image.file(File(s.mediaAsset), fit: BoxFit.contain);
+    final image = FutureBuilder<String>(
+      future: s.mediaAsset.startsWith('assets/')
+          ? Future.value(s.mediaAsset)
+          : UserStore.resolveLocalPath(s.mediaAsset),
+      builder: (context, snap) {
+        final p = snap.data;
+        if (p == null) return const SizedBox();
+        return p.startsWith('assets/')
+            ? Image.asset(p, fit: BoxFit.contain)
+            : Image.file(File(p), fit: BoxFit.contain);
+      },
+    );
     return Scaffold(
       appBar: AppBar(actions: [
         IconButton(

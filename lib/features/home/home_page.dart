@@ -5,6 +5,9 @@ import 'package:tevorn/data/local_repository.dart';
 import 'package:tevorn/data/models.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tevorn/data/user_store.dart';
+import 'package:tevorn/features/challenge/challenge_detail_page.dart';
+import 'package:tevorn/widgets/gradient_scaffold.dart';
+import 'package:tevorn/widgets/glass_card.dart';
 import 'dart:io';
 
 class HomePage extends StatefulWidget {
@@ -60,6 +63,13 @@ class _HomePageState extends State<HomePage> {
     if (mounted) setState(() => _subs = list);
   }
 
+  String _assetBackgroundForCurrent() {
+    for (final s in _subs) {
+      if (s.coverAsset.startsWith('assets/')) return s.coverAsset;
+    }
+    return 'assets/images/welcome_hero.jpeg';
+  }
+
   @override
   Widget build(BuildContext context) {
     if (_loading) {
@@ -84,19 +94,23 @@ class _HomePageState extends State<HomePage> {
       );
     }
 
-    return Scaffold(
+    return GradientScaffold(
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
         title: const Text('今日挑战'),
-        actions: [
-          IconButton(onPressed: _pickAndSubmit, icon: const Icon(Icons.add_photo_alternate_outlined))
-        ],
+        actions: [IconButton(onPressed: _pickAndSubmit, icon: const Icon(Icons.add_photo_alternate_outlined))],
       ),
       body: RefreshIndicator(
         onRefresh: _load,
         child: ListView(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.fromLTRB(16, 100, 16, 16),
           children: [
-            _ChallengeCard(challenge: ch),
+            _HeroChallengeCard(
+              challenge: ch,
+              backgroundAsset: _assetBackgroundForCurrent(),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => ChallengeDetailPage(challenge: ch))),
+            ),
             const SizedBox(height: 12),
             _Countdown(endAt: ch.endAt),
             const SizedBox(height: 16),
@@ -138,31 +152,56 @@ class _HomePageState extends State<HomePage> {
 
 class _ChallengeCard extends StatelessWidget {
   final Challenge challenge;
-  const _ChallengeCard({required this.challenge});
+  final String? backgroundAsset;
+  const _ChallengeCard({required this.challenge, this.backgroundAsset});
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    return Container(
-      decoration: BoxDecoration(
-        color: scheme.surface,
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: scheme.outlineVariant),
-      ),
-      padding: const EdgeInsets.all(16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(16),
+      child: Stack(
         children: [
-          Text(challenge.title, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w800)),
-          const SizedBox(height: 8),
-          Text(challenge.rules, style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant)),
-          const SizedBox(height: 8),
-          Row(
-            children: [
-              const Icon(Icons.schedule, size: 16),
-              const SizedBox(width: 6),
-              Text('${_fmtTime(challenge.startAt)} - ${_fmtTime(challenge.endAt)}'),
-            ],
+          if (backgroundAsset != null)
+            Positioned.fill(
+              child: Image.asset(
+                backgroundAsset!,
+                fit: BoxFit.cover,
+                color: Colors.black.withOpacity(0.25),
+                colorBlendMode: BlendMode.darken,
+              ),
+            ),
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(color: Colors.white.withOpacity(0.25)),
+            ),
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  challenge.title,
+                  style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w900, color: Colors.white),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  challenge.rules,
+                  style: const TextStyle(color: Colors.white70),
+                ),
+                const SizedBox(height: 8),
+                Row(
+                  children: const [
+                    Icon(Icons.schedule, size: 16, color: Colors.white70),
+                    SizedBox(width: 6),
+                  ],
+                ),
+                Text(
+                  '${_fmtTime(challenge.startAt)} - ${_fmtTime(challenge.endAt)}',
+                  style: const TextStyle(color: Colors.white70),
+                ),
+              ],
+            ),
           ),
         ],
       ),
@@ -253,6 +292,67 @@ class _NearbyCard extends StatelessWidget {
   }
 }
 
+class _HeroChallengeCard extends StatelessWidget {
+  final Challenge challenge;
+  final String backgroundAsset;
+  final VoidCallback onTap;
+  const _HeroChallengeCard({required this.challenge, required this.backgroundAsset, required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        height: 180,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.25), blurRadius: 24, offset: const Offset(0, 12))],
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(20),
+          child: Stack(
+            children: [
+              Positioned.fill(
+                child: Image.asset(backgroundAsset, fit: BoxFit.cover),
+              ),
+              Positioned.fill(
+                child: Container(
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [Color(0x66000000), Color(0x99000000)],
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 16,
+                right: 16,
+                bottom: 16,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(challenge.title, style: const TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.w900)),
+                    const SizedBox(height: 4),
+                    Row(children: const [Icon(Icons.schedule, size: 16, color: Colors.white70), SizedBox(width: 6)]),
+                    Text('${_fmtTime(challenge.startAt)} - ${_fmtTime(challenge.endAt)}', style: const TextStyle(color: Colors.white70)),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  String _fmtTime(DateTime dt) {
+    return '${dt.hour.toString().padLeft(2, '0')}:${dt.minute.toString().padLeft(2, '0')}';
+  }
+}
+
 class _SubmissionChip extends StatelessWidget {
   final Submission s;
   const _SubmissionChip({required this.s});
@@ -261,9 +361,20 @@ class _SubmissionChip extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(10),
-      child: s.coverAsset.startsWith('assets/')
-          ? Image.asset(s.coverAsset, width: 110, height: 180, fit: BoxFit.cover)
-          : Image.file(File(s.coverAsset), width: 110, height: 180, fit: BoxFit.cover),
+      child: FutureBuilder<String>(
+        future: s.coverAsset.startsWith('assets/')
+            ? Future.value(s.coverAsset)
+            : UserStore.resolveLocalPath(s.coverAsset),
+        builder: (context, snap) {
+          final p = snap.data;
+          if (p == null) {
+            return const SizedBox(width: 110, height: 180);
+          }
+          return p.startsWith('assets/')
+              ? Image.asset(p, width: 110, height: 180, fit: BoxFit.cover)
+              : Image.file(File(p), width: 110, height: 180, fit: BoxFit.cover);
+        },
+      ),
     );
   }
 }

