@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart' show Ticker;
 import 'package:tevorn/data/local_repository.dart';
 import 'package:tevorn/data/models.dart';
-import 'package:image_picker/image_picker.dart';
+ 
 import 'package:tevorn/data/user_store.dart';
 import 'package:tevorn/features/challenge/challenge_detail_page.dart';
 import 'package:tevorn/widgets/gradient_scaffold.dart';
 import 'package:tevorn/widgets/glass_card.dart';
-import 'dart:io';
+import 'package:tevorn/features/publish/publish_page.dart';
+ 
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -50,15 +51,7 @@ class _HomePageState extends State<HomePage> {
   Future<void> _pickAndSubmit() async {
     final ch = _challenge;
     if (ch == null) return;
-    final picker = ImagePicker();
-    final file = await picker.pickImage(source: ImageSource.gallery, requestFullMetadata: true);
-    if (file == null) return;
-    final store = const UserStore();
-    await store.addImageSubmissionFromPath(challengeId: ch.id, sourcePath: file.path);
-    await _load();
-    if (mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('已提交到本地作品库')));
-    }
+    Navigator.of(context).push(MaterialPageRoute(builder: (_) => PublishPage(challengeId: ch.id, onDone: _load)));
   }
 
   Future<void> _selectChallenge(Challenge c) async {
@@ -115,7 +108,6 @@ class _HomePageState extends State<HomePage> {
         elevation: 0,
         foregroundColor: Colors.white,
         title: const Text('今日挑战'),
-        actions: [IconButton(onPressed: _pickAndSubmit, color: Colors.white, icon: const Icon(Icons.add_photo_alternate_outlined))],
       ),
       body: RefreshIndicator(
         onRefresh: _load,
@@ -188,68 +180,7 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-class _ChallengeCard extends StatelessWidget {
-  final Challenge challenge;
-  final String? backgroundAsset;
-  const _ChallengeCard({required this.challenge, this.backgroundAsset});
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(16),
-      child: Stack(
-        children: [
-          if (backgroundAsset != null)
-            Positioned.fill(
-              child: Image.asset(
-                backgroundAsset!,
-                fit: BoxFit.cover,
-                color: Colors.black.withOpacity(0.25),
-                colorBlendMode: BlendMode.darken,
-              ),
-            ),
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: Colors.white.withOpacity(0.25)),
-            ),
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  challenge.title,
-                  style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w900, color: Colors.white),
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  challenge.rules,
-                  style: const TextStyle(color: Colors.white70),
-                ),
-                const SizedBox(height: 8),
-                Row(
-                  children: const [
-                    Icon(Icons.schedule, size: 16, color: Colors.white70),
-                    SizedBox(width: 6),
-                  ],
-                ),
-                Text(
-                  '${_fmtTime(challenge.startAt)} - ${_fmtTime(challenge.endAt)}',
-                  style: const TextStyle(color: Colors.white70),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  String _fmtTime(DateTime dt) {
-    return '${dt.hour.toString().padLeft(2, '0')}:${dt.minute.toString().padLeft(2, '0')}';
-  }
-}
+ 
 
 class _Countdown extends StatefulWidget {
   final DateTime endAt;
@@ -286,9 +217,12 @@ class _CountdownState extends State<_Countdown> {
     final s = _left.inSeconds % 60;
     return Row(
       children: [
-        const Icon(Icons.timer_outlined, size: 18),
+        const Icon(Icons.timer_outlined, size: 18, color: Colors.white70),
         const SizedBox(width: 6),
-        Text('截稿倒计时  ${h.toString().padLeft(2, '0')}:${m.toString().padLeft(2, '0')}:${s.toString().padLeft(2, '0')}'),
+        Text(
+          '截稿倒计时  ${h.toString().padLeft(2, '0')}:${m.toString().padLeft(2, '0')}:${s.toString().padLeft(2, '0')}',
+          style: const TextStyle(color: Colors.white),
+        ),
       ],
     );
   }
@@ -344,7 +278,7 @@ class _HeroChallengeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
+    
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -424,3 +358,4 @@ class _SubmissionChip extends StatelessWidget {
 }
 
 enum _Filter { all, favorites, mine }
+

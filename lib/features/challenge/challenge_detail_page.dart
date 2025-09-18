@@ -6,6 +6,7 @@ import 'package:tevorn/data/local_repository.dart';
 import 'package:tevorn/data/models.dart';
 import 'package:tevorn/widgets/gradient_scaffold.dart';
 import 'package:tevorn/widgets/glass_card.dart';
+import 'package:tevorn/features/publish/publish_page.dart';
 
 class ChallengeDetailPage extends StatefulWidget {
   final Challenge challenge;
@@ -43,11 +44,11 @@ class _ChallengeDetailPageState extends State<ChallengeDetailPage> {
   @override
   Widget build(BuildContext context) {
     final c = widget.challenge;
-    final scheme = Theme.of(context).colorScheme;
     return GradientScaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
+        foregroundColor: Colors.white,
         title: const Text('挑战详情'),
         actions: [
           IconButton(onPressed: _shareChallenge, icon: const Icon(Icons.ios_share)),
@@ -83,9 +84,18 @@ class _ChallengeDetailPageState extends State<ChallengeDetailPage> {
                       SizedBox(
                         width: double.infinity,
                         child: FilledButton.icon(
-                          onPressed: () => Navigator.of(context).pop(),
+                          onPressed: () async {
+                            await Navigator.of(context).push(MaterialPageRoute(
+                              builder: (_) => PublishPage(
+                                challengeId: c.id,
+                                onDone: () async {
+                                  await _load();
+                                },
+                              ),
+                            ));
+                          },
                           icon: const Icon(Icons.add_photo_alternate_outlined),
-                          label: const Text('立即参赛（从首页投稿）'),
+                          label: const Text('立即参赛'),
                         ),
                       ),
                     ],
@@ -110,7 +120,36 @@ class _ChallengeDetailPageState extends State<ChallengeDetailPage> {
                     final img = s.coverAsset.startsWith('assets/')
                         ? Image.asset(s.coverAsset, fit: BoxFit.cover)
                         : Image.file(File(s.coverAsset), fit: BoxFit.cover);
-                    return ClipRRect(borderRadius: BorderRadius.circular(12), child: img);
+                    return ClipRRect(
+                      borderRadius: BorderRadius.circular(12),
+                      child: Stack(
+                        children: [
+                          Positioned.fill(child: img),
+                          if ((s.description ?? '').isNotEmpty)
+                            Positioned(
+                              left: 0,
+                              right: 0,
+                              bottom: 0,
+                              child: Container(
+                                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    begin: Alignment.topCenter,
+                                    end: Alignment.bottomCenter,
+                                    colors: [Colors.transparent, Colors.black.withOpacity(0.75)],
+                                  ),
+                                ),
+                                child: Text(
+                                  s.description!,
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: const TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w600),
+                                ),
+                              ),
+                            ),
+                        ],
+                      ),
+                    );
                   },
                 ),
               ],

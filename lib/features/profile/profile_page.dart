@@ -4,6 +4,10 @@ import 'dart:io';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:tevorn/features/support/support_page.dart';
+import 'package:tevorn/features/about/about_simple_page.dart';
+import 'package:tevorn/widgets/gradient_scaffold.dart';
+import 'package:tevorn/widgets/glass_card.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -80,60 +84,83 @@ class _ProfilePageState extends State<ProfilePage> {
     if (_loading) {
       return const Scaffold(body: Center(child: CircularProgressIndicator()));
     }
-    return Scaffold(
-      appBar: AppBar(title: const Text('我的')),
+    return GradientScaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        foregroundColor: Colors.white,
+        title: const Text('我的'),
+      ),
       body: ListView(
+        padding: const EdgeInsets.fromLTRB(16, 100, 16, 16),
         children: [
-          const SizedBox(height: 12),
-          Center(child: GestureDetector(onTap: _changeAvatar, child: _buildAvatar())),
-          const SizedBox(height: 10),
-          Center(child: Text(_displayName, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700))),
-          Center(
-            child: TextButton(onPressed: _editName, child: const Text('修改昵称')),
+          GlassCard(
+            child: Column(
+              children: [
+                Center(child: GestureDetector(onTap: _changeAvatar, child: _buildAvatar())),
+                const SizedBox(height: 10),
+                Center(child: Text(_displayName, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w900, color: Colors.white))),
+                Center(child: TextButton(onPressed: _editName, child: const Text('修改昵称'))),
+              ],
+            ),
           ),
-          const Divider(),
-          ListTile(
-            leading: const Icon(Icons.support_agent_outlined),
-            title: const Text('技术支持'),
-            subtitle: const Text('support@tevorn.app'),
-            onTap: () async {
-              final uri = Uri.parse('mailto:support@tevorn.app?subject=Tevorn%20技术支持');
-              if (!await launchUrl(uri)) {
-                await Clipboard.setData(const ClipboardData(text: 'support@tevorn.app'));
-                if (context.mounted) {
-                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('已复制邮箱：support@tevorn.app')));
-                }
-              }
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.privacy_tip_outlined),
-            title: const Text('用户隐私协议'),
-            onTap: () => Navigator.of(context).pushNamed('/privacy'),
-          ),
-          const Divider(),
-          ListTile(
-            leading: const Icon(Icons.cleaning_services_outlined),
-            title: const Text('清理本地数据'),
-            onTap: () async {
-              final ok = await showDialog<bool>(
-                context: context,
-                builder: (_) => AlertDialog(
-                  title: const Text('清理本地数据'),
-                  content: const Text('将删除本地作品与缓存，不可恢复。确定继续？'),
-                  actions: [
-                    TextButton(onPressed: () => Navigator.pop(context, false), child: const Text('取消')),
-                    FilledButton(onPressed: () => Navigator.pop(context, true), child: const Text('清理')),
-                  ],
+          const SizedBox(height: 16),
+          GlassCard(
+            child: Column(
+              children: [
+                ListTile(
+                  contentPadding: EdgeInsets.zero,
+                  leading: const Icon(Icons.support_agent_outlined, color: Colors.white70),
+                  title: const Text('技术支持', style: TextStyle(color: Colors.white)),
+                  subtitle: const Text('support@tevorn.app', style: TextStyle(color: Colors.white70)),
+                  trailing: const Icon(Icons.chevron_right, color: Colors.white54),
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const SupportPage())),
                 ),
-              );
-              if (ok == true) {
-                await const UserStore().clearAllUserData();
-                if (context.mounted) {
-                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('已清理本地数据')));
+                const Divider(height: 1),
+                ListTile(
+                  contentPadding: EdgeInsets.zero,
+                  leading: const Icon(Icons.privacy_tip_outlined, color: Colors.white70),
+                  title: const Text('用户隐私协议', style: TextStyle(color: Colors.white)),
+                  trailing: const Icon(Icons.chevron_right, color: Colors.white54),
+                  onTap: () => Navigator.of(context).pushNamed('/privacy'),
+                ),
+                const Divider(height: 1),
+                ListTile(
+                  contentPadding: EdgeInsets.zero,
+                  leading: const Icon(Icons.info_outline, color: Colors.white70),
+                  title: const Text('关于我们', style: TextStyle(color: Colors.white)),
+                  trailing: const Icon(Icons.chevron_right, color: Colors.white54),
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const AboutSimplePage())),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 16),
+          GlassCard(
+            child: ListTile(
+              contentPadding: EdgeInsets.zero,
+              leading: const Icon(Icons.cleaning_services_outlined, color: Colors.white70),
+              title: const Text('清理本地数据', style: TextStyle(color: Colors.white)),
+              onTap: () async {
+                final ok = await showDialog<bool>(
+                  context: context,
+                  builder: (_) => AlertDialog(
+                    title: const Text('清理本地数据'),
+                    content: const Text('将删除本地作品与缓存，不可恢复。确定继续？'),
+                    actions: [
+                      TextButton(onPressed: () => Navigator.pop(context, false), child: const Text('取消')),
+                      FilledButton(onPressed: () => Navigator.pop(context, true), child: const Text('清理')),
+                    ],
+                  ),
+                );
+                if (ok == true) {
+                  await const UserStore().clearAllUserData();
+                  if (context.mounted) {
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('已清理本地数据')));
+                  }
                 }
-              }
-            },
+              },
+            ),
           ),
         ],
       ),

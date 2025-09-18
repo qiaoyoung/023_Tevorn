@@ -38,6 +38,8 @@ class Submission {
   final SubmissionType type;
   final String coverAsset;
   final String mediaAsset;
+  final String? title;
+  final String? description;
   final int width;
   final int height;
   final double duration;
@@ -50,6 +52,8 @@ class Submission {
     required this.type,
     required this.coverAsset,
     required this.mediaAsset,
+    this.title,
+    this.description,
     required this.width,
     required this.height,
     required this.duration,
@@ -63,6 +67,8 @@ class Submission {
     SubmissionType? type,
     String? coverAsset,
     String? mediaAsset,
+    String? title,
+    String? description,
     int? width,
     int? height,
     double? duration,
@@ -75,6 +81,8 @@ class Submission {
       type: type ?? this.type,
       coverAsset: coverAsset ?? this.coverAsset,
       mediaAsset: mediaAsset ?? this.mediaAsset,
+      title: title ?? this.title,
+      description: description ?? this.description,
       width: width ?? this.width,
       height: height ?? this.height,
       duration: duration ?? this.duration,
@@ -89,6 +97,8 @@ class Submission {
         type: (json['type'] as String) == 'video' ? SubmissionType.video : SubmissionType.image,
         coverAsset: json['coverAsset'] as String,
         mediaAsset: json['mediaAsset'] as String,
+        title: json['title'] as String?,
+        description: json['description'] as String?,
         width: json['width'] as int,
         height: json['height'] as int,
         duration: (json['duration'] as num).toDouble(),
@@ -102,6 +112,8 @@ class Submission {
         'type': type == SubmissionType.video ? 'video' : 'image',
         'coverAsset': coverAsset,
         'mediaAsset': mediaAsset,
+        'title': title,
+        'description': description,
         'width': width,
         'height': height,
         'duration': duration,

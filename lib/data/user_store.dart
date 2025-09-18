@@ -55,6 +55,8 @@ class UserStore {
   Future<Submission> addImageSubmissionFromPath({
     required String challengeId,
     required String sourcePath,
+    String? title,
+    String? description,
   }) async {
     final mediaDir = await _mediaDir();
     final uuid = const Uuid().v4().replaceAll('-', '').substring(0, 12);
@@ -76,6 +78,8 @@ class UserStore {
       type: SubmissionType.image,
       coverAsset: rel,
       mediaAsset: rel,
+      title: title,
+      description: description,
       width: 1080,
       height: 1920,
       duration: 0,
@@ -107,6 +111,15 @@ class UserStore {
     final idx = current.indexWhere((e) => e.id == id);
     if (idx >= 0) {
       current[idx] = current[idx].copyWith(liked: value);
+      await _saveAll(current);
+    }
+  }
+
+  Future<void> updateDescription(String id, String? description) async {
+    final current = await loadUserSubmissions();
+    final idx = current.indexWhere((e) => e.id == id);
+    if (idx >= 0) {
+      current[idx] = current[idx].copyWith(description: (description == null || description.isEmpty) ? null : description);
       await _saveAll(current);
     }
   }
