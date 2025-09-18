@@ -5,6 +5,7 @@ import 'package:tevorn/features/library/library_page.dart';
 import 'package:tevorn/features/profile/profile_page.dart';
 import 'package:tevorn/features/welcome/welcome_page.dart';
 import 'package:tevorn/features/legal/privacy_policy_page.dart';
+import 'package:tevorn/widgets/floating_dock.dart';
 
 class TevornApp extends StatelessWidget {
   const TevornApp({super.key});
@@ -43,28 +44,49 @@ class _RootTabScaffoldState extends State<_RootTabScaffold> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IndexedStack(
-        index: _currentIndex,
-        children: _tabs,
-      ),
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: _currentIndex,
-        onDestinationSelected: (index) => setState(() => _currentIndex = index),
-        destinations: const [
-          NavigationDestination(
-            icon: Icon(Icons.today_outlined),
-            selectedIcon: Icon(Icons.today),
-            label: '今日',
+      body: Stack(
+        children: [
+          AnimatedSwitcher(
+            duration: const Duration(milliseconds: 300),
+            switchInCurve: Curves.easeOutCubic,
+            switchOutCurve: Curves.easeInCubic,
+            transitionBuilder: (child, animation) {
+              final fade = CurvedAnimation(parent: animation, curve: Curves.easeOutQuad);
+              final scale = Tween<double>(begin: 0.985, end: 1).animate(animation);
+              return FadeTransition(
+                opacity: fade,
+                child: ScaleTransition(scale: scale, child: child),
+              );
+            },
+            child: KeyedSubtree(
+              key: ValueKey(_currentIndex),
+              child: _tabs[_currentIndex],
+            ),
           ),
-          NavigationDestination(
-            icon: Icon(Icons.video_library_outlined),
-            selectedIcon: Icon(Icons.video_library),
-            label: '作品',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.person_outline),
-            selectedIcon: Icon(Icons.person),
-            label: '我的',
+          Positioned(
+            right: 16,
+            top: 100,
+            child: FloatingSideDock(
+              selectedIndex: _currentIndex,
+              onSelected: (i) => setState(() => _currentIndex = i),
+              destinations: const [
+                FloatingDockDestination(
+                  icon: Icons.today_outlined,
+                  selectedIcon: Icons.today,
+                  label: '今日',
+                ),
+                FloatingDockDestination(
+                  icon: Icons.video_library_outlined,
+                  selectedIcon: Icons.video_library,
+                  label: '作品',
+                ),
+                FloatingDockDestination(
+                  icon: Icons.person_outline,
+                  selectedIcon: Icons.person,
+                  label: '我的',
+                ),
+              ],
+            ),
           ),
         ],
       ),
