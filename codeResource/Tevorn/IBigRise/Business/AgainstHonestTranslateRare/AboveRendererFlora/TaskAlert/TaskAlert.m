@@ -3286,7 +3286,7 @@ CGPathRef _Nullable bluishToday(CGRect bounds, Abstract cornerRadii) {
 @interface VentureLabel : UILabel
 
 //: @property (nonatomic, strong) LEEItem *item;
-@property (nonatomic, strong) WeakenLimitYard *now;
+@property (nonatomic, strong) WeakenLimitYard *composition;
 
 //: @property (nonatomic, copy) void (^textChangedBlock)(void);
 @property (nonatomic, copy) void (^temp)(void);
@@ -5647,7 +5647,7 @@ CGPathRef _Nullable bluishToday(CGRect bounds, Abstract cornerRadii) {
                 }
 
                 //: label.item = item;
-                label.now = item;
+                label.composition = item;
 
                 //: label.textChangedBlock = ^{
                 label.temp = ^{
@@ -5710,7 +5710,7 @@ CGPathRef _Nullable bluishToday(CGRect bounds, Abstract cornerRadii) {
                 }
 
                 //: label.item = item;
-                label.now = item;
+                label.composition = item;
 
                 //: label.textChangedBlock = ^{
                 label.temp = ^{
@@ -6464,7 +6464,7 @@ CGPathRef _Nullable bluishToday(CGRect bounds, Abstract cornerRadii) {
                 }
 
                 //: label.item = item;
-                label.now = item;
+                label.composition = item;
 
                 //: label.textChangedBlock = ^{
                 label.temp = ^{
@@ -6520,7 +6520,7 @@ CGPathRef _Nullable bluishToday(CGRect bounds, Abstract cornerRadii) {
                 }
 
                 //: label.item = item;
-                label.now = item;
+                label.composition = item;
 
                 //: label.textChangedBlock = ^{
                 label.temp = ^{
