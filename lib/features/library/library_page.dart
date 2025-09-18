@@ -4,6 +4,7 @@ import 'package:tevorn/data/local_repository.dart';
 import 'package:tevorn/data/models.dart';
 import 'package:tevorn/data/user_store.dart';
 import 'package:tevorn/widgets/gradient_scaffold.dart';
+import 'package:tevorn/features/library/submission_detail_page.dart';
  
 
 class LibraryPage extends StatefulWidget {
@@ -35,6 +36,57 @@ class _LibraryPageState extends State<LibraryPage> {
     });
   }
 
+  Widget _buildWaterfall(BoxConstraints constraints) {
+    // Two columns waterfall (masonry-like): alternate tile heights for visual rhythm
+    final colA = <Submission>[];
+    final colB = <Submission>[];
+    for (var i = 0; i < _all.length; i++) {
+      (i % 2 == 0 ? colA : colB).add(_all[i]);
+    }
+
+    Widget buildColumn(List<Submission> items, {required bool tallOdd}) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          for (var i = 0; i < items.length; i++) ...[
+            _WaterfallTile(
+              s: items[i],
+              tall: tallOdd ? (i % 2 == 1) : (i % 2 == 0),
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => SubmissionDetailPage(s: items[i])),
+              ),
+              onDelete: () async {
+                if (items[i].mediaAsset.startsWith('assets/')) return;
+                final ok = await showDialog<bool>(
+                  context: context,
+                  builder: (_) => AlertDialog(
+                    title: const Text('Delete Submission'),
+                    content: const Text('Delete this local submission? This cannot be undone.'),
+                    actions: [
+                      TextButton(onPressed: () => Navigator.pop(context, false), child: const Text('Cancel')),
+                      FilledButton(onPressed: () => Navigator.pop(context, true), child: const Text('Delete')),
+                    ],
+                  ),
+                );
+                if (ok == true) await _deleteIfLocal(items[i]);
+              },
+            ),
+            const SizedBox(height: 12),
+          ],
+        ],
+      );
+    }
+
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Expanded(child: buildColumn(colA, tallOdd: false)),
+        const SizedBox(width: 12),
+        Expanded(child: buildColumn(colB, tallOdd: true)),
+      ],
+    );
+  }
+
   Future<void> _deleteIfLocal(Submission s) async {
     if (!s.mediaAsset.startsWith('assets/')) {
       await const UserStore().deleteSubmission(s.id);
@@ -52,43 +104,15 @@ class _LibraryPageState extends State<LibraryPage> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         foregroundColor: Colors.white,
-        title: const Text('作品库'),
+        title: const Text('Library'),
       ),
       body: RefreshIndicator(
         onRefresh: _load,
-        child: GridView.builder(
-          padding: const EdgeInsets.fromLTRB(16, 100, 16, 16),
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: 12,
-            mainAxisSpacing: 12,
-            childAspectRatio: 9 / 16,
-          ),
-          itemCount: _all.length,
-          itemBuilder: (context, i) {
-            final s = _all[i];
-            return GestureDetector(
-              onTap: () => Navigator.of(context).push(
-                MaterialPageRoute(builder: (_) => _DetailPage(s: s)),
-              ),
-              onLongPress: () async {
-                if (s.mediaAsset.startsWith('assets/')) return;
-                final ok = await showDialog<bool>(
-                  context: context,
-                  builder: (_) => AlertDialog(
-                    title: const Text('删除作品'),
-                    content: const Text('确定删除该本地作品吗？'),
-                    actions: [
-                      TextButton(onPressed: () => Navigator.pop(context, false), child: const Text('取消')),
-                      FilledButton(onPressed: () => Navigator.pop(context, true), child: const Text('删除')),
-                    ],
-                  ),
-                );
-                if (ok == true) {
-                  await _deleteIfLocal(s);
-                }
-              },
-              child: _SubmissionCard(s: s),
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            return SingleChildScrollView(
+              padding: const EdgeInsets.fromLTRB(16, 120, 16, 16),
+              child: _buildWaterfall(constraints),
             );
           },
         ),
@@ -97,36 +121,51 @@ class _LibraryPageState extends State<LibraryPage> {
   }
 }
 
-class _SubmissionCard extends StatelessWidget {
+ 
+
+class _WaterfallTile extends StatelessWidget {
   final Submission s;
-  const _SubmissionCard({required this.s});
+  final bool tall;
+  final VoidCallback onTap;
+  final VoidCallback onDelete;
+  const _WaterfallTile({required this.s, required this.tall, required this.onTap, required this.onDelete});
 
   @override
   Widget build(BuildContext context) {
+    final height = tall ? 260.0 : 200.0;
     final badge = Positioned(
       right: 6,
       top: 6,
-      child: Icon(
-        s.liked ? Icons.favorite : Icons.favorite_border,
-        size: 20,
-        color: s.liked ? Colors.pinkAccent : Colors.white,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
+        decoration: BoxDecoration(
+          color: Colors.black.withOpacity(0.45),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(s.liked ? Icons.favorite : Icons.favorite_border, size: 14, color: s.liked ? Colors.pinkAccent : Colors.white),
+            const SizedBox(width: 4),
+            Text(
+              s.id.startsWith('u_') ? '0' : (s.likeCount).toString(),
+              style: const TextStyle(color: Colors.white, fontSize: 11, fontWeight: FontWeight.w700),
+            ),
+          ],
+        ),
       ),
     );
 
     final imageWidget = FutureBuilder<String>(
-      future: s.coverAsset.startsWith('assets/')
-          ? Future.value(s.coverAsset)
-          : UserStore.resolveLocalPath(s.coverAsset),
+      future: s.coverAsset.startsWith('assets/') ? Future.value(s.coverAsset) : UserStore.resolveLocalPath(s.coverAsset),
       builder: (context, snap) {
         final p = snap.data;
         if (p == null) return const ColoredBox(color: Color(0x11000000));
-        return p.startsWith('assets/')
-            ? Image.asset(p, fit: BoxFit.cover)
-            : Image.file(File(p), fit: BoxFit.cover);
+        return p.startsWith('assets/') ? Image.asset(p, fit: BoxFit.cover) : Image.file(File(p), fit: BoxFit.cover);
       },
     );
 
-    final caption = (s.description ?? '').isEmpty
+    final caption = (s.title ?? s.description ?? '').isEmpty
         ? const SizedBox()
         : Positioned(
             left: 0,
@@ -141,25 +180,34 @@ class _SubmissionCard extends StatelessWidget {
                   colors: [Colors.transparent, Colors.black.withOpacity(0.78)],
                 ),
               ),
-              child: Text(
-                s.description!,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: const TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w600),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  if ((s.title ?? '').isNotEmpty)
+                    Text(s.title!, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w800, fontSize: 12)),
+                  if ((s.description ?? '').isNotEmpty)
+                    Text(s.description!, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(color: Colors.white70, fontSize: 11)),
+                ],
               ),
             ),
           );
 
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(color: Colors.black.withOpacity(0.18), blurRadius: 16, offset: const Offset(0, 8)),
-        ],
-      ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(16),
-        child: Stack(children: [Positioned.fill(child: imageWidget), caption, badge]),
+    return GestureDetector(
+      onTap: onTap,
+      onLongPress: onDelete,
+      child: SizedBox(
+        height: height,
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(14),
+            boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.18), blurRadius: 14, offset: const Offset(0, 8))],
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(14),
+            child: Stack(children: [Positioned.fill(child: imageWidget), caption, badge]),
+          ),
+        ),
       ),
     );
   }
@@ -198,20 +246,20 @@ class _DetailPageState extends State<_DetailPage> {
   }
 
   Future<void> _editDescription() async {
-    if (s.mediaAsset.startsWith('assets/')) return; // 只允许编辑本地作品
+    if (s.mediaAsset.startsWith('assets/')) return; // only local submissions
     final controller = TextEditingController(text: s.description ?? '');
     final result = await showDialog<String>(
       context: context,
       builder: (_) => AlertDialog(
-        title: const Text('编辑作品描述'),
+        title: const Text('Edit Description'),
         content: TextField(
           controller: controller,
           maxLength: 80,
-          decoration: const InputDecoration(hintText: '为作品写一句描述'),
+          decoration: const InputDecoration(hintText: 'Write a short description'),
         ),
         actions: [
-          TextButton(onPressed: () => Navigator.pop(context), child: const Text('取消')),
-          FilledButton(onPressed: () => Navigator.pop(context, controller.text.trim()), child: const Text('保存')),
+          TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancel')),
+          FilledButton(onPressed: () => Navigator.pop(context, controller.text.trim()), child: const Text('Save')),
         ],
       ),
     );
@@ -253,18 +301,7 @@ class _DetailPageState extends State<_DetailPage> {
           if (!s.mediaAsset.startsWith('assets/')) IconButton(onPressed: _editDescription, icon: const Icon(Icons.edit_note_outlined)),
         ],
       ),
-      body: ListView(
-        padding: const EdgeInsets.fromLTRB(16, 100, 16, 16),
-        children: [
-          ClipRRect(borderRadius: BorderRadius.circular(16), child: image),
-          const SizedBox(height: 12),
-          if ((s.description ?? '').isNotEmpty)
-            Text(
-              s.description!,
-              style: const TextStyle(color: Colors.white, fontSize: 14),
-            ),
-        ],
-      ),
+      body: Center(child: image),
     );
   }
 }

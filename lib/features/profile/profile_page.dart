@@ -41,11 +41,11 @@ class _ProfilePageState extends State<ProfilePage> {
     final result = await showDialog<String>(
       context: context,
       builder: (_) => AlertDialog(
-        title: const Text('修改昵称'),
-        content: TextField(controller: controller, decoration: const InputDecoration(hintText: '输入昵称')),
+        title: const Text('Edit Nickname'),
+        content: TextField(controller: controller, decoration: const InputDecoration(hintText: 'Enter nickname')),
         actions: [
-          TextButton(onPressed: () => Navigator.pop(context), child: const Text('取消')),
-          FilledButton(onPressed: () => Navigator.pop(context, controller.text.trim()), child: const Text('保存')),
+          TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancel')),
+          FilledButton(onPressed: () => Navigator.pop(context, controller.text.trim()), child: const Text('Save')),
         ],
       ),
     );
@@ -89,10 +89,10 @@ class _ProfilePageState extends State<ProfilePage> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         foregroundColor: Colors.white,
-        title: const Text('我的'),
+        title: const Text('Profile'),
       ),
       body: ListView(
-        padding: const EdgeInsets.fromLTRB(16, 100, 16, 16),
+        padding: const EdgeInsets.fromLTRB(16, 120, 16, 16),
         children: [
           GlassCard(
             child: Column(
@@ -100,7 +100,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 Center(child: GestureDetector(onTap: _changeAvatar, child: _buildAvatar())),
                 const SizedBox(height: 10),
                 Center(child: Text(_displayName, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w900, color: Colors.white))),
-                Center(child: TextButton(onPressed: _editName, child: const Text('修改昵称'))),
+                Center(child: TextButton(onPressed: _editName, child: const Text('Edit Nickname'))),
               ],
             ),
           ),
@@ -111,7 +111,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 ListTile(
                   contentPadding: EdgeInsets.zero,
                   leading: const Icon(Icons.support_agent_outlined, color: Colors.white70),
-                  title: const Text('技术支持', style: TextStyle(color: Colors.white)),
+                  title: const Text('Support', style: TextStyle(color: Colors.white)),
                   subtitle: const Text('support@tevorn.app', style: TextStyle(color: Colors.white70)),
                   trailing: const Icon(Icons.chevron_right, color: Colors.white54),
                   onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const SupportPage())),
@@ -120,7 +120,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 ListTile(
                   contentPadding: EdgeInsets.zero,
                   leading: const Icon(Icons.privacy_tip_outlined, color: Colors.white70),
-                  title: const Text('用户隐私协议', style: TextStyle(color: Colors.white)),
+                  title: const Text('Privacy Policy', style: TextStyle(color: Colors.white)),
                   trailing: const Icon(Icons.chevron_right, color: Colors.white54),
                   onTap: () => Navigator.of(context).pushNamed('/privacy'),
                 ),
@@ -128,7 +128,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 ListTile(
                   contentPadding: EdgeInsets.zero,
                   leading: const Icon(Icons.info_outline, color: Colors.white70),
-                  title: const Text('关于我们', style: TextStyle(color: Colors.white)),
+                  title: const Text('About', style: TextStyle(color: Colors.white)),
                   trailing: const Icon(Icons.chevron_right, color: Colors.white54),
                   onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const AboutSimplePage())),
                 ),
@@ -140,23 +140,23 @@ class _ProfilePageState extends State<ProfilePage> {
             child: ListTile(
               contentPadding: EdgeInsets.zero,
               leading: const Icon(Icons.cleaning_services_outlined, color: Colors.white70),
-              title: const Text('清理本地数据', style: TextStyle(color: Colors.white)),
+              title: const Text('Clear Local Data', style: TextStyle(color: Colors.white)),
               onTap: () async {
                 final ok = await showDialog<bool>(
                   context: context,
                   builder: (_) => AlertDialog(
-                    title: const Text('清理本地数据'),
-                    content: const Text('将删除本地作品与缓存，不可恢复。确定继续？'),
+                    title: const Text('Clear Local Data'),
+                    content: const Text('This will delete local works and cache. This cannot be undone. Continue?'),
                     actions: [
-                      TextButton(onPressed: () => Navigator.pop(context, false), child: const Text('取消')),
-                      FilledButton(onPressed: () => Navigator.pop(context, true), child: const Text('清理')),
+                      TextButton(onPressed: () => Navigator.pop(context, false), child: const Text('Cancel')),
+                      FilledButton(onPressed: () => Navigator.pop(context, true), child: const Text('Clear')),
                     ],
                   ),
                 );
                 if (ok == true) {
                   await const UserStore().clearAllUserData();
                   if (context.mounted) {
-                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('已清理本地数据')));
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Cleared local data')));
                   }
                 }
               },

@@ -11,6 +11,7 @@ class UserStore {
   static const String _dbFileName = 'user_submissions.json';
   static const String _favFileName = 'favorites.json';
   static const String _profileFileName = 'user_profile.json';
+  static const String _reportFileName = 'reports.json';
 
   Future<Directory> _mediaDir() async {
     final support = await getApplicationSupportDirectory();
@@ -124,6 +125,22 @@ class UserStore {
     }
   }
 
+  Future<void> updateSubmissionMeta({
+    required String id,
+    String? title,
+    String? description,
+  }) async {
+    final current = await loadUserSubmissions();
+    final idx = current.indexWhere((e) => e.id == id);
+    if (idx >= 0) {
+      current[idx] = current[idx].copyWith(
+        title: (title == null || title.trim().isEmpty) ? null : title.trim(),
+        description: (description == null || description.trim().isEmpty) ? null : description.trim(),
+      );
+      await _saveAll(current);
+    }
+  }
+
   static Future<String> resolveLocalPath(String stored) async {
     if (stored.startsWith('assets/')) return stored;
     final f = File(stored);
@@ -177,6 +194,8 @@ class UserStore {
     if (await fav.exists()) await fav.delete();
     final profile = File('${support.path}/$_profileFileName');
     if (await profile.exists()) await profile.delete();
+    final reports = File('${support.path}/$_reportFileName');
+    if (await reports.exists()) await reports.delete();
   }
 
   // Profile
@@ -187,7 +206,7 @@ class UserStore {
       // default profile
       final rnd = DateTime.now().millisecondsSinceEpoch % 10000;
       final def = {
-        'displayName': '创作者$rnd',
+        'displayName': 'Creator$rnd',
         'avatar': 'assets/images/app_logo.png',
       };
       await file.create(recursive: true);
@@ -217,5 +236,29 @@ class UserStore {
       keepExif: false,
     );
     return 'Media/Avatars/$uuid.jpg';
+  }
+
+  // Reports
+  Future<void> reportSubmission({
+    required String submissionId,
+    required String reason,
+    String? details,
+  }) async {
+    final support = await getApplicationSupportDirectory();
+    final file = File('${support.path}/$_reportFileName');
+    if (!await file.exists()) {
+      await file.create(recursive: true);
+      await file.writeAsString('[]');
+    }
+    final raw = await file.readAsString();
+    final List<dynamic> list = jsonDecode(raw) as List<dynamic>;
+    final item = {
+      'submissionId': submissionId,
+      'reason': reason,
+      'details': (details == null || details.trim().isEmpty) ? null : details.trim(),
+      'createdAt': DateTime.now().toUtc().toIso8601String(),
+    };
+    list.add(item);
+    await file.writeAsString(jsonEncode(list));
   }
 }

@@ -40,6 +40,7 @@ class Submission {
   final String mediaAsset;
   final String? title;
   final String? description;
+  final int likeCount;
   final int width;
   final int height;
   final double duration;
@@ -54,6 +55,7 @@ class Submission {
     required this.mediaAsset,
     this.title,
     this.description,
+    this.likeCount = 0,
     required this.width,
     required this.height,
     required this.duration,
@@ -69,6 +71,7 @@ class Submission {
     String? mediaAsset,
     String? title,
     String? description,
+    int? likeCount,
     int? width,
     int? height,
     double? duration,
@@ -83,6 +86,7 @@ class Submission {
       mediaAsset: mediaAsset ?? this.mediaAsset,
       title: title ?? this.title,
       description: description ?? this.description,
+      likeCount: likeCount ?? this.likeCount,
       width: width ?? this.width,
       height: height ?? this.height,
       duration: duration ?? this.duration,
@@ -91,20 +95,30 @@ class Submission {
     );
   }
 
-  factory Submission.fromJson(Map<String, dynamic> json) => Submission(
-        id: json['id'] as String,
-        challengeId: json['challengeId'] as String,
-        type: (json['type'] as String) == 'video' ? SubmissionType.video : SubmissionType.image,
-        coverAsset: json['coverAsset'] as String,
-        mediaAsset: json['mediaAsset'] as String,
-        title: json['title'] as String?,
-        description: json['description'] as String?,
-        width: json['width'] as int,
-        height: json['height'] as int,
-        duration: (json['duration'] as num).toDouble(),
-        createdAt: DateTime.parse(json['createdAt'] as String),
-        liked: json['liked'] as bool? ?? false,
-      );
+  factory Submission.fromJson(Map<String, dynamic> json) {
+    final lcRaw = json['likeCount'];
+    int lc = 0;
+    if (lcRaw is num) {
+      lc = lcRaw.toInt();
+    } else if (lcRaw is String) {
+      lc = int.tryParse(lcRaw) ?? 0;
+    }
+    return Submission(
+      id: json['id'] as String,
+      challengeId: json['challengeId'] as String,
+      type: (json['type'] as String) == 'video' ? SubmissionType.video : SubmissionType.image,
+      coverAsset: json['coverAsset'] as String,
+      mediaAsset: json['mediaAsset'] as String,
+      title: json['title'] as String?,
+      description: json['description'] as String?,
+      likeCount: lc,
+      width: (json['width'] as num).toInt(),
+      height: (json['height'] as num).toInt(),
+      duration: (json['duration'] as num).toDouble(),
+      createdAt: DateTime.parse(json['createdAt'] as String),
+      liked: json['liked'] as bool? ?? false,
+    );
+  }
 
   Map<String, dynamic> toJson() => {
         'id': id,
@@ -114,6 +128,7 @@ class Submission {
         'mediaAsset': mediaAsset,
         'title': title,
         'description': description,
+        'likeCount': likeCount,
         'width': width,
         'height': height,
         'duration': duration,

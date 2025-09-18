@@ -17,10 +17,30 @@ class LocalRepository {
     final raw = await rootBundle.loadString('assets/data/submissions.json');
     final List<dynamic> list = jsonDecode(raw) as List<dynamic>;
     final seeds = list.map((e) => Submission.fromJson(e as Map<String, dynamic>)).toList();
+    // inject randomized like counts for seed submissions (keep user submissions at 0)
+    int jitter(String id) {
+      int h = 2166136261;
+      for (final c in id.codeUnits) {
+        h ^= c;
+        h = (h * 16777619) & 0xFFFFFFFF;
+      }
+      return h & 0x7FFFFFFF;
+    }
+    final enriched = seeds.map((s) {
+      final isSeed = s.id.startsWith('s_');
+      if (!isSeed) return s;
+      final base = (jitter(s.id) % 90) + 10; // 10~99
+      return s.copyWith(likeCount: base);
+    }).toList();
+    // 将收藏状态持久化映射到种子作品的 liked 字段（用户作品由本地 JSON 决定）
+    final favs = await const UserStore().loadFavorites();
+    final enrichedLiked = enriched
+        .map((s) => s.id.startsWith('s_') && favs.contains(s.id) ? s.copyWith(liked: true) : s)
+        .toList();
     // 补齐标题/描述（仅对种子数据，无侵入用户本地作品）
     final challenges = await loadChallenges();
     final idToChallenge = {for (final c in challenges) c.id: c};
-    return seeds.map((s) {
+    return enrichedLiked.map((s) {
       final c = idToChallenge[s.challengeId];
       if (c == null) return s;
       if (s.title != null && s.description != null) return s;
@@ -122,40 +142,130 @@ Submission _fillTitleDescByChallenge(Submission s, Challenge c, int index) {
   String title = s.title ?? '';
   String desc = s.description ?? '';
 
-  String twoDigit(int n) => n.toString().padLeft(2, '0');
+  // 保留占位以便未来扩展编号策略（当前不显示编号）
+
+  // Diverse copy pool, rotate by index to avoid repetition per challenge
+  String pick(List<String> pool, int i) => pool[(i - 1) % pool.length];
 
   switch (c.id) {
-    case 'c_today':
-      title = title.isEmpty ? '色彩涟漪 · ${twoDigit(index)}' : title;
-      desc = desc.isEmpty ? '流动的颜料与光影交织，记录色彩的呼吸瞬间。' : desc;
+    case 'c_today': {
+      final titlePool = [
+        'Color Ripples',
+        'Flowing Gradient',
+        'Breathing Pigments',
+        'Soft Bloom',
+        'Colors in Motion',
+        'Light-Tinted Hues',
+      ];
+      title = title.isEmpty ? pick(titlePool, index) : title;
+      final pool = [
+        'Pigments stretch in the air like ripples on water.',
+        'Light and saturation overlap; feelings rise in layers.',
+        'A single hue extends the moment, gently elongating time.',
+        'Highlights fall softly as shadows gather in response.',
+        'Fluid edges blur forms yet outline emotions.',
+        'Even a tiny bloom can write today’s mood.',
+      ];
+      desc = desc.isEmpty ? pick(pool, index) : desc;
       break;
-    case 'c_yesterday':
-      title = title.isEmpty ? '城市一刻 · ${twoDigit(index)}' : title;
-      desc = desc.isEmpty ? '街角的灯与影，噪点里是城市的脉搏与温度。' : desc;
+    }
+    case 'c_yesterday': {
+      final titlePool = ['City Moment','Night Particles','Corner Light','Glass Reflections','Neon & Steps','Light and Breeze'];
+      title = title.isEmpty ? pick(titlePool, index) : title;
+      final pool = [
+        'Headlights comb the street; traffic breathes in grain.',
+        'Buildings fold reflections; night flows on glass.',
+        'Crowds become particles, completing one another.',
+        'Fog blends with light; the city softens at the edges.',
+        'A mottled road holds both haste and pause.',
+        'Neon becomes punctuation, footnoting the night.',
+      ];
+      desc = desc.isEmpty ? pick(pool, index) : desc;
       break;
-    case 'c_20250915':
-      title = title.isEmpty ? '单色练习 · ${twoDigit(index)}' : title;
-      desc = desc.isEmpty ? '只留一抹色彩，依靠明暗与留白塑造层次与节奏。' : desc;
+    }
+    case 'c_20250915': {
+      final titlePool = ['Monochrome Study','Whitespace & Contrast','Within One Hue','Restrained Layers','Pure Color Rhythm','Hue and Warmth'];
+      title = title.isEmpty ? pick(titlePool, index) : title;
+      final pool = [
+        'One dominant hue; let contrast tell the story.',
+        'Hue stays restrained while layers grow in detail.',
+        'Monochrome isn’t dull—it purifies rhythm.',
+        'Cut the noise; express in whitespace.',
+        'Light gives the same color different warmth.',
+        'Less color, clearer shape and texture.',
+      ];
+      desc = desc.isEmpty ? pick(pool, index) : desc;
       break;
-    case 'c_tomorrow':
-      title = title.isEmpty ? '三个形状 · ${twoDigit(index)}' : title;
-      desc = desc.isEmpty ? '以圆、三角与方块搭建秩序，在限制中寻找平衡。' : desc;
+    }
+    case 'c_tomorrow': {
+      final titlePool = ['Three Shapes','Grammar of Form','Order and Freedom','Simple Relations','Structure & Rhythm','The Scaffold of Space'];
+      title = title.isEmpty ? pick(titlePool, index) : title;
+      final pool = [
+        'Circle, triangle, square—three grammars of one sentence.',
+        'Find freedom within limits; order gains strength.',
+        'Build the most stable relations from simple forms.',
+        'Whitespace and alignment become emotional scaffolds.',
+        'Forms cancel and complete each other.',
+        'Strip texture; leave structure and rhythm.',
+      ];
+      desc = desc.isEmpty ? pick(pool, index) : desc;
       break;
-    case 'c_20250919':
-      title = title.isEmpty ? '窗外之光 · ${twoDigit(index)}' : title;
-      desc = desc.isEmpty ? '一束光穿过窗格，落在日常的表面，时间因此被看见。' : desc;
+    }
+    case 'c_20250919': {
+      final titlePool = ['Light Outside the Window','Slices of Light','Quiet Beam','Geometric Projection','Soft Edges','Light as Narrative'];
+      title = title.isEmpty ? pick(titlePool, index) : title;
+      final pool = [
+        'Light slips through a gap, slicing daily life into geometry.',
+        'Dust floats in the beam; time becomes visible.',
+        'Shadows as gentle borders set the tone.',
+        'One beam gives objects their role.',
+        'Window panes segment light like a metronome.',
+        'In a quiet room, light is the only narrator.',
+      ];
+      desc = desc.isEmpty ? pick(pool, index) : desc;
       break;
-    case 'c_20250920':
-      title = title.isEmpty ? '微距纹理 · ${twoDigit(index)}' : title;
-      desc = desc.isEmpty ? '靠近再靠近，纹理与颗粒成为风景，尺度被重新定义。' : desc;
+    }
+    case 'c_20250920': {
+      final titlePool = ['Macro Texture','Grain & Fiber','Scale Shift','Detail Landscape','Material First','Small and Vast'];
+      title = title.isEmpty ? pick(titlePool, index) : title;
+      final pool = [
+        'Get closer—the world rewrites itself in detail.',
+        'Grain, cracks and fibers become a landscape.',
+        'Change the scale and ordinary turns strange.',
+        'Light glides along texture, leaving tiny undulations.',
+        'Material is seen before it’s felt.',
+        'From the small, we see the vast.',
+      ];
+      desc = desc.isEmpty ? pick(pool, index) : desc;
       break;
-    case 'c_20250921':
-      title = title.isEmpty ? '对称之镜 · ${twoDigit(index)}' : title;
-      desc = desc.isEmpty ? '镜像与反射构成秩序，重复之间隐约藏着变化。' : desc;
+    }
+    case 'c_20250921': {
+      final titlePool = ['Mirror Symmetry','Axis & Repetition','The Other Half','Order Comforts','Mirror Narrative','Near-Perfect'];
+      title = title.isEmpty ? pick(titlePool, index) : title;
+      final pool = [
+        'Mirroring gives the world its other half; order emerges.',
+        'An axis splits the frame; details finish the dialogue.',
+        'Repetition isn’t dull; variation hides in the seams.',
+        'Water flips reality like a second narrative.',
+        'Perfection needn’t be exact; near-perfect is elegant.',
+        'Symmetry soothes and sparks curiosity.',
+      ];
+      desc = desc.isEmpty ? pick(pool, index) : desc;
       break;
-    default:
-      title = title.isEmpty ? '${c.title} · ${twoDigit(index)}' : title;
-      desc = desc.isEmpty ? c.rules : desc;
+    }
+    default: {
+      final titlePool = [c.title, '${c.title} · A', '${c.title} · B', '${c.title} Series', 'On ${c.title}', 'Revisiting ${c.title}'];
+      title = title.isEmpty ? pick(titlePool, index) : title;
+      final pool = [
+        'Find possibilities within limits; sharpen the theme.',
+        'Light and shadow alternate; the story lives in layers.',
+        'Express rich emotions with restraint.',
+        'Give focus to the subject; let others yield to space.',
+        'Organize with rhythm so the eye moves naturally.',
+        'Each creation is a conversation with the brief.',
+      ];
+      desc = desc.isEmpty ? pick(pool, index) : desc;
+    }
   }
 
   return s.copyWith(title: title, description: desc);

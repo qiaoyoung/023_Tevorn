@@ -10,11 +10,11 @@ class SupportPage extends StatelessWidget {
   static const String _supportEmail = 'support@tevorn.app';
 
   Future<void> _tapEmail(BuildContext context) async {
-    final uri = Uri.parse('mailto:$_supportEmail?subject=Tevorn%20技术支持');
+    final uri = Uri.parse('mailto:$_supportEmail?subject=Tevorn%20Support');
     if (!await launchUrl(uri)) {
       await Clipboard.setData(const ClipboardData(text: _supportEmail));
       if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('已复制邮箱：support@tevorn.app')));
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Copied: support@tevorn.app')));
       }
     }
   }
@@ -27,35 +27,32 @@ class SupportPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         foregroundColor: Colors.white,
-        title: const Text('技术支持'),
+        title: const Text('Support'),
       ),
       body: ListView(
-        padding: const EdgeInsets.fromLTRB(16, 100, 16, 16),
+        padding: const EdgeInsets.fromLTRB(16, 120, 16, 16),
         children: [
           GlassCard(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text('支持说明', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800, color: Colors.white)),
+                const Text('Support Guide', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800, color: Colors.white)),
                 const SizedBox(height: 8),
-                const Text(
-                  'Tevorn 为离线本地版，所有数据仅存储在你的设备本机。若遇到问题或有建议，可通过以下联系方式与我们沟通。',
-                  style: TextStyle(color: Colors.white70),
-                ),
+                const Text('Tevorn is an offline, local-only app. For issues or suggestions, contact us below.', style: TextStyle(color: Colors.white70)),
                 const SizedBox(height: 16),
-                const Text('常见问题', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: Colors.white)),
+                const Text('FAQ', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: Colors.white)),
                 const SizedBox(height: 6),
-                _bullet('如何投稿？在首页点击右上角或悬浮“+”，从相册选择图片即可。'),
-                _bullet('如何删除作品？在“作品库”长按本地作品，确认后删除。'),
-                _bullet('为什么离线？首版不依赖服务端，保障隐私、加快上架与体验。'),
+                _bullet('How to submit? Tap the floating + on Home and choose an image.'),
+                _bullet('How to delete? Long press a local item in Library to delete.'),
+                _bullet('Why offline? To protect privacy and keep the experience smooth.'),
                 const SizedBox(height: 16),
-                const Text('联系方式', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: Colors.white)),
+                const Text('Contact', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: Colors.white)),
                 const SizedBox(height: 6),
                 ListTile(
                   contentPadding: EdgeInsets.zero,
                   leading: const Icon(Icons.email_outlined, color: Colors.white70),
                   title: const Text('support@tevorn.app', style: TextStyle(color: Colors.white)),
-                  subtitle: const Text('点击打开系统邮箱；若失败将自动复制地址', style: TextStyle(color: Colors.white70)),
+                  subtitle: const Text('Tap to open your mail app; if it fails, the address is copied.', style: TextStyle(color: Colors.white70)),
                   onTap: () => _tapEmail(context),
                 ),
               ],

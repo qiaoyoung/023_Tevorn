@@ -1,71 +1,71 @@
 [
   {
     "id": "c_20250915",
-    "title": "单色之美",
-    "rules": "仅使用一种主色完成创作，可搭配明暗变化。",
+    "title": "Monochrome Beauty",
+    "rules": "Create with a single primary color. Use light and shadow for contrast.",
     "startAt": "2025-09-15T00:00:00.000Z",
     "endAt": "2025-09-15T23:59:59.000Z"
   },
   {
     "id": "c_yesterday",
-    "title": "15秒里的城市",
-    "rules": "以竖屏 15s 视频记录你所在城市的一段声音或光影。",
+    "title": "City in 15 Seconds",
+    "rules": "Record a 15-second vertical video of urban light or sound.",
     "startAt": "2025-09-16T00:00:00.000Z",
     "endAt": "2025-09-16T23:59:59.000Z"
   },
   {
     "id": "c_today",
-    "title": "色彩涟漪",
-    "rules": "拍摄或创作一张以流动色彩为主题的作品。可使用抽象元素。",
+    "title": "Color Ripples",
+    "rules": "Create an image themed around flowing color. Abstract elements are welcome.",
     "startAt": "2025-09-17T00:00:00.000Z",
     "endAt": "2025-09-17T23:59:59.000Z"
   },
   {
     "id": "c_tomorrow",
-    "title": "三个形状",
-    "rules": "只用圆、三角、方块三种形状完成构图。",
+    "title": "Three Shapes",
+    "rules": "Compose using only a circle, a triangle and a square.",
     "startAt": "2025-09-18T00:00:00.000Z",
     "endAt": "2025-09-18T23:59:59.000Z"
   },
   {
     "id": "c_20250919",
-    "title": "窗外的光",
-    "rules": "以一处自然或人造光的投影为主体完成构图。",
+    "title": "Light Through the Window",
+    "rules": "Use a cast of natural or artificial light as your main subject.",
     "startAt": "2025-09-19T00:00:00.000Z",
     "endAt": "2025-09-19T23:59:59.000Z"
   },
   {
     "id": "c_20250920",
-    "title": "微距纹理",
-    "rules": "拍摄物体的细节纹理，强调质感与形状。",
+    "title": "Textural Macro",
+    "rules": "Capture close-up textures. Emphasize detail and form.",
     "startAt": "2025-09-20T00:00:00.000Z",
     "endAt": "2025-09-20T23:59:59.000Z"
   },
   {
     "id": "c_20250921",
-    "title": "对称之镜",
-    "rules": "通过镜像或真实反射构建对称美学。",
+    "title": "Mirror Symmetry",
+    "rules": "Build symmetry via mirror or real reflection.",
     "startAt": "2025-09-21T00:00:00.000Z",
     "endAt": "2025-09-21T23:59:59.000Z"
   },
   {
     "id": "c_20250922",
-    "title": "手写一个词",
-    "rules": "选择一个最能代表你今天的词，用独特方式呈现。",
+    "title": "Write One Word",
+    "rules": "Choose a word that represents your day and present it in a unique way.",
     "startAt": "2025-09-22T00:00:00.000Z",
     "endAt": "2025-09-22T23:59:59.000Z"
   },
   {
     "id": "c_20250923",
-    "title": "三色限制",
-    "rules": "全作仅使用三种颜色（黑白不计入）。",
+    "title": "Three-Color Constraint",
+    "rules": "Use only three colors in the entire piece (black/white not counted).",
     "startAt": "2025-09-23T00:00:00.000Z",
     "endAt": "2025-09-23T23:59:59.000Z"
   },
   {
     "id": "c_20250924",
-    "title": "一个物件的性格",
-    "rules": "通过角度与光影为日常小物“立人设”。",
+    "title": "Object Personality",
+    "rules": "Give a small daily object a persona using angle and light.",
     "startAt": "2025-09-24T00:00:00.000Z",
     "endAt": "2025-09-24T23:59:59.000Z"
   }

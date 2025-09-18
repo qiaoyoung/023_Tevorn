@@ -7,8 +7,9 @@ import 'package:tevorn/data/models.dart';
 import 'package:tevorn/data/user_store.dart';
 import 'package:tevorn/features/challenge/challenge_detail_page.dart';
 import 'package:tevorn/widgets/gradient_scaffold.dart';
-import 'package:tevorn/widgets/glass_card.dart';
+ 
 import 'package:tevorn/features/publish/publish_page.dart';
+import 'package:tevorn/features/library/submission_detail_page.dart';
  
 
 class HomePage extends StatefulWidget {
@@ -26,6 +27,7 @@ class _HomePageState extends State<HomePage> {
   bool _loading = true;
   Set<String> _favorites = {};
   _Filter _filter = _Filter.all;
+  final Map<String, String> _bgForChallenge = {};
 
   @override
   void initState() {
@@ -39,11 +41,31 @@ class _HomePageState extends State<HomePage> {
     final list = ch == null ? <Submission>[] : await repo.getSubmissionsFor(ch.id);
     final near = await repo.getNearbyChallenges();
     final favs = await const UserStore().loadFavorites();
+    // Pre-fetch background image for nearby challenges (prefer seed images)
+    final Map<String, String> bg = {};
+    for (final nc in near) {
+      try {
+        final sl = await repo.getSubmissionsFor(nc.id);
+        String? asset;
+        for (final s in sl) {
+          if (s.coverAsset.startsWith('assets/')) {
+            asset = s.coverAsset;
+            break;
+          }
+        }
+        bg[nc.id] = asset ?? 'assets/images/welcome_hero.jpeg';
+      } catch (_) {
+        bg[nc.id] = 'assets/images/welcome_hero.jpeg';
+      }
+    }
     setState(() {
       _challenge = ch;
       _subs = list;
       _nearby = near;
       _favorites = favs;
+      _bgForChallenge
+        ..clear()
+        ..addAll(bg);
       _loading = false;
     });
   }
@@ -93,9 +115,9 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Text('今日暂无挑战'),
+              const Text('No challenge today'),
               const SizedBox(height: 8),
-              FilledButton(onPressed: _load, child: const Text('刷新')),
+              FilledButton(onPressed: _load, child: const Text('Refresh')),
             ],
           ),
         ),
@@ -107,12 +129,12 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         foregroundColor: Colors.white,
-        title: const Text('今日挑战'),
+        title: const Text('Today'),
       ),
       body: RefreshIndicator(
         onRefresh: _load,
         child: ListView(
-          padding: const EdgeInsets.fromLTRB(16, 100, 16, 16),
+          padding: const EdgeInsets.fromLTRB(16, 120, 16, 16),
           children: [
             _HeroChallengeCard(
               challenge: ch,
@@ -124,58 +146,59 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 20),
             Row(
               children: [
-                const Text('更多挑战', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700)),
+                const Text('More Challenges', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700)),
                 const Spacer(),
                 ChoiceChip(
                   selected: _filter == _Filter.all,
-                  label: const Text('全部'),
+                  label: const Text('All'),
                   onSelected: (_) => setState(() => _filter = _Filter.all),
                 ),
                 const SizedBox(width: 8),
                 ChoiceChip(
                   selected: _filter == _Filter.favorites,
-                  label: const Text('收藏'),
+                  label: const Text('Liked'),
                   onSelected: (_) => setState(() => _filter = _Filter.favorites),
                 ),
                 const SizedBox(width: 8),
                 ChoiceChip(
                   selected: _filter == _Filter.mine,
-                  label: const Text('我投稿'),
+                  label: const Text('Mine'),
                   onSelected: (_) => setState(() => _filter = _Filter.mine),
                 ),
               ],
             ),
             const SizedBox(height: 8),
             SizedBox(
-              height: 124,
+              height: 160,
               child: ListView.separated(
                 scrollDirection: Axis.horizontal,
                 itemCount: _nearby.length,
                 separatorBuilder: (_, __) => const SizedBox(width: 10),
                 itemBuilder: (context, i) => _NearbyCard(
                   c: _nearby[i],
+                  backgroundAsset: _bgForChallenge[_nearby[i].id],
                   onTap: () => _selectChallenge(_nearby[i]),
                   isSelected: _nearby[i].id == _challenge?.id,
                 ),
               ),
             ),
             const SizedBox(height: 20),
-            const Text('最新作品', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700)),
+            const Text('Latest Submissions', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700)),
             const SizedBox(height: 10),
             Wrap(
               spacing: 10,
               runSpacing: 10,
               children: [
-                for (final s in _filteredSubs.take(12)) _SubmissionChip(s: s),
+                for (final s in _filteredSubs.take(12)) _SubmissionChip(s: s, onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (_) => SubmissionDetailPage(s: s)));
+                }),
               ],
             ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _pickAndSubmit,
-        child: const Icon(Icons.add),
-      ),
+      // publish entry now lives under the floating side dock; remove FAB here
+      floatingActionButton: null,
     );
   }
 }
@@ -220,7 +243,7 @@ class _CountdownState extends State<_Countdown> {
         const Icon(Icons.timer_outlined, size: 18, color: Colors.white70),
         const SizedBox(width: 6),
         Text(
-          '截稿倒计时  ${h.toString().padLeft(2, '0')}:${m.toString().padLeft(2, '0')}:${s.toString().padLeft(2, '0')}',
+          'Deadline in  ${h.toString().padLeft(2, '0')}:${m.toString().padLeft(2, '0')}:${s.toString().padLeft(2, '0')}',
           style: const TextStyle(color: Colors.white),
         ),
       ],
@@ -230,40 +253,97 @@ class _CountdownState extends State<_Countdown> {
 
 class _NearbyCard extends StatelessWidget {
   final Challenge c;
+  final String? backgroundAsset;
   final VoidCallback? onTap;
   final bool isSelected;
-  const _NearbyCard({required this.c, this.onTap, this.isSelected = false});
+  const _NearbyCard({required this.c, this.backgroundAsset, this.onTap, this.isSelected = false});
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    return GlassCard(
-      margin: const EdgeInsets.only(right: 0),
-      padding: const EdgeInsets.all(12),
+    return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 220,
+        width: 240,
         decoration: BoxDecoration(
-          border: Border.all(color: isSelected ? scheme.primary : Colors.white.withOpacity(0.25), width: isSelected ? 2 : 1),
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(16),
+          boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.25), blurRadius: 18, offset: const Offset(0, 10))],
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              c.title,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: const TextStyle(fontWeight: FontWeight.w800, color: Colors.white),
-            ),
-            const SizedBox(height: 6),
-            Text(
-              c.rules,
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-              style: const TextStyle(color: Colors.white70),
-            ),
-          ],
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(16),
+          child: Stack(
+            children: [
+              if (backgroundAsset != null)
+                Positioned.fill(
+                  child: Image.asset(backgroundAsset!, fit: BoxFit.cover),
+                ),
+              Positioned.fill(
+                child: Container(
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [Color(0x66000000), Color(0x99000000)],
+                    ),
+                  ),
+                ),
+              ),
+              Positioned.fill(
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: isSelected ? scheme.primary : Colors.white.withOpacity(0.25), width: isSelected ? 2 : 1),
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                ),
+              ),
+              Positioned.fill(
+                child: Padding(
+                  padding: const EdgeInsets.all(14),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Container(
+                            width: 6,
+                            height: 6,
+                            decoration: BoxDecoration(
+                              color: isSelected ? scheme.primary : Colors.white70,
+                              shape: BoxShape.circle,
+                            ),
+                          ),
+                          const SizedBox(width: 8),
+                          Expanded(
+                            child: Text(
+                              c.title,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: const TextStyle(fontWeight: FontWeight.w900, color: Colors.white),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        c.rules,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(color: Colors.white70),
+                      ),
+                      const Spacer(),
+                      Row(
+                        children: const [
+                          Icon(Icons.timer_outlined, size: 16, color: Colors.white70),
+                          SizedBox(width: 6),
+                          Text('00:00 - 23:59', style: TextStyle(color: Colors.white70, fontSize: 12)),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -333,29 +413,66 @@ class _HeroChallengeCard extends StatelessWidget {
 
 class _SubmissionChip extends StatelessWidget {
   final Submission s;
-  const _SubmissionChip({required this.s});
+  final VoidCallback? onTap;
+  const _SubmissionChip({required this.s, this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(10),
-      child: FutureBuilder<String>(
+    final image = FutureBuilder<String>(
         future: s.coverAsset.startsWith('assets/')
             ? Future.value(s.coverAsset)
             : UserStore.resolveLocalPath(s.coverAsset),
         builder: (context, snap) {
           final p = snap.data;
-          if (p == null) {
-            return const SizedBox(width: 110, height: 180);
-          }
+          if (p == null) return const SizedBox(width: 110, height: 180);
           return p.startsWith('assets/')
               ? Image.asset(p, width: 110, height: 180, fit: BoxFit.cover)
               : Image.file(File(p), width: 110, height: 180, fit: BoxFit.cover);
         },
+      );
+
+    final caption = (s.title ?? s.description ?? '').isEmpty
+        ? const SizedBox()
+        : Positioned(
+            left: 0,
+            right: 0,
+            bottom: 0,
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [Colors.transparent, Colors.black.withOpacity(0.78)],
+                ),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  if ((s.title ?? '').isNotEmpty)
+                    Text(s.title!, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w800)),
+                  if ((s.description ?? '').isNotEmpty)
+                    Text(s.description!, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(color: Colors.white70, fontSize: 11)),
+                ],
+              ),
+            ),
+          );
+
+    return GestureDetector(
+      onTap: onTap,
+      child: SizedBox(
+        width: 110,
+        height: 180,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(10),
+          child: Stack(children: [Positioned.fill(child: image), caption]),
+        ),
       ),
     );
   }
 }
 
 enum _Filter { all, favorites, mine }
+
 

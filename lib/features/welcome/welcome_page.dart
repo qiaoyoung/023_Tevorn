@@ -79,14 +79,7 @@ class _WelcomePageState extends State<WelcomePage> {
                           ),
                         ),
                         const SizedBox(height: 20),
-                        const Text(
-                          'Tevorn',
-                          style: TextStyle(
-                            fontSize: 30,
-                            fontWeight: FontWeight.w800,
-                            letterSpacing: 0.3,
-                          ),
-                        ),
+                        const Text('Tevorn', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w800, letterSpacing: 0.3)),
                         const SizedBox(height: 8),
                         Container(
                           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
@@ -94,11 +87,7 @@ class _WelcomePageState extends State<WelcomePage> {
                             color: Colors.white.withOpacity(0.5),
                             borderRadius: BorderRadius.circular(999),
                           ),
-                          child: Text(
-                            '创意挑战，从今天开始',
-                            style: TextStyle(color: scheme.onSurface, fontSize: 14, fontWeight: FontWeight.w600),
-                            textAlign: TextAlign.center,
-                          ),
+                          child: Text('Creative challenges start today', style: TextStyle(color: scheme.onSurface, fontSize: 14, fontWeight: FontWeight.w600), textAlign: TextAlign.center),
                         ),
                       ],
                     ),
@@ -131,9 +120,9 @@ class _WelcomePageState extends State<WelcomePage> {
                                     text: TextSpan(
                                       style: TextStyle(color: scheme.onSurface),
                                       children: [
-                                        const TextSpan(text: '我已阅读并同意 '),
+                                        const TextSpan(text: 'I have read and agree to '),
                                         TextSpan(
-                                          text: '《用户隐私协议》',
+                                          text: 'Privacy Policy',
                                           style: TextStyle(
                                             color: scheme.primary,
                                             decoration: TextDecoration.underline,
@@ -157,7 +146,7 @@ class _WelcomePageState extends State<WelcomePage> {
                                 onPressed: _agreed
                                     ? () => Navigator.of(context).pushReplacementNamed('/root')
                                     : null,
-                                child: const Text('开始创作'),
+                                child: const Text('Enter App'),
                               ),
                             ),
                           ],
