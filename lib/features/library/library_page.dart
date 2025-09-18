@@ -119,9 +119,17 @@ class _SubmissionCard extends StatelessWidget {
       },
     );
 
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(12),
-      child: Stack(children: [Positioned.fill(child: imageWidget), badge]),
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(color: Colors.black.withOpacity(0.18), blurRadius: 16, offset: const Offset(0, 8)),
+        ],
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(16),
+        child: Stack(children: [Positioned.fill(child: imageWidget), badge]),
+      ),
     );
   }
 }
@@ -136,11 +144,18 @@ class _DetailPage extends StatefulWidget {
 
 class _DetailPageState extends State<_DetailPage> {
   late Submission s;
+  bool _fav = false;
 
   @override
   void initState() {
     super.initState();
     s = widget.s;
+    _initFav();
+  }
+
+  Future<void> _initFav() async {
+    final favs = await const UserStore().loadFavorites();
+    if (mounted) setState(() => _fav = favs.contains(s.id));
   }
 
   Future<void> _toggleLike() async {
@@ -149,6 +164,12 @@ class _DetailPageState extends State<_DetailPage> {
       await const UserStore().toggleLike(s.id, newVal);
     }
     setState(() => s = s.copyWith(liked: newVal));
+  }
+
+  Future<void> _toggleFav() async {
+    final newVal = !_fav;
+    await const UserStore().toggleFavorite(s.id, newVal);
+    if (mounted) setState(() => _fav = newVal);
   }
 
   @override
@@ -167,10 +188,8 @@ class _DetailPageState extends State<_DetailPage> {
     );
     return Scaffold(
       appBar: AppBar(actions: [
-        IconButton(
-          onPressed: _toggleLike,
-          icon: Icon(s.liked ? Icons.favorite : Icons.favorite_border),
-        )
+        IconButton(onPressed: _toggleFav, icon: Icon(_fav ? Icons.star : Icons.star_border)),
+        IconButton(onPressed: _toggleLike, icon: Icon(s.liked ? Icons.favorite : Icons.favorite_border)),
       ]),
       body: Center(child: image),
     );

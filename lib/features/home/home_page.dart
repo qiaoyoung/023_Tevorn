@@ -23,6 +23,8 @@ class _HomePageState extends State<HomePage> {
   List<Submission> _subs = const [];
   List<Challenge> _nearby = const [];
   bool _loading = true;
+  Set<String> _favorites = {};
+  _Filter _filter = _Filter.all;
 
   @override
   void initState() {
@@ -35,10 +37,12 @@ class _HomePageState extends State<HomePage> {
     final ch = await repo.getTodayChallenge();
     final list = ch == null ? <Submission>[] : await repo.getSubmissionsFor(ch.id);
     final near = await repo.getNearbyChallenges();
+    final favs = await const UserStore().loadFavorites();
     setState(() {
       _challenge = ch;
       _subs = list;
       _nearby = near;
+      _favorites = favs;
       _loading = false;
     });
   }
@@ -70,6 +74,17 @@ class _HomePageState extends State<HomePage> {
     return 'assets/images/welcome_hero.jpeg';
   }
 
+  List<Submission> get _filteredSubs {
+    switch (_filter) {
+      case _Filter.all:
+        return _subs;
+      case _Filter.favorites:
+        return _subs.where((s) => _favorites.contains(s.id)).toList();
+      case _Filter.mine:
+        return _subs.where((s) => s.id.startsWith('u_')).toList();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     if (_loading) {
@@ -98,8 +113,9 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
+        foregroundColor: Colors.white,
         title: const Text('今日挑战'),
-        actions: [IconButton(onPressed: _pickAndSubmit, icon: const Icon(Icons.add_photo_alternate_outlined))],
+        actions: [IconButton(onPressed: _pickAndSubmit, color: Colors.white, icon: const Icon(Icons.add_photo_alternate_outlined))],
       ),
       body: RefreshIndicator(
         onRefresh: _load,
@@ -111,10 +127,32 @@ class _HomePageState extends State<HomePage> {
               backgroundAsset: _assetBackgroundForCurrent(),
               onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => ChallengeDetailPage(challenge: ch))),
             ),
-            const SizedBox(height: 12),
-            _Countdown(endAt: ch.endAt),
             const SizedBox(height: 16),
-            Text('更多挑战', style: Theme.of(context).textTheme.titleMedium),
+            _Countdown(endAt: ch.endAt),
+            const SizedBox(height: 20),
+            Row(
+              children: [
+                const Text('更多挑战', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700)),
+                const Spacer(),
+                ChoiceChip(
+                  selected: _filter == _Filter.all,
+                  label: const Text('全部'),
+                  onSelected: (_) => setState(() => _filter = _Filter.all),
+                ),
+                const SizedBox(width: 8),
+                ChoiceChip(
+                  selected: _filter == _Filter.favorites,
+                  label: const Text('收藏'),
+                  onSelected: (_) => setState(() => _filter = _Filter.favorites),
+                ),
+                const SizedBox(width: 8),
+                ChoiceChip(
+                  selected: _filter == _Filter.mine,
+                  label: const Text('我投稿'),
+                  onSelected: (_) => setState(() => _filter = _Filter.mine),
+                ),
+              ],
+            ),
             const SizedBox(height: 8),
             SizedBox(
               height: 124,
@@ -129,14 +167,14 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            const SizedBox(height: 16),
-            Text('最新作品', style: Theme.of(context).textTheme.titleMedium),
-            const SizedBox(height: 8),
+            const SizedBox(height: 20),
+            const Text('最新作品', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700)),
+            const SizedBox(height: 10),
             Wrap(
               spacing: 10,
               runSpacing: 10,
               children: [
-                for (final s in _subs.take(12)) _SubmissionChip(s: s),
+                for (final s in _filteredSubs.take(12)) _SubmissionChip(s: s),
               ],
             ),
           ],
@@ -265,27 +303,33 @@ class _NearbyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(12),
-        child: Container(
-          width: 220,
-          padding: const EdgeInsets.all(12),
-          decoration: BoxDecoration(
-            color: scheme.surface,
-            borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: isSelected ? scheme.primary : scheme.outlineVariant, width: isSelected ? 2 : 1),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(c.title, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(fontWeight: FontWeight.w800)),
-              const SizedBox(height: 6),
-              Text(c.rules, maxLines: 2, overflow: TextOverflow.ellipsis, style: TextStyle(color: scheme.onSurfaceVariant)),
-            ],
-          ),
+    return GlassCard(
+      margin: const EdgeInsets.only(right: 0),
+      padding: const EdgeInsets.all(12),
+      onTap: onTap,
+      child: Container(
+        width: 220,
+        decoration: BoxDecoration(
+          border: Border.all(color: isSelected ? scheme.primary : Colors.white.withOpacity(0.25), width: isSelected ? 2 : 1),
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              c.title,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(fontWeight: FontWeight.w800, color: Colors.white),
+            ),
+            const SizedBox(height: 6),
+            Text(
+              c.rules,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(color: Colors.white70),
+            ),
+          ],
         ),
       ),
     );
@@ -378,3 +422,5 @@ class _SubmissionChip extends StatelessWidget {
     );
   }
 }
+
+enum _Filter { all, favorites, mine }
