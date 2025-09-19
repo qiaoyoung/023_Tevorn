@@ -82,6 +82,10 @@ class LocalRepository {
     final list = <Challenge>[];
     final gen = ChallengeGenerator();
     final seedIds = await _distinctSeedChallengeIds();
+    // Prefer non-reserved seed ids to avoid duplication with today/yesterday/tomorrow
+    List<String> pool = seedIds.where((e) => e != 'c_today' && e != 'c_yesterday' && e != 'c_tomorrow').toList();
+    if (pool.isEmpty) pool = List<String>.from(seedIds);
+    int cursor = pool.isEmpty ? 0 : ((now.day + now.month) % pool.length);
     for (int d = -daysBefore; d <= daysAfter; d++) {
       final day = DateTime(now.year, now.month, now.day).add(Duration(days: d));
       final g = await gen.generateForDate(day);
@@ -93,10 +97,10 @@ class LocalRepository {
       } else if (d == 1) {
         id = 'c_tomorrow';
       } else {
-        // 将更多挑战映射到已有种子作品的 challengeId，保证有示例可看
-        if (seedIds.isNotEmpty) {
-          final idx = (d - (-daysBefore)) % seedIds.length;
-          id = seedIds[idx < 0 ? (idx + seedIds.length) : idx];
+        // Map to seed ids with examples, avoid duplicates within the current window as much as possible
+        if (pool.isNotEmpty) {
+          id = pool[cursor % pool.length];
+          cursor++;
         } else {
           id = g.id;
         }

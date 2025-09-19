@@ -156,7 +156,7 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(width: 8),
                 ChoiceChip(
                   selected: _filter == _Filter.favorites,
-                  label: const Text('Liked'),
+                  label: const Text('Favorites'),
                   onSelected: (_) => setState(() => _filter = _Filter.favorites),
                 ),
                 const SizedBox(width: 8),
