@@ -59,7 +59,11 @@ class _RootTabScaffoldState extends State<_RootTabScaffold> {
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  colors: [Color(0xFF130026), Color(0xFF2B0050), Color(0xFF0E001B)],
+                  colors: [
+                    Color(0xFF130026),
+                    Color(0xFF2B0050),
+                    Color(0xFF0E001B)
+                  ],
                 ),
               ),
             ),
@@ -80,7 +84,8 @@ class _RootTabScaffoldState extends State<_RootTabScaffold> {
             switchInCurve: Curves.easeOutCubic,
             switchOutCurve: Curves.easeInCubic,
             transitionBuilder: (child, animation) {
-              final fade = CurvedAnimation(parent: animation, curve: Curves.easeOutQuad);
+              final fade =
+                  CurvedAnimation(parent: animation, curve: Curves.easeOutQuad);
               // Use pure fade to minimize background flashing
               return FadeTransition(opacity: fade, child: child);
             },
@@ -89,15 +94,17 @@ class _RootTabScaffoldState extends State<_RootTabScaffold> {
               child: _tabs[idx],
             ),
           ),
-          Positioned(
-            right: 16,
-            top: 100,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                FloatingSideDock(
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).padding.bottom + 16),
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 560),
+                child: FloatingBottomDock(
                   selectedIndex: idx,
-                  onSelected: (i) => setState(() => _currentIndex = i.clamp(0, _tabs.length - 1)),
+                  onSelected: (i) => setState(
+                      () => _currentIndex = i.clamp(0, _tabs.length - 1)),
                   destinations: const [
                     FloatingDockDestination(
                       icon: Icons.today_outlined,
@@ -109,35 +116,40 @@ class _RootTabScaffoldState extends State<_RootTabScaffold> {
                       selectedIcon: Icons.video_library,
                       label: 'Library',
                     ),
-                FloatingDockDestination(
-                  icon: Icons.lightbulb_outline,
-                  selectedIcon: Icons.lightbulb,
-                  label: 'AI',
-                ),
-                FloatingDockDestination(
-                  icon: Icons.person_outline,
-                  selectedIcon: Icons.person,
-                  label: 'Profile',
-                ),
+                    FloatingDockDestination(
+                      icon: Icons.lightbulb_outline,
+                      selectedIcon: Icons.lightbulb,
+                      label: 'AI',
+                    ),
+                    FloatingDockDestination(
+                      icon: Icons.person_outline,
+                      selectedIcon: Icons.person,
+                      label: 'Profile',
+                    ),
                   ],
                 ),
-                if (idx == 0) const SizedBox(height: 24),
-                if (idx == 0)
-                  _RootPublishButton(
-                    onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (_) => PublishPage(
-                            challengeId: 'c_today',
-                            onDone: () async {},
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-              ],
+              ),
             ),
           ),
+          if (idx == 0)
+            Positioned(
+              right: 16,
+              bottom: MediaQuery.of(context).padding.bottom +
+                  kFloatingBottomDockHeight +
+                  24,
+              child: _RootPublishButton(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => PublishPage(
+                        challengeId: 'c_today',
+                        onDone: () async {},
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
         ],
       ),
     );
@@ -161,7 +173,10 @@ class _RootPublishButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
             border: Border.all(color: Colors.white.withOpacity(0.35)),
             boxShadow: [
-              BoxShadow(color: Colors.black.withOpacity(0.25), blurRadius: 16, offset: const Offset(0, 8)),
+              BoxShadow(
+                  color: Colors.black.withOpacity(0.25),
+                  blurRadius: 16,
+                  offset: const Offset(0, 8)),
             ],
             gradient: const LinearGradient(
               begin: Alignment.topLeft,
@@ -174,7 +189,9 @@ class _RootPublishButton extends StatelessWidget {
             child: InkWell(
               borderRadius: BorderRadius.circular(12),
               onTap: onTap,
-              child: const Center(child: Icon(Icons.add_rounded, color: Colors.white, size: 26)),
+              child: const Center(
+                  child:
+                      Icon(Icons.add_rounded, color: Colors.white, size: 26)),
             ),
           ),
         ),

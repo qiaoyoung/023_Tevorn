@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:tevorn/data/user_store.dart';
 import 'dart:io';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tevorn/features/support/support_page.dart';
 import 'package:tevorn/features/about/about_simple_page.dart';
 import 'package:tevorn/widgets/gradient_scaffold.dart';
+import 'package:tevorn/widgets/floating_dock.dart';
 import 'package:tevorn/widgets/glass_card.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -42,16 +42,23 @@ class _ProfilePageState extends State<ProfilePage> {
       context: context,
       builder: (_) => AlertDialog(
         title: const Text('Edit Nickname'),
-        content: TextField(controller: controller, decoration: const InputDecoration(hintText: 'Enter nickname')),
+        content: TextField(
+            controller: controller,
+            decoration: const InputDecoration(hintText: 'Enter nickname')),
         actions: [
-          TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancel')),
-          FilledButton(onPressed: () => Navigator.pop(context, controller.text.trim()), child: const Text('Save')),
+          TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('Cancel')),
+          FilledButton(
+              onPressed: () => Navigator.pop(context, controller.text.trim()),
+              child: const Text('Save')),
         ],
       ),
     );
     if (result != null && result.isNotEmpty) {
       setState(() => _displayName = result);
-      await const UserStore().saveProfile({'displayName': _displayName, 'avatar': _avatar});
+      await const UserStore()
+          .saveProfile({'displayName': _displayName, 'avatar': _avatar});
     }
   }
 
@@ -60,7 +67,8 @@ class _ProfilePageState extends State<ProfilePage> {
     if (picked == null) return;
     final pathRel = await const UserStore().setAvatarFromPath(picked.path);
     setState(() => _avatar = pathRel);
-    await const UserStore().saveProfile({'displayName': _displayName, 'avatar': _avatar});
+    await const UserStore()
+        .saveProfile({'displayName': _displayName, 'avatar': _avatar});
   }
 
   Widget _buildAvatar() {
@@ -92,15 +100,26 @@ class _ProfilePageState extends State<ProfilePage> {
         title: const Text('Profile'),
       ),
       body: ListView(
-        padding: const EdgeInsets.fromLTRB(16, 120, 16, 16),
+        padding:
+            EdgeInsets.fromLTRB(16, 120, 16, bottomDockOverlapPadding(context)),
         children: [
           GlassCard(
             child: Column(
               children: [
-                Center(child: GestureDetector(onTap: _changeAvatar, child: _buildAvatar())),
+                Center(
+                    child: GestureDetector(
+                        onTap: _changeAvatar, child: _buildAvatar())),
                 const SizedBox(height: 10),
-                Center(child: Text(_displayName, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w900, color: Colors.white))),
-                Center(child: TextButton(onPressed: _editName, child: const Text('Edit Nickname'))),
+                Center(
+                    child: Text(_displayName,
+                        style: const TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.white))),
+                Center(
+                    child: TextButton(
+                        onPressed: _editName,
+                        child: const Text('Edit Nickname'))),
               ],
             ),
           ),
@@ -110,27 +129,39 @@ class _ProfilePageState extends State<ProfilePage> {
               children: [
                 ListTile(
                   contentPadding: EdgeInsets.zero,
-                  leading: const Icon(Icons.support_agent_outlined, color: Colors.white70),
-                  title: const Text('Support', style: TextStyle(color: Colors.white)),
-                  subtitle: const Text('support@tevorn.app', style: TextStyle(color: Colors.white70)),
-                  trailing: const Icon(Icons.chevron_right, color: Colors.white54),
-                  onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const SupportPage())),
+                  leading: const Icon(Icons.support_agent_outlined,
+                      color: Colors.white70),
+                  title: const Text('Support',
+                      style: TextStyle(color: Colors.white)),
+                  subtitle: const Text('support@tevorn.app',
+                      style: TextStyle(color: Colors.white70)),
+                  trailing:
+                      const Icon(Icons.chevron_right, color: Colors.white54),
+                  onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute(builder: (_) => const SupportPage())),
                 ),
                 const Divider(height: 1),
                 ListTile(
                   contentPadding: EdgeInsets.zero,
-                  leading: const Icon(Icons.privacy_tip_outlined, color: Colors.white70),
-                  title: const Text('Privacy Policy', style: TextStyle(color: Colors.white)),
-                  trailing: const Icon(Icons.chevron_right, color: Colors.white54),
+                  leading: const Icon(Icons.privacy_tip_outlined,
+                      color: Colors.white70),
+                  title: const Text('Privacy Policy',
+                      style: TextStyle(color: Colors.white)),
+                  trailing:
+                      const Icon(Icons.chevron_right, color: Colors.white54),
                   onTap: () => Navigator.of(context).pushNamed('/privacy'),
                 ),
                 const Divider(height: 1),
                 ListTile(
                   contentPadding: EdgeInsets.zero,
-                  leading: const Icon(Icons.info_outline, color: Colors.white70),
-                  title: const Text('About', style: TextStyle(color: Colors.white)),
-                  trailing: const Icon(Icons.chevron_right, color: Colors.white54),
-                  onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const AboutSimplePage())),
+                  leading:
+                      const Icon(Icons.info_outline, color: Colors.white70),
+                  title: const Text('About',
+                      style: TextStyle(color: Colors.white)),
+                  trailing:
+                      const Icon(Icons.chevron_right, color: Colors.white54),
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                      builder: (_) => const AboutSimplePage())),
                 ),
               ],
             ),
@@ -139,24 +170,32 @@ class _ProfilePageState extends State<ProfilePage> {
           GlassCard(
             child: ListTile(
               contentPadding: EdgeInsets.zero,
-              leading: const Icon(Icons.cleaning_services_outlined, color: Colors.white70),
-              title: const Text('Clear Local Data', style: TextStyle(color: Colors.white)),
+              leading: const Icon(Icons.cleaning_services_outlined,
+                  color: Colors.white70),
+              title: const Text('Clear Local Data',
+                  style: TextStyle(color: Colors.white)),
               onTap: () async {
                 final ok = await showDialog<bool>(
                   context: context,
                   builder: (_) => AlertDialog(
                     title: const Text('Clear Local Data'),
-                    content: const Text('This will delete local works and cache. This cannot be undone. Continue?'),
+                    content: const Text(
+                        'This will delete local works and cache. This cannot be undone. Continue?'),
                     actions: [
-                      TextButton(onPressed: () => Navigator.pop(context, false), child: const Text('Cancel')),
-                      FilledButton(onPressed: () => Navigator.pop(context, true), child: const Text('Clear')),
+                      TextButton(
+                          onPressed: () => Navigator.pop(context, false),
+                          child: const Text('Cancel')),
+                      FilledButton(
+                          onPressed: () => Navigator.pop(context, true),
+                          child: const Text('Clear')),
                     ],
                   ),
                 );
                 if (ok == true) {
                   await const UserStore().clearAllUserData();
                   if (context.mounted) {
-                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Cleared local data')));
+                    ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Cleared local data')));
                   }
                 }
               },

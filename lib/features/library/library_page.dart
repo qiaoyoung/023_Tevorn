@@ -4,8 +4,8 @@ import 'package:tevorn/data/local_repository.dart';
 import 'package:tevorn/data/models.dart';
 import 'package:tevorn/data/user_store.dart';
 import 'package:tevorn/widgets/gradient_scaffold.dart';
+import 'package:tevorn/widgets/floating_dock.dart';
 import 'package:tevorn/features/library/submission_detail_page.dart';
- 
 
 class LibraryPage extends StatefulWidget {
   const LibraryPage({super.key});
@@ -29,7 +29,8 @@ class _LibraryPageState extends State<LibraryPage> {
     setState(() => _loading = true);
     final list = await repo.loadSubmissions();
     final user = await const UserStore().loadUserSubmissions();
-    final merged = [...list, ...user]..sort((a, b) => b.createdAt.compareTo(a.createdAt));
+    final merged = [...list, ...user]
+      ..sort((a, b) => b.createdAt.compareTo(a.createdAt));
     setState(() {
       _all = merged;
       _loading = false;
@@ -53,7 +54,8 @@ class _LibraryPageState extends State<LibraryPage> {
               s: items[i],
               tall: tallOdd ? (i % 2 == 1) : (i % 2 == 0),
               onTap: () => Navigator.of(context).push(
-                MaterialPageRoute(builder: (_) => SubmissionDetailPage(s: items[i])),
+                MaterialPageRoute(
+                    builder: (_) => SubmissionDetailPage(s: items[i])),
               ),
               onDelete: () async {
                 if (items[i].mediaAsset.startsWith('assets/')) return;
@@ -61,10 +63,15 @@ class _LibraryPageState extends State<LibraryPage> {
                   context: context,
                   builder: (_) => AlertDialog(
                     title: const Text('Delete Submission'),
-                    content: const Text('Delete this local submission? This cannot be undone.'),
+                    content: const Text(
+                        'Delete this local submission? This cannot be undone.'),
                     actions: [
-                      TextButton(onPressed: () => Navigator.pop(context, false), child: const Text('Cancel')),
-                      FilledButton(onPressed: () => Navigator.pop(context, true), child: const Text('Delete')),
+                      TextButton(
+                          onPressed: () => Navigator.pop(context, false),
+                          child: const Text('Cancel')),
+                      FilledButton(
+                          onPressed: () => Navigator.pop(context, true),
+                          child: const Text('Delete')),
                     ],
                   ),
                 );
@@ -111,7 +118,8 @@ class _LibraryPageState extends State<LibraryPage> {
         child: LayoutBuilder(
           builder: (context, constraints) {
             return SingleChildScrollView(
-              padding: const EdgeInsets.fromLTRB(16, 120, 16, 16),
+              padding: EdgeInsets.fromLTRB(
+                  16, 120, 16, bottomDockOverlapPadding(context)),
               child: _buildWaterfall(constraints),
             );
           },
@@ -121,14 +129,16 @@ class _LibraryPageState extends State<LibraryPage> {
   }
 }
 
- 
-
 class _WaterfallTile extends StatelessWidget {
   final Submission s;
   final bool tall;
   final VoidCallback onTap;
   final VoidCallback onDelete;
-  const _WaterfallTile({required this.s, required this.tall, required this.onTap, required this.onDelete});
+  const _WaterfallTile(
+      {required this.s,
+      required this.tall,
+      required this.onTap,
+      required this.onDelete});
 
   @override
   Widget build(BuildContext context) {
@@ -145,11 +155,15 @@ class _WaterfallTile extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(s.liked ? Icons.favorite : Icons.favorite_border, size: 14, color: s.liked ? Colors.pinkAccent : Colors.white),
+            Icon(s.liked ? Icons.favorite : Icons.favorite_border,
+                size: 14, color: s.liked ? Colors.pinkAccent : Colors.white),
             const SizedBox(width: 4),
             Text(
               s.id.startsWith('u_') ? '0' : (s.likeCount).toString(),
-              style: const TextStyle(color: Colors.white, fontSize: 11, fontWeight: FontWeight.w700),
+              style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 11,
+                  fontWeight: FontWeight.w700),
             ),
           ],
         ),
@@ -157,11 +171,15 @@ class _WaterfallTile extends StatelessWidget {
     );
 
     final imageWidget = FutureBuilder<String>(
-      future: s.coverAsset.startsWith('assets/') ? Future.value(s.coverAsset) : UserStore.resolveLocalPath(s.coverAsset),
+      future: s.coverAsset.startsWith('assets/')
+          ? Future.value(s.coverAsset)
+          : UserStore.resolveLocalPath(s.coverAsset),
       builder: (context, snap) {
         final p = snap.data;
         if (p == null) return const ColoredBox(color: Color(0x11000000));
-        return p.startsWith('assets/') ? Image.asset(p, fit: BoxFit.cover) : Image.file(File(p), fit: BoxFit.cover);
+        return p.startsWith('assets/')
+            ? Image.asset(p, fit: BoxFit.cover)
+            : Image.file(File(p), fit: BoxFit.cover);
       },
     );
 
@@ -185,9 +203,19 @@ class _WaterfallTile extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   if ((s.title ?? '').isNotEmpty)
-                    Text(s.title!, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w800, fontSize: 12)),
+                    Text(s.title!,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w800,
+                            fontSize: 12)),
                   if ((s.description ?? '').isNotEmpty)
-                    Text(s.description!, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(color: Colors.white70, fontSize: 11)),
+                    Text(s.description!,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                            color: Colors.white70, fontSize: 11)),
                 ],
               ),
             ),
@@ -201,11 +229,20 @@ class _WaterfallTile extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(14),
-            boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.18), blurRadius: 14, offset: const Offset(0, 8))],
+            boxShadow: [
+              BoxShadow(
+                  color: Colors.black.withOpacity(0.18),
+                  blurRadius: 14,
+                  offset: const Offset(0, 8))
+            ],
           ),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(14),
-            child: Stack(children: [Positioned.fill(child: imageWidget), caption, badge]),
+            child: Stack(children: [
+              Positioned.fill(child: imageWidget),
+              caption,
+              badge
+            ]),
           ),
         ),
       ),
@@ -255,17 +292,23 @@ class _DetailPageState extends State<_DetailPage> {
         content: TextField(
           controller: controller,
           maxLength: 80,
-          decoration: const InputDecoration(hintText: 'Write a short description'),
+          decoration:
+              const InputDecoration(hintText: 'Write a short description'),
         ),
         actions: [
-          TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancel')),
-          FilledButton(onPressed: () => Navigator.pop(context, controller.text.trim()), child: const Text('Save')),
+          TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('Cancel')),
+          FilledButton(
+              onPressed: () => Navigator.pop(context, controller.text.trim()),
+              child: const Text('Save')),
         ],
       ),
     );
     if (result != null) {
       await const UserStore().updateDescription(s.id, result);
-      setState(() => s = s.copyWith(description: result.isEmpty ? null : result));
+      setState(
+          () => s = s.copyWith(description: result.isEmpty ? null : result));
     }
   }
 
@@ -296,9 +339,16 @@ class _DetailPageState extends State<_DetailPage> {
         foregroundColor: Colors.white,
         title: const Text('作品详情'),
         actions: [
-          IconButton(onPressed: _toggleFav, icon: Icon(_fav ? Icons.star : Icons.star_border)),
-          IconButton(onPressed: _toggleLike, icon: Icon(s.liked ? Icons.favorite : Icons.favorite_border)),
-          if (!s.mediaAsset.startsWith('assets/')) IconButton(onPressed: _editDescription, icon: const Icon(Icons.edit_note_outlined)),
+          IconButton(
+              onPressed: _toggleFav,
+              icon: Icon(_fav ? Icons.star : Icons.star_border)),
+          IconButton(
+              onPressed: _toggleLike,
+              icon: Icon(s.liked ? Icons.favorite : Icons.favorite_border)),
+          if (!s.mediaAsset.startsWith('assets/'))
+            IconButton(
+                onPressed: _editDescription,
+                icon: const Icon(Icons.edit_note_outlined)),
         ],
       ),
       body: Center(child: image),

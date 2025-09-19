@@ -4,8 +4,14 @@ class GradientScaffold extends StatelessWidget {
   final PreferredSizeWidget? appBar;
   final Widget body;
   final Widget? floatingActionButton;
+  final Widget? bottomCenterOverlay;
 
-  const GradientScaffold({super.key, this.appBar, required this.body, this.floatingActionButton});
+  const GradientScaffold(
+      {super.key,
+      this.appBar,
+      required this.body,
+      this.floatingActionButton,
+      this.bottomCenterOverlay});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +27,11 @@ class GradientScaffold extends StatelessWidget {
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  colors: [Color(0xFF130026), Color(0xFF2B0050), Color(0xFF0E001B)],
+                  colors: [
+                    Color(0xFF130026),
+                    Color(0xFF2B0050),
+                    Color(0xFF0E001B)
+                  ],
                 ),
               ),
             ),
@@ -38,10 +48,9 @@ class GradientScaffold extends StatelessWidget {
             ),
           ),
           body,
+          if (bottomCenterOverlay != null) bottomCenterOverlay!,
         ],
       ),
     );
   }
 }
-
-

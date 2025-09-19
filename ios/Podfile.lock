@@ -72,16 +72,16 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
-  flutter_image_compress_common: 1697a328fd72bfb335507c6bca1a65fa5ad87df1
-  image_picker_ios: 7fe1ff8e34c1790d6fff70a32484959f563a928a
+  flutter_image_compress_common: ec1d45c362c9d30a3f6a0426c297f47c52007e3e
+  image_picker_ios: c560581cceedb403a6ff17f2f816d7fea1421fc1
   libwebp: 02b23773aedb6ff1fd38cec7a77b81414c6842a8
   Mantle: c5aa8794a29a022dfbbfc9799af95f477a69b62d
-  package_info_plus: af8e2ca6888548050f16fa2f1938db7b5a5df499
-  path_provider_foundation: 080d55be775b7414fd5a5ef3ac137b97b097e564
+  package_info_plus: c0502532a26c7662a62a356cebe2692ec5fe4ec4
+  path_provider_foundation: 2b6b4c569c0fb62ec74538f866245ac84301af46
   SDWebImage: 9f177d83116802728e122410fb25ad88f5c7608a
   SDWebImageWebPCoder: e38c0a70396191361d60c092933e22c20d5b1380
-  share_plus: 50da8cb520a8f0f65671c6c6a99b3617ed10a58a
-  url_launcher_ios: 694010445543906933d732453a59da0a173ae33d
+  share_plus: 8b6f8b3447e494cca5317c8c3073de39b3600d1f
+  url_launcher_ios: 5334b05cef931de560670eeae103fd3e431ac3fe
 
 PODFILE CHECKSUM: 7d8ebc2894ef516d33d4c23ad3c06c6d3190d717
 

@@ -41,7 +41,8 @@ class _SubmissionDetailPageState extends State<SubmissionDetailPage> {
   }
 
   Future<void> _editMeta() async {
-    if (s.mediaAsset.startsWith('assets/')) return; // only local submissions are editable
+    if (s.mediaAsset.startsWith('assets/'))
+      return; // only local submissions are editable
     final formKey = GlobalKey<FormState>();
     final titleCtrl = TextEditingController(text: s.title ?? '');
     final descCtrl = TextEditingController(text: s.description ?? '');
@@ -59,20 +60,26 @@ class _SubmissionDetailPageState extends State<SubmissionDetailPage> {
                 controller: titleCtrl,
                 maxLength: 40,
                 decoration: const InputDecoration(labelText: 'Title'),
-                validator: (v) => (v == null || v.trim().isEmpty) ? 'Please enter a title' : null,
+                validator: (v) => (v == null || v.trim().isEmpty)
+                    ? 'Please enter a title'
+                    : null,
               ),
               TextFormField(
                 controller: descCtrl,
                 maxLines: 3,
                 maxLength: 120,
                 decoration: const InputDecoration(labelText: 'Description'),
-                validator: (v) => (v == null || v.trim().isEmpty) ? 'Please enter a description' : null,
+                validator: (v) => (v == null || v.trim().isEmpty)
+                    ? 'Please enter a description'
+                    : null,
               ),
             ],
           ),
         ),
         actions: [
-          TextButton(onPressed: () => Navigator.pop(context, false), child: const Text('Cancel')),
+          TextButton(
+              onPressed: () => Navigator.pop(context, false),
+              child: const Text('Cancel')),
           FilledButton(
             onPressed: () {
               if (formKey.currentState?.validate() ?? false) {
@@ -91,9 +98,11 @@ class _SubmissionDetailPageState extends State<SubmissionDetailPage> {
         title: titleCtrl.text.trim(),
         description: descCtrl.text.trim(),
       );
-      setState(() => s = s.copyWith(title: titleCtrl.text.trim(), description: descCtrl.text.trim()));
+      setState(() => s = s.copyWith(
+          title: titleCtrl.text.trim(), description: descCtrl.text.trim()));
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Updated')));
+        ScaffoldMessenger.of(context)
+            .showSnackBar(const SnackBar(content: Text('Updated')));
       }
     }
   }
@@ -107,7 +116,9 @@ class _SubmissionDetailPageState extends State<SubmissionDetailPage> {
   Future<void> _loadRecommendation() async {
     try {
       final list = await repo.getSubmissionsFor(s.challengeId);
-      final seeds = list.where((e) => e.id != s.id && e.coverAsset.startsWith('assets/')).toList();
+      final seeds = list
+          .where((e) => e.id != s.id && e.coverAsset.startsWith('assets/'))
+          .toList();
       if (seeds.isEmpty) return;
       final other = seeds.first;
       if (other.id != s.id && mounted) setState(() => _rec = other);
@@ -119,9 +130,13 @@ class _SubmissionDetailPageState extends State<SubmissionDetailPage> {
     Widget _errorBox() {
       return const ColoredBox(
         color: Color(0x22000000),
-        child: SizedBox(height: 300, child: Center(child: Icon(Icons.broken_image, color: Colors.white54))),
+        child: SizedBox(
+            height: 300,
+            child:
+                Center(child: Icon(Icons.broken_image, color: Colors.white54))),
       );
     }
+
     final image = FutureBuilder<String>(
       future: s.mediaAsset.startsWith('assets/')
           ? Future.value(s.mediaAsset)
@@ -165,16 +180,30 @@ class _SubmissionDetailPageState extends State<SubmissionDetailPage> {
         foregroundColor: Colors.white,
         title: const Text('Submission'),
         actions: [
-          IconButton(onPressed: _toggleFav, icon: Icon(_fav ? Icons.star : Icons.star_border)),
-          IconButton(onPressed: _toggleLike, icon: Icon(s.liked ? Icons.favorite : Icons.favorite_border)),
-          if (!s.mediaAsset.startsWith('assets/')) IconButton(onPressed: _editMeta, icon: const Icon(Icons.edit_note_outlined)),
-          PopupMenuButton<String>(
-            onSelected: (value) {
-              if (value == 'report') _showReportSheet();
-            },
-            itemBuilder: (_) => const [
-              PopupMenuItem<String>(value: 'report', child: Text('Report')),
-            ],
+          _ActionIcon(
+            tooltip: 'Favorite',
+            onTap: _toggleFav,
+            icon: _fav ? Icons.star : Icons.star_border,
+          ),
+          const SizedBox(width: 4),
+          _ActionIcon(
+            tooltip: s.liked ? 'Unlike' : 'Like',
+            onTap: _toggleLike,
+            icon: s.liked ? Icons.favorite : Icons.favorite_border,
+          ),
+          if (!s.mediaAsset.startsWith('assets/')) ...[
+            const SizedBox(width: 4),
+            _ActionIcon(
+              tooltip: 'Edit',
+              onTap: _editMeta,
+              icon: Icons.edit_note_outlined,
+            ),
+          ],
+          const SizedBox(width: 4),
+          _ActionIcon(
+            tooltip: 'Report',
+            onTap: _showReportSheet,
+            icon: Icons.flag_outlined,
           ),
         ],
       ),
@@ -192,7 +221,8 @@ class _SubmissionDetailPageState extends State<SubmissionDetailPage> {
                       onTap: () => Navigator.of(context).push(
                         PageRouteBuilder(
                           pageBuilder: (_, __, ___) => FullImagePage(s: s),
-                          transitionsBuilder: (_, animation, __, child) => FadeTransition(opacity: animation, child: child),
+                          transitionsBuilder: (_, animation, __, child) =>
+                              FadeTransition(opacity: animation, child: child),
                         ),
                       ),
                       child: image,
@@ -208,7 +238,10 @@ class _SubmissionDetailPageState extends State<SubmissionDetailPage> {
                         gradient: LinearGradient(
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter,
-                          colors: [Colors.transparent, Colors.black.withOpacity(0.75)],
+                          colors: [
+                            Colors.transparent,
+                            Colors.black.withOpacity(0.75)
+                          ],
                         ),
                       ),
                       child: Column(
@@ -216,12 +249,17 @@ class _SubmissionDetailPageState extends State<SubmissionDetailPage> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           if ((s.title ?? '').isNotEmpty)
-                            Text(s.title!, style: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w900)),
+                            Text(s.title!,
+                                style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w900)),
                           if ((s.description ?? '').isNotEmpty) ...[
                             const SizedBox(height: 4),
                             Text(
                               s.description!,
-                              style: const TextStyle(color: Colors.white70, fontSize: 13),
+                              style: const TextStyle(
+                                  color: Colors.white70, fontSize: 13),
                             ),
                           ],
                         ],
@@ -232,10 +270,11 @@ class _SubmissionDetailPageState extends State<SubmissionDetailPage> {
               ),
             ),
           ),
-
           if (_rec != null) ...[
             const SizedBox(height: 16),
-            const Text('Recommended', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w800)),
+            const Text('Recommended',
+                style: TextStyle(
+                    color: Colors.white, fontWeight: FontWeight.w800)),
             const SizedBox(height: 8),
             _RecommendedTile(s: _rec!),
           ],
@@ -259,30 +298,42 @@ class _SubmissionDetailPageState extends State<SubmissionDetailPage> {
       context: context,
       isScrollControlled: true,
       backgroundColor: const Color(0xFF1B1B1B),
-      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(16))),
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(top: Radius.circular(16))),
       builder: (ctx) {
         return Padding(
-          padding: EdgeInsets.only(bottom: MediaQuery.of(ctx).viewInsets.bottom),
+          padding:
+              EdgeInsets.only(bottom: MediaQuery.of(ctx).viewInsets.bottom),
           child: Padding(
             padding: const EdgeInsets.fromLTRB(16, 16, 16, 20),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text('Report Submission', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w800)),
+                const Text('Report Submission',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w800)),
                 const SizedBox(height: 12),
                 DropdownButtonFormField<String>(
                   value: selected,
                   dropdownColor: const Color(0xFF2A2A2A),
-                  items: reasons.map((r) => DropdownMenuItem<String>(value: r, child: Text(r))).toList(),
+                  items: reasons
+                      .map((r) =>
+                          DropdownMenuItem<String>(value: r, child: Text(r)))
+                      .toList(),
                   onChanged: (v) => selected = v,
-                  decoration: const InputDecoration(labelText: 'Reason',),
+                  decoration: const InputDecoration(
+                    labelText: 'Reason',
+                  ),
                 ),
                 const SizedBox(height: 12),
                 TextFormField(
                   controller: detailsCtrl,
                   maxLines: 3,
-                  decoration: const InputDecoration(labelText: 'Details (optional)'),
+                  decoration:
+                      const InputDecoration(labelText: 'Details (optional)'),
                 ),
                 const SizedBox(height: 16),
                 SizedBox(
@@ -297,7 +348,10 @@ class _SubmissionDetailPageState extends State<SubmissionDetailPage> {
                       );
                       if (context.mounted) {
                         Navigator.pop(ctx);
-                        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Thanks, your report has been submitted.')));
+                        ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                                content: Text(
+                                    'Thanks, your report has been submitted.')));
                       }
                     },
                     child: const Text('Submit Report'),
@@ -319,7 +373,9 @@ class _RecommendedTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final image = FutureBuilder<String>(
-      future: s.coverAsset.startsWith('assets/') ? Future.value(s.coverAsset) : UserStore.resolveLocalPath(s.coverAsset),
+      future: s.coverAsset.startsWith('assets/')
+          ? Future.value(s.coverAsset)
+          : UserStore.resolveLocalPath(s.coverAsset),
       builder: (context, snap) {
         final p = snap.data;
         if (p == null) {
@@ -355,12 +411,16 @@ class _RecommendedTile extends StatelessWidget {
                 right: 0,
                 bottom: 0,
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
-                      colors: [Colors.transparent, Colors.black.withOpacity(0.78)],
+                      colors: [
+                        Colors.transparent,
+                        Colors.black.withOpacity(0.78)
+                      ],
                     ),
                   ),
                   child: Column(
@@ -368,9 +428,17 @@ class _RecommendedTile extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       if ((s.title ?? '').isNotEmpty)
-                        Text(s.title!, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w800)),
+                        Text(s.title!,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w800)),
                       if ((s.description ?? '').isNotEmpty)
-                        Text(s.description!, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(color: Colors.white70)),
+                        Text(s.description!,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(color: Colors.white70)),
                     ],
                   ),
                 ),
@@ -383,4 +451,22 @@ class _RecommendedTile extends StatelessWidget {
   }
 }
 
+class _ActionIcon extends StatelessWidget {
+  final String tooltip;
+  final IconData icon;
+  final VoidCallback? onTap;
+  const _ActionIcon(
+      {required this.tooltip, required this.icon, required this.onTap});
 
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      onPressed: onTap,
+      tooltip: tooltip,
+      icon: Icon(icon),
+      padding: const EdgeInsets.symmetric(horizontal: 8),
+      constraints: const BoxConstraints(minWidth: 48, minHeight: 48),
+      splashRadius: 24,
+    );
+  }
+}

@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:tevorn/widgets/gradient_scaffold.dart';
+import 'package:tevorn/widgets/floating_dock.dart';
 import 'package:tevorn/widgets/glass_card.dart';
 import 'package:tevorn/data/ai_client.dart';
 import 'package:tevorn/data/chat_store.dart';
@@ -19,13 +20,17 @@ class _AiPageState extends State<AiPage> {
   late final ChatStore _store;
   bool _sending = false;
   final List<_ChatBubble> _messages = <_ChatBubble>[
-    const _ChatBubble(role: _Role.assistant, text: 'Hi! I\'m your Challenge Assistant. What theme or twist do you want?'),
+    const _ChatBubble(
+        role: _Role.assistant,
+        text:
+            'Hi! I\'m your Challenge Assistant. What theme or twist do you want?'),
   ];
 
   @override
   void initState() {
     super.initState();
-    _client = ZhipuAIClient(apiKey: '55175811300b4e2d9112de93763092f0.Yyv41yQFR8I3maft');
+    _client = ZhipuAIClient(
+        apiKey: '55175811300b4e2d9112de93763092f0.Yyv41yQFR8I3maft');
     _store = ChatStore();
     _loadHistory();
   }
@@ -65,7 +70,9 @@ class _AiPageState extends State<AiPage> {
       _saveHistory();
     } catch (e) {
       setState(() {
-        _messages.add(const _ChatBubble(role: _Role.assistant, text: "Hmm, I couldn't reach the studio. Try again in a bit."));
+        _messages.add(const _ChatBubble(
+            role: _Role.assistant,
+            text: "Hmm, I couldn't reach the studio. Try again in a bit."));
       });
       _saveHistory();
     } finally {
@@ -115,11 +122,17 @@ class _AiPageState extends State<AiPage> {
                   context: context,
                   builder: (ctx) => AlertDialog(
                     backgroundColor: const Color(0xFF2B0050),
-                    title: const Text('Clear chat?', style: TextStyle(color: Colors.white)),
-                    content: const Text('This will remove all messages.', style: TextStyle(color: Colors.white70)),
+                    title: const Text('Clear chat?',
+                        style: TextStyle(color: Colors.white)),
+                    content: const Text('This will remove all messages.',
+                        style: TextStyle(color: Colors.white70)),
                     actions: [
-                      TextButton(onPressed: () => Navigator.pop(ctx, false), child: const Text('Cancel')),
-                      TextButton(onPressed: () => Navigator.pop(ctx, true), child: const Text('Clear')),
+                      TextButton(
+                          onPressed: () => Navigator.pop(ctx, false),
+                          child: const Text('Cancel')),
+                      TextButton(
+                          onPressed: () => Navigator.pop(ctx, true),
+                          child: const Text('Clear')),
                     ],
                   ),
                 );
@@ -128,7 +141,10 @@ class _AiPageState extends State<AiPage> {
                   setState(() {
                     _messages
                       ..clear()
-                      ..add(const _ChatBubble(role: _Role.assistant, text: 'Hi! I\'m your Challenge Assistant. What theme or twist do you want?'));
+                      ..add(const _ChatBubble(
+                          role: _Role.assistant,
+                          text:
+                              'Hi! I\'m your Challenge Assistant. What theme or twist do you want?'));
                   });
                   await Future<void>.delayed(const Duration(milliseconds: 30));
                   _scrollToEnd();
@@ -144,23 +160,27 @@ class _AiPageState extends State<AiPage> {
           Expanded(
             child: ListView.builder(
               controller: _scrollController,
-              padding: const EdgeInsets.fromLTRB(16, 0, 96, 16),
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
               itemCount: _messages.length,
               itemBuilder: (context, index) {
                 final m = _messages[index];
                 final isUser = m.role == _Role.user;
                 return Align(
-                  alignment: isUser ? Alignment.centerRight : Alignment.centerLeft,
+                  alignment:
+                      isUser ? Alignment.centerRight : Alignment.centerLeft,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 4),
                     child: GlassCard(
-                      margin: EdgeInsets.only(left: isUser ? 80 : 0, right: isUser ? 0 : 80),
-                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                      margin: EdgeInsets.only(
+                          left: isUser ? 80 : 0, right: isUser ? 0 : 80),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 10),
                       child: ConstrainedBox(
                         constraints: const BoxConstraints(maxWidth: 260),
                         child: Text(
                           m.text,
-                          style: const TextStyle(color: Colors.white, fontSize: 14, height: 1.35),
+                          style: const TextStyle(
+                              color: Colors.white, fontSize: 14, height: 1.35),
                         ),
                       ),
                     ),
@@ -171,7 +191,8 @@ class _AiPageState extends State<AiPage> {
           ),
           const SizedBox(height: 4),
           Padding(
-            padding: const EdgeInsets.fromLTRB(16, 0, 96, 20),
+            padding: EdgeInsets.fromLTRB(
+                16, 0, 16, bottomDockOverlapPadding(context) + 12),
             child: _InputBar(
               controller: _controller,
               sending: _sending,
@@ -196,7 +217,8 @@ class _InputBar extends StatelessWidget {
   final TextEditingController controller;
   final bool sending;
   final VoidCallback onSend;
-  const _InputBar({required this.controller, required this.sending, required this.onSend});
+  const _InputBar(
+      {required this.controller, required this.sending, required this.onSend});
 
   @override
   Widget build(BuildContext context) {
@@ -257,7 +279,11 @@ class _GlassSendButton extends StatelessWidget {
               onTap: sending ? null : onTap,
               child: Center(
                 child: sending
-                    ? const SizedBox(width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white))
+                    ? const SizedBox(
+                        width: 18,
+                        height: 18,
+                        child: CircularProgressIndicator(
+                            strokeWidth: 2, color: Colors.white))
                     : const Icon(Icons.send_rounded, color: Colors.white),
               ),
             ),
@@ -272,7 +298,8 @@ class _GlassActionChip extends StatelessWidget {
   final IconData icon;
   final String label;
   final VoidCallback onTap;
-  const _GlassActionChip({required this.icon, required this.label, required this.onTap});
+  const _GlassActionChip(
+      {required this.icon, required this.label, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -301,7 +328,11 @@ class _GlassActionChip extends StatelessWidget {
                 children: [
                   Icon(icon, size: 16, color: Colors.white),
                   const SizedBox(width: 6),
-                  Text(label, style: const TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.w600)),
+                  Text(label,
+                      style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 13,
+                          fontWeight: FontWeight.w600)),
                 ],
               ),
             ),
@@ -311,5 +342,3 @@ class _GlassActionChip extends StatelessWidget {
     );
   }
 }
-
-
